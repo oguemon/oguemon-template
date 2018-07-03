@@ -62,13 +62,13 @@ $link_hatena  = 'http://b.hatena.ne.jp/entry/' . $url;
 $link_line    = 'http://line.me/R/msg/text/?'. $url;
 $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 ?>
-	<div class="sns-btn-list-header">
-		<a href="<?= $link_twitter ?>" target="_blank"><div class="sns-btn sns-btn-twitter"></div></a>
-		<a href="<?= $link_fb ?>" target="_blank"><div class="sns-btn sns-btn-facebook"></div></a>
-		<a href="<?= $link_gplus ?>" target="_blank"><div class="sns-btn sns-btn-gplus"></div></a>
-		<a href="<?= $link_hatena ?>" target="_blank"><div class="sns-btn sns-btn-hatena"></div></a>
-		<a href="<?= $link_line ?>" target="_blank"><div class="sns-btn sns-btn-line"></div></a>
-		<a href="<?= $link_pocket ?>" target="_blank"><div class="sns-btn sns-btn-pocket"></div></a>
+	<div id="sns-btn-list-header">
+		<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn sns-btn-twitter"></a>
+		<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn sns-btn-facebook"></a>
+		<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn sns-btn-gplus"></a>
+		<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn sns-btn-hatena"></a>
+		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn sns-btn-line"></a>
+		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn sns-btn-pocket"></a>
 	</div>
 		
 	<div id="post-body" class="entry-content clearfix">
@@ -79,8 +79,8 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	wp_link_pages( array(
 		'before'           => '<div class="page-links">',
 		'after'            => '</div>',
-		'previouspagelink' => '<div id="previous-page-link-before"></div><div id="previous-page-link">前のページ</div>',
-		'nextpagelink'     => '<div id="next-page-link-before"></div><div id="next-page-link">次のページ</div>',
+		'previouspagelink' => '<div class="page-link-arrow prev">前のページ</div><div></div>',
+		'nextpagelink'     => '<div class="page-link-arrow next">次のページ</div><div></div>',
 		'next_or_number'   => 'next',
 		'separator'        => ' ',
 		'echo'             => 1
@@ -97,13 +97,13 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	) );
 ?>
 		<!-- ソーシャルボタン（記事上部にもあり） -->
-		<div class="sns-btn-list-footer">
-			<a href="<?= $link_twitter ?>" target="_blank"><div class="sns-btn sns-btn-twitter"></div></a>
-			<a href="<?= $link_fb ?>" target="_blank"><div class="sns-btn sns-btn-facebook"></div></a>
-			<a href="<?= $link_gplus ?>" target="_blank"><div class="sns-btn sns-btn-gplus"></div></a>
-			<a href="<?= $link_hatena ?>" target="_blank"><div class="sns-btn sns-btn-hatena"></div></a>
-			<a href="<?= $link_line ?>" target="_blank"><div class="sns-btn sns-btn-line"></div></a>
-			<a href="<?= $link_pocket ?>" target="_blank"><div class="sns-btn sns-btn-pocket"></div></a>
+		<div id="sns-btn-list-footer">
+			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn sns-btn-twitter"></a>
+			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn sns-btn-facebook"></a>
+			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn sns-btn-gplus"></a>
+			<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn sns-btn-hatena"></a>
+			<a href="<?= $link_line ?>"    target="_blank" class="sns-btn sns-btn-line"></a>
+			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn sns-btn-pocket"></a>
 		</div>
 
 	</div><!-- id="post-body" -->

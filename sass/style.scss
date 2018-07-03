@@ -98,6 +98,17 @@ body {
 	color: #333;
 	background: #f6fcff;
 }
+
+div, nav {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 14px 0;
+	padding: 0;
+}
+
 a {
 	color: $main-color;
 	text-decoration: none;
@@ -177,7 +188,6 @@ header {
 	}
 
 	#blog-description {
-		margin: 0;
 		color: #888;
 	}
 }
@@ -204,16 +214,11 @@ header {
 #menu-main {
 	width: 100%;
 	height: 25px;
-	margin: 0;
 	padding: 10px 0;
 	background: $main-color;
 	color: #fff;
 	font-size: 110%;
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
-
-	ul {
-		margin: 0;
-	}
 
 	li {
 		margin: 0 30px 0 0;
@@ -477,7 +482,7 @@ li.post-item {
 	}
 
 	// 記事一覧のカテゴリー
-	li.post-item .post-meta {
+	.post-meta {
 		margin: 0 0 5px 0;
 	}
 
@@ -563,7 +568,6 @@ ul#breadcrumb {
 	}
 	
 	#post-title {
-		margin: 0;
 		font-size: 180%;
 		line-height: 1.5em;
 	}
@@ -582,7 +586,7 @@ ul#breadcrumb {
 			}
 		}
 	}
-	#post-excerpt {
+	p#post-excerpt {
 		margin: 0;
 	}
 }
@@ -726,6 +730,7 @@ ul#breadcrumb {
 	height: 40px;
 	margin: 20px 0;
 	padding: 0;
+	position: relative;
 	text-align: center;
 	clear: both;
 
@@ -733,46 +738,50 @@ ul#breadcrumb {
 		&:hover {
 			text-decoration: none;
 		}
+	}
 
-		#next-page-link,
-		#previous-page-link {
-			width: 125px;
-			height: 24px;
-			margin: 0;
-			padding: 8px 20px;
-			background: $main-color;
-			color: #fff;
-			font-size: 100%;
-			font-weight: bold;
-			text-align: center;
-			display: inline-block;
+	// 記事本文内の次のページ・前のページの矢印
+	.page-link-arrow {
+		width: 125px;
+		height: 24px;
+		padding: 8px 20px;
+		background: $main-color;
+		color: #fff;
+		font-size: 100%;
+		font-weight: bold;
+		line-height: 24px;
+		text-align: center;
+		position: absolute;
+
+
+		&.next {
+			right: 20px;
+
+			+ div {
+				position: absolute;
+				right: 0;
+				border-left: 20px solid $main-color;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+			}
 		}
 
-		#next-page-link {
-			float: right;
-		}
-		
-		#previous-page-link {
-			float: left;
-		}
-
-		#next-page-link-before {
-			float: right;
-			border-left: 20px solid $main-color;
-			border-top: 20px solid transparent;
-			border-bottom: 20px solid transparent;
-		}
-
-		#previous-page-link-before {
-			float: left;
-			border-right: 20px solid $main-color;
-			border-top: 20px solid transparent;
-			border-bottom: 20px solid transparent;
+		&.prev {
+			left: 20px;
+	
+			+ div {
+				position: absolute;
+				left: 0;
+				border-right: 20px solid $main-color;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+			}
 		}
 	}
 
-	.page-number,
-	a .page-number {
+
+	// ページ番号
+	.page-number {
 		margin: 0 3px;
 		padding: 8px;
 		border: 1px solid $main-color;
@@ -780,6 +789,8 @@ ul#breadcrumb {
 		color: #fff;
 		font-size: 120%;
 	}
+
+	// 特にページ番号がリンクで囲まれているもの（現在のページでない）
 	a .page-number {
 		color: $main-color;
 		background: #fff;
@@ -930,19 +941,19 @@ footer {
 /*
  *  ソーシャルボタン
  */
-.sns-btn-list-header {
+#sns-btn-list-header {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
-.sns-btn-list-footer {
+#sns-btn-list-footer {
 	margin: 30px 0 20px 0;
 	padding: 10px 0;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	text-align: center;
 }
-.sns-btn-list-sidebar {
+#sns-btn-list-sidebar {
 	margin: 5px 0 0 0;
 	padding: 5px 0 0 0;
 	border-top: 1px solid #ddd;
@@ -1189,7 +1200,7 @@ footer {
 			}
 		}
 
-		li.post-pickup-main .post-preview {
+		.post-preview {
 			padding: 0 10px;
 		}
 
@@ -1310,7 +1321,7 @@ footer {
 		}
 
 		// 記事一覧の記事タイトル
-		li.post-item .title-post {
+		.title-post {
 			margin: 0 0 5px 0;
 			font-size: 110%;
 
@@ -1328,6 +1339,12 @@ footer {
 		.posted-on {
 			font-size: 80%;
 			color: #888;
+		}
+
+		.post-meta .genericon,
+		.more-link .genericon {
+			margin-bottom: 2px;
+			vertical-align: middle;
 		}
 	}
 
@@ -1372,8 +1389,7 @@ footer {
 	}
 
 	// 前のページ・次のページ
-	.page-links a #next-page-link,
-	.page-links a #previous-page-link {
+	.page-links .page-link-arrow {
 		width: 80px;
 	}
 

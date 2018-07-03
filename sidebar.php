@@ -36,7 +36,7 @@ $link_hatena  = 'http://b.hatena.ne.jp/entry/' . $url;
 $link_line    = 'http://line.me/R/msg/text/?'. $url;
 $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 ?>
-		<div class="sns-btn-list-sidebar">
+		<div id="sns-btn-list-sidebar">
 			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-side sns-btn-twitter"></a>
 			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-side sns-btn-facebook"></a>
 			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn-side sns-btn-gplus"></a>
