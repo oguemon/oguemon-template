@@ -77,9 +77,9 @@ if (is_single()){
 <!-- 以下、PC・スマホ共通コンテンツ -->
 <div id="container">
 	<!-- ヘッダー -->
-	<header class="site-header clearfix" role="banner">
+	<header class="clearfix">
 		<!-- ロゴとか -->
-		<div class="wrapper wrapper-header clearfix">
+		<div class="wrapper clearfix">
 			<?php
 			if ( has_nav_menu( 'secondary' ) ) {
 				echo '<nav id="menu-secondary" role="navigation" aria-label="Secondary Navigation">';
@@ -99,11 +99,11 @@ if (is_single()){
 				<div id="blog-title"><a href="<?= get_bloginfo('url')?>"><?= get_bloginfo('name')?></a></div>
 				<div id="blog-description">たぶん今すぐ使えるテクニックから、きっと全く使えない豆知識まで。</div>
 			</div>
-		</div><!-- .wrapper .wrapper-header -->
+		</div>
 
 		<!-- メインメニュー -->
-		<nav id="menu-main" role="navigation" aria-label="Main Navigation">
-			<div class="wrapper wrapper-header-menu clearfix">
+		<nav id="menu-main">
+			<div class="wrapper clearfix">
 			<?php
 			if ( has_nav_menu( 'primary' ) ) {
 				wp_nav_menu( array(
@@ -116,6 +116,6 @@ if (is_single()){
 					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ));
 			}
 			?>
-			</div><!-- .wrapper .wrapper-header-menu .clearfix -->
-		</nav><!-- #menu-main -->
-	</header><!-- .site-header -->
+			</div>
+		</nav>
+	</header>
