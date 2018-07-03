@@ -5,15 +5,15 @@
  */
 ?>
 <aside id="site-aside" role="complementary">
-	<div class="widget-title">メインコンテンツ</div>
-	<div class="widget-contents">
+	<div class="title">メインコンテンツ</div>
+	<div class="contents">
 		<div class="side-banner"><a href="https://oguemon.com/topic/study/linear-algebra/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-study-linear-algebra.png"></a></div>
 		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/trivia/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-trivia.png"></a></div>
 		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/is/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-is.png"></a></div>
 	</div>
 
-	<div class="widget-title">プロフィール</div>
-	<div class="widget-contents widget-profile">
+	<div class="title">プロフィール</div>
+	<div class="contents profile">
 		<img src="https://oguemon.com/wordpress/wp-content/uploads/2017/02/profile.png" width="160px">
 		<p><strong>著者：おぐえもん</strong></p>
 		<p>大学に通っていながらJKの肩書きを持つ情報系（=JK）大学生。</p>
@@ -23,7 +23,7 @@
 		</a></p>
 		【お問い合わせ】<br>
 		<img src="https://oguemon.com/wordpress/wp-content/uploads/2017/02/mail.png" width="160px">
-		
+
 		<!-- ソーシャルボタン -->
 <?php
 //リンクの生成
@@ -37,17 +37,17 @@ $link_line    = 'http://line.me/R/msg/text/?'. $url;
 $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 ?>
 		<div class="sns-btn-list-sidebar">
-			<a href="<?= $link_twitter ?>" target="_blank"><div class="sns-btn-side sns-btn-twitter-side"></div></a>
-			<a href="<?= $link_fb ?>" target="_blank"><div class="sns-btn-side sns-btn-facebook-side"></div></a>
-			<a href="<?= $link_gplus ?>" target="_blank"><div class="sns-btn-side sns-btn-gplus-side"></div></a>
-			<a href="<?= $link_hatena ?>" target="_blank"><div class="sns-btn-side sns-btn-hatena-side"></div></a>
-			<a href="<?= $link_line ?>" target="_blank"><div class="sns-btn-side sns-btn-line-side"></div></a>
-			<a href="<?= $link_pocket ?>" target="_blank"><div class="sns-btn-side sns-btn-pocket-side"></div></a>
+			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-side sns-btn-twitter-side"></a>
+			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-side sns-btn-facebook-side"></a>
+			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn-side sns-btn-gplus-side"></a>
+			<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-side sns-btn-hatena-side"></a>
+			<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-side sns-btn-line-side"></a>
+			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-side sns-btn-pocket-side"></a>
 		</div>
 	</div>
 	
-	<div class="widget-title">人気記事</div>
-	<div class="widget-contents">
+	<div class="title">人気記事</div>
+	<div class="contents">
 		<?php
 		//記事のPVをインクリメントする（function.php参照）
 		setPostViews(get_the_ID());
