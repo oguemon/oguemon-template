@@ -23,7 +23,7 @@
 			<h2 class="title-post"><a href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h2>
 			<p class="post-excerpt"><?= get_the_excerpt() ?></p>
 			<p class="post-meta">
-			<span class="posted-on"><span class="icon icon-published"></span><time><?= get_the_date() ?></time></span>
+			<span class="posted-on"><span class="icon-published"></span><time><?= get_the_date() ?></time></span>
 			</p>
 		</div>
 	</article>

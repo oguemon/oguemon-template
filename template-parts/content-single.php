@@ -22,16 +22,16 @@
 <?php
 	if ( get_the_date() == get_the_modified_date() ){
 ?>
-				<span class="icon icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
+				<span class="icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
 <?php
 	} else {
 ?>
-				<span class="icon icon-published"></span><time class="published" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
-				<span class="icon icon-updated"></span><time class="updated" datetime="<?= get_the_modified_date('c') ?>"><?= get_the_modified_date() ?></time>
+				<span class="icon-published"></span><time class="published" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
+				<span class="icon-updated"></span><time class="updated" datetime="<?= get_the_modified_date('c') ?>"><?= get_the_modified_date() ?></time>
 <?php
 	}
 ?>
-				<span class="icon icon-author"></span><span class="vcard author"><span class="fn">おぐえもん</span></span>
+				<span class="icon-author"></span><span class="vcard author"><span class="fn">おぐえもん</span></span>
 			</p>
 		</div>
 	</div>
@@ -40,10 +40,10 @@
 		$category = get_the_category()[0];
 ?>
 	<div class="category-detail">
-		<span id="icon">本カテゴリ</span>
-		<div id="title" rel="tag"><?= $category->name ?></div>
-		<div id="description"><?= $category->description ?></div>
-		<div id="link">
+		<span class="icon">本カテゴリ</span>
+		<div class="title" rel="tag"><?= $category->name ?></div>
+		<div class="description"><?= $category->description ?></div>
+		<div class="link">
 			<a href="<?= get_category_link($category->cat_ID) ?>">＞＞このカテゴリの記事一覧（<?= $category->count ?>件）を見る</a>
 		</div>
 	</div>
@@ -132,7 +132,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		/* 同じカテゴリの記事一覧 */
 ?>
 		<div id="same-category">
-			<div id="header">このカテゴリーの最新記事</div>
+			<div class="header">このカテゴリーの最新記事</div>
 <?php
 		$this_article_ID = get_the_ID();
 		query_posts('cat='.$category->cat_ID.'&showposts=5');

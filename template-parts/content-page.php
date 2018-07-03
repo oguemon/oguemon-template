@@ -19,12 +19,12 @@
 		<div id="post-meta">
 			<p id="posted-on">
 <?php if ( get_the_date() == get_the_modified_date() ){ ?>
-				<span class="icon icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
+				<span class="icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
 <?php } else { ?>
-				<span class="icon icon-published"></span><time class="published" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
-				<span class="icon icon-updated"></span><time class="updated" datetime="<?= get_the_modified_date('c') ?>"><?= get_the_modified_date() ?></time>
+				<span class="icon-published"></span><time class="published" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
+				<span class="icon-updated"></span><time class="updated" datetime="<?= get_the_modified_date('c') ?>"><?= get_the_modified_date() ?></time>
 <?php } ?>
-				<span class="icon icon-author"></span><span class="vcard author"><span class="fn">おぐえもん</span></span>
+				<span class="icon-author"></span><span class="vcard author"><span class="fn">おぐえもん</span></span>
 			</p>
 		</div>
 	</div>
