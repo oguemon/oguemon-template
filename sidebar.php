@@ -37,12 +37,12 @@ $link_line    = 'http://line.me/R/msg/text/?'. $url;
 $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 ?>
 		<div class="sns-btn-list-sidebar">
-			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-side sns-btn-twitter-side"></a>
-			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-side sns-btn-facebook-side"></a>
-			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn-side sns-btn-gplus-side"></a>
-			<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-side sns-btn-hatena-side"></a>
-			<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-side sns-btn-line-side"></a>
-			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-side sns-btn-pocket-side"></a>
+			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-side sns-btn-twitter"></a>
+			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-side sns-btn-facebook"></a>
+			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn-side sns-btn-gplus"></a>
+			<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-side sns-btn-hatena"></a>
+			<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-side sns-btn-line"></a>
+			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-side sns-btn-pocket"></a>
 		</div>
 	</div>
 	

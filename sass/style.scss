@@ -25,6 +25,11 @@ Tags: oguemon,site,blog
 /*
  *  変数関係
  */
+
+// URL
+$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
+
+// 色関係
 $main-color: #00A5DE;
 
 /******************************************
@@ -916,13 +921,15 @@ footer {
 	display: inline-block;
 }
 .icon-published, .icon-updated, .icon-author {
-	background: url(http://localhost/wordpress/wp-content/themes/oguemon/img/icons.svg) left top;
+	background: url(#{$base-url}/img/icons.svg) left top;
 }
 .icon-published {background-position: -15px -12px;}
 .icon-updated {background-position: -30px -12px;}
 .icon-author {background-position: -45px -12px;}
 
-/* ソーシャルボタン */
+/*
+ *  ソーシャルボタン
+ */
 .sns-btn-list-header {
 	margin: 0;
 	padding: 0;
@@ -942,27 +949,29 @@ footer {
 }
 
 /* 記事の途中・サイドバー共通 */
-.sns-btn, .sns-btn-side {
+%base-sns-btn {
+	background: url(#{$base-url}/img/icons.svg) left top;
 	display: inline-block;
-	background: url(http://localhost/wordpress/wp-content/themes/oguemon/img/icons.svg) left top;
 
 	&:hover {
 		/*アニメーション*/
 		animation: poyopoyo 0.4s ease-out;
 		transform-origin: 50% 50%;
 		animation-play-state:running;
-	}
-}
 
-@keyframes poyopoyo {
-	  0% { transform: scale(1.0, 1.0); }
-	 30% { transform: scale(0.8, 0.8); }
-	 60% { transform: scale(1.2, 1.2); }
-	100% { transform: scale(1.0, 1.0); }
+		@keyframes poyopoyo {
+			0%   { transform: scale(1.0, 1.0); }
+			30%  { transform: scale(0.8, 0.8); }
+			60%  { transform: scale(1.2, 1.2); }
+			100% { transform: scale(1.0, 1.0); }
+		}
+	}
 }
 
 /*記事の途中用SNSボタン*/
 .sns-btn {
+	@extend %base-sns-btn;
+
 	width: 40px;
 	height: 50px;
 	margin: 0 20px;
@@ -970,29 +979,30 @@ footer {
 	@include mq() {
 		margin: 10px 1%;
 	}
-}
 
-.sns-btn-twitter  {background-position:    0px -80px;}
-.sns-btn-facebook {background-position:  -40px -80px;}
-.sns-btn-gplus    {background-position:  -80px -80px;}
-.sns-btn-hatena   {background-position: -120px -80px;}
-.sns-btn-line     {background-position: -160px -80px;}
-.sns-btn-pocket   {background-position: -200px -80px;}
+	&.sns-btn-twitter  {background-position:    0px -80px;}
+	&.sns-btn-facebook {background-position:  -40px -80px;}
+	&.sns-btn-gplus    {background-position:  -80px -80px;}
+	&.sns-btn-hatena   {background-position: -120px -80px;}
+	&.sns-btn-line     {background-position: -160px -80px;}
+	&.sns-btn-pocket   {background-position: -200px -80px;}
+}
 
 /* サイドバー用SNSボタン */
 .sns-btn-side {
+	@extend %base-sns-btn;
+
 	width: 30px;
 	height: 30px;
 	margin: 0 3px;
-	display: inline-block;
-}
 
-.sns-btn-twitter-side  {background-position:    0px -50px;}
-.sns-btn-facebook-side {background-position:  -40px -50px;}
-.sns-btn-gplus-side    {background-position:  -80px -50px;}
-.sns-btn-hatena-side   {background-position: -120px -50px;}
-.sns-btn-line-side     {background-position: -160px -50px;}
-.sns-btn-pocket-side   {background-position: -200px -50px;}
+	&.sns-btn-twitter  {background-position:    0px -50px;}
+	&.sns-btn-facebook {background-position:  -40px -50px;}
+	&.sns-btn-gplus    {background-position:  -80px -50px;}
+	&.sns-btn-hatena   {background-position: -120px -50px;}
+	&.sns-btn-line     {background-position: -160px -50px;}
+	&.sns-btn-pocket   {background-position: -200px -50px;}
+}
 
 /* mathjax */
 .MathJax_Display {
@@ -1058,7 +1068,7 @@ footer {
 			height: 50px;
 			margin: 0 0 0 5px;
 			float: left;
-			background: url(http://localhost/wordpress/wp-content/themes/oguemon/img/blog-title.svg) no-repeat;
+			background: url(#{$base-url}/img/blog-title.svg) no-repeat;
 		}
 	}
 	
@@ -1089,7 +1099,7 @@ footer {
 		width: 30px;
 		height: 30px;
 		margin: 10px 10px 15px auto;
-		background: url(http://localhost/wordpress/wp-content/themes/oguemon/img/icons.svg) no-repeat;
+		background: url(#{$base-url}/img/icons.svg) no-repeat;
 		background-position: -210px 0px;
 		-webkit-transition: all .3s ease;
 		transition: all .3s ease;
