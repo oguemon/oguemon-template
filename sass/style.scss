@@ -400,11 +400,9 @@ li.post-pickup-sub {
 	}
 }
 
-/* 記事一覧 */
-ul.post-list {
-	margin: 0;
-	padding: 0;
-}
+/*
+ *  記事一覧
+ */
 li.post-item {
 	margin: 0 0 5px 0;
 	padding-bottom: 5px;
@@ -983,8 +981,14 @@ footer {
 /******************************************
 9. Buttons, Forms
 ******************************************/
+
 /******************************************
-10. Media Queries (Responsive Feature)
+10. Popup Window
+******************************************/
+@import "popup";
+
+/******************************************
+11. Media Queries (Responsive Feature)
 ******************************************/
 @media (max-width: 640px) {
 	body {
@@ -1225,10 +1229,6 @@ footer {
 	}
 
 	/* 記事一覧 */
-	ul.post-list {
-		margin: 0;
-		padding: 0;
-	}
 	li.post-item {
 		margin: 0;
 		padding: 0 10px 5px 10px;
