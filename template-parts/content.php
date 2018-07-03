@@ -12,13 +12,6 @@
 		</div><!-- .post-cover-wrapper -->
 		<?php } ?>
 		<div class="post-preview">
-			<p class="post-meta">
-			<?php
-				if ( is_sticky() ) { 
-					echo '<span class="sticky-post">Sticky</span>'; 
-				}
-			?>
-			</p>
 			<?php the_category();?>
 			<h2 class="title-post"><a href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h2>
 			<p class="post-excerpt"><?= get_the_excerpt() ?></p>
