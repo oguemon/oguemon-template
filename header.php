@@ -57,14 +57,14 @@ if (is_single()){
 	<meta name="twitter:site" content="@oguemon_com">
 </head>
 
-<body <?php body_class(); ?>>
-
+<body>
 	<!-- スマホ用ヘッドバー -->
 	<div id="sp-header">
 		<a href="<?= get_bloginfo('url');?>"><div id="blog-title-sp"></div></a>
 		<div id="sp-menu-right-btn"></div>
 	</div>
 	<?php
+	// スマホ用メニュー
 	wp_nav_menu( array(
 		'container_id'   => 'sp-right-menu-area',
 		'menu_id'        => 'sp-right-menu',
@@ -82,6 +82,7 @@ if (is_single()){
 		<div class="wrapper clearfix">
 			<?php
 			if ( has_nav_menu( 'secondary' ) ) {
+				// 右上メニュー
 				echo '<nav id="menu-secondary" role="navigation" aria-label="Secondary Navigation">';
 				wp_nav_menu( array(
 					'container' => '', 

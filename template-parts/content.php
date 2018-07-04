@@ -6,7 +6,7 @@
 ?>
 <li class="post-item clearfix">
 	<article>
-		<?php if ( has_post_thumbnail() ){ ?>
+		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="post-cover">
 			<a href="<?= get_permalink() ?>"><?php the_post_thumbnail(); ?></a>
 		</div><!-- .post-cover-wrapper -->

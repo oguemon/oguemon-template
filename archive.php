@@ -24,7 +24,7 @@ get_header();
 				</div>
 				<?php
 				if ( have_posts() ) {
-					echo '<ul id="recent-posts" class="post-list clearfix">';
+					echo '<ul id="recent-posts" class="clearfix">';
 					while ( have_posts() ){
 						the_post();
 						get_template_part( 'template-parts/content', get_post_format() );

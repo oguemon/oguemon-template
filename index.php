@@ -21,9 +21,9 @@ get_header();
 					}
 					if ( is_home() && !is_paged() ) {
 						get_template_part( 'template-parts/content', 'pickup' );
-						echo '<p class="widget-title">最近の記事</p>';
+						echo '<div class="widget-title">最近の記事</div>';
 					}
-					echo '<ul id="recent-posts" class="post-list clearfix">';
+					echo '<ul id="recent-posts" class="clearfix">';
 					while (have_posts()) {
 						the_post();
 						get_template_part( 'template-parts/content');

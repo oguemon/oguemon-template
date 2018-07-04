@@ -31,49 +31,46 @@ $base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
 
 // 色関係
 $main-color: #00A5DE;
+$white-color: #fff;
+$text-base-color: #333;
+$text-sub-color: #888;
+
+// サイズ関係
+$margin-site-side: 30px;
 
 /******************************************
 0. Normalize
 ******************************************/
-@import "normalize";
+//@import "normalize";
 
 /******************************************
 1. General
 ******************************************/
-/*
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-*/
+
 body {
 	margin: 0;
 	padding: 0;
 	line-height: 1.6em;
 	font-size: 14px;
     font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-	color: #333;
+	color: $text-base-color;
 	background: #f6fcff;
 }
 
-div, nav {
+div, nav, article, p {
 	margin: 0;
 	padding: 0;
 }
 
-p {
-	margin: 14px 0;
-	padding: 0;
-}
-
 a {
-	color: $main-color;
+	color: $text-base-color;
 	text-decoration: none;
-	
-	&:hover {
-		text-decoration: underline;
-	}
 }
 
 img {
@@ -86,31 +83,27 @@ ul {
 }
 
 li {
+	margin: 0;
+	padding: 0;
 	list-style-type: none;
 }
 
 .wrapper {
-	width: 1020px;
+	width: 1080px;
 	margin: 0 auto;
 }
 
 .wrapper-main {
-	padding: 20px 30px 30px 30px;
-	background: #fff;
+	padding: 20px $margin-site-side;
+	background: $white-color;
 	box-shadow: 1px 0px 5px rgba(0,0,0,0.05);
 }
 
 .clearfix {
-	&:before {
+	&:before, &:after {
 		clear: both;
-		content: " ";
-		display: table;
-	}
-
-	&:after {
-		clear: both;
-		content: " ";
-		display: table;
+		content: "";
+		display: block;
 	}
 }
 
@@ -125,28 +118,20 @@ li {
 header {
 	width: 100%;
 	min-width: 1080px;
-	background: #fff;
+	background: $white-color;
 
 	#blog-info {
-		margin: 30px 0 10px 0;
+		padding: 30px $margin-site-side 20px $margin-site-side;
 	}
 
 	#blog-title {
 		margin: 0 0 10px 0;
 		font-size: 220%;
 		font-weight: bold;
-
-		a {
-			color: #333;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
 	}
 
 	#blog-description {
-		color: #888;
+		color: $text-sub-color;
 	}
 }
 
@@ -160,33 +145,35 @@ header {
 	li {
 		margin: 0 10px;
 		float: left;
-		list-style-type: none;
 	}
 
 	a {
-		color: #333;
+		color: $text-base-color;
 	}
 }
 
 /* メインメニュー */
 #menu-main {
 	width: 100%;
-	height: 25px;
-	padding: 10px 0;
+	height: 45px;
 	background: $main-color;
-	color: #fff;
+	color: $white-color;
 	font-size: 110%;
+	line-height: 45px;
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+
+	ul {
+		margin: 0 30px;
+	}
 
 	li {
 		margin: 0 30px 0 0;
 		padding: 0;
 		float: left;
-		list-style-type: none;
 	}
 
 	a {
-		color: #fff;
+		color: $white-color;
 
 		&:hover {
 			color: #ff0;
@@ -198,7 +185,6 @@ header {
 /* サイドバー */
 aside#site-aside {
 	width: 320px;
-	padding: 0 0 0 20px;
 	float: right;
 
 	.title {
@@ -206,7 +192,7 @@ aside#site-aside {
 		padding: 5px 10px;
 		font-size: 110%;
 		font-weight: bold;
-		color: #fff;
+		color: $white-color;
 		background: $main-color;
 	}
 
@@ -263,7 +249,6 @@ aside#site-aside {
 
 		a {
 			font-weight: bold;
-			color: #333;
 		}
 	}
 }
@@ -277,14 +262,14 @@ main.site-main {
 	float: left;
 
 	// 「最新記事」みたいな見出し
-	p.widget-title {
+	.widget-title {
 		margin: 0 0 10px 0;
-		padding: 6px 20px;
-		background: $main-color;
+		padding: 5px 10px;
+		background: #00A5DE;
 		color: #fff;
+		font-size: 110%;
 		font-weight: bold;
 		text-transform: uppercase;
-		display: block;
 	}
 }
 
@@ -333,14 +318,14 @@ li.post-pickup-main {
 		line-height: 1.6em;
 	
 		a {
-			color: #333;
+			color: $text-base-color;
 		}
 	}
 
 	// おすすめ記事の記事要旨
 	.post-excerpt {
 		margin: 0 0 0 0;
-		color: #888;
+		color: $text-sub-color;
 		font-size: 100%;
 		line-height: 1.6em;
 	}
@@ -348,7 +333,7 @@ li.post-pickup-main {
 	// おすすめ記事の投稿時刻など
 	.posted-on {
 		font-size: 90%;
-		color: #888;
+		color: $text-sub-color;
 	}
 }
 
@@ -377,14 +362,14 @@ li.post-pickup-sub {
 		line-height: 1.6em;
 
 		a {
-			color: #333;
+			color: $text-base-color;
 		}
 	}
 
 	// おすすめ記事の記事要旨
 	.post-excerpt {
 		margin: 0 0 0 0;
-		color: #888;
+		color: $text-sub-color;
 		font-size: 90%;
 		line-height: 1.6em;
 	}
@@ -396,7 +381,7 @@ li.post-pickup-sub {
 
 	.posted-on {
 		font-size: 80%;
-		color: #888;
+		color: $text-sub-color;
 	}
 }
 
@@ -442,14 +427,14 @@ li.post-item {
 		font-size: 150%;
 
 		a {
-			color: #333;
+			color: $text-base-color;
 		}
 	}
 
 	// 記事一覧の記事要旨
 	.post-excerpt {
 		margin: 0 0 0 0;
-		color: #888;
+		color: $text-sub-color;
 		font-size: 90%;
 		line-height: 1.6em;
 	}
@@ -457,14 +442,14 @@ li.post-item {
 	// 投稿時刻など
 	.posted-on {
 		font-size: 90%;
-		color: #888;
+		color: $text-sub-color;
 	}
 }
 
 /* パンくずリスト */
 ul#breadcrumb {
 	margin: 0 0 30px 0;
-	color: #333;
+	color: $text-base-color;
 	font-size: 90%;
 
 	li {
@@ -500,7 +485,7 @@ ul#breadcrumb {
 		margin: 0;
 	
 		a {
-			color: #888;
+			color: $text-sub-color;
 		}
 	}
 	
@@ -512,7 +497,7 @@ ul#breadcrumb {
 
 	#post-meta {
 		margin: 10px 0 0 0;
-		color: #888;
+		color: $text-sub-color;
 
 		#posted-on {
 			margin: 5px 0 0 0;
@@ -533,7 +518,7 @@ ul#breadcrumb {
 
 	.icon {
 		padding: 4px 8px;
-		color: #fff;
+		color: $white-color;
 		font-weight: bold;
 		font-size: 90%;
 		background: #6cf;
@@ -545,7 +530,7 @@ ul#breadcrumb {
 		padding: 0 0 2px 0;
 		border-bottom: 5px solid #eee;
 		font-weight: bold;
-		color: #333;
+		color: $text-base-color;
 		font-size: 120%;
 	}
 
@@ -653,7 +638,7 @@ ul#breadcrumb {
 		margin: -11px -16px 10px -16px;
 		padding: 2px 10px;
 		background: $main-color;
-		color: #fff;
+		color: $white-color;
 		font-weight: bold;
 	}
 }
@@ -679,7 +664,7 @@ ul#breadcrumb {
 		height: 24px;
 		padding: 8px 20px;
 		background: $main-color;
-		color: #fff;
+		color: $white-color;
 		font-size: 100%;
 		font-weight: bold;
 		line-height: 24px;
@@ -719,14 +704,14 @@ ul#breadcrumb {
 		padding: 8px;
 		border: 1px solid $main-color;
 		background: $main-color;
-		color: #fff;
+		color: $white-color;
 		font-size: 120%;
 	}
 
 	// 特にページ番号がリンクで囲まれているもの（現在のページでない）
 	a .page-number {
 		color: $main-color;
-		background: #fff;
+		background: $white-color;
 
 		&:hover {
 			background: #ff8;
@@ -745,7 +730,7 @@ ul#breadcrumb {
 	.header {
 		margin: 0 0 5px 0;
 		padding: 2px 10px;
-		color: #fff;
+		color: $white-color;
 		background: $main-color;
 	}
 
@@ -769,7 +754,7 @@ ul#breadcrumb {
 		
 			.date {
 				font-size: 80%;
-				color: #888;
+				color: $text-sub-color;
 				line-height: 1.6em;
 			}
 		
@@ -781,7 +766,7 @@ ul#breadcrumb {
 		
 			.detail {
 				font-size: 80%;
-				color: #888;
+				color: $text-sub-color;
 				line-height: 1.5em;
 			}
 		}
@@ -792,7 +777,7 @@ ul#breadcrumb {
 	
 		#same-article-header {
 			padding: 0 5px;
-			color: #333;
+			color: $text-base-color;
 			font-size: 90%;
 			background: #ff8;
 		}
@@ -811,7 +796,7 @@ h2.screen-reader-text {
 	margin: 30px 0;
 
 	a {
-		color: #fff;
+		color: $white-color;
 
 		&:hover {
 			text-decoration: none;
@@ -848,7 +833,7 @@ footer {
 	#copyright {
 		margin: 0;
 		padding: 30px 0;
-		color: #888;
+		color: $text-sub-color;
 		font-size: 80%;
 	}
 }
@@ -994,7 +979,7 @@ footer {
 	body {
 		width: 100%;
 		font-size: 13px;
-		background: #fff;
+		background: $white-color;
 	}
 	/* 
 	 * スマホ用専用コンテンツ
@@ -1005,7 +990,7 @@ footer {
 		top: 0;
 		left: 0;
 		position: fixed;
-		background: #fff;
+		background: $white-color;
 		display: block;
 		z-index: 999;
 		box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
@@ -1111,7 +1096,7 @@ footer {
 			margin: 0 0 10px 0;
 			padding: 6px 20px;
 			background: $main-color;
-			color: #fff;
+			color: $white-color;
 			font-weight: bold;
 			text-transform: uppercase;
 			display: block;
@@ -1163,14 +1148,14 @@ footer {
 			line-height: 1.6em;
 	
 			a {
-				color: #333;
+				color: $text-base-color;
 			}
 		}
 
 		// おすすめ記事の記事要旨
 		.post-excerpt {
 			margin: 0 0 0 0;
-			color: #888;
+			color: $text-sub-color;
 			font-size: 90%;
 			line-height: 1.6em;
 		}
@@ -1209,7 +1194,7 @@ footer {
 			line-height: 1.6em;
 
 			a {
-				color: #333;
+				color: $text-base-color;
 			}
 		}
 
@@ -1224,11 +1209,13 @@ footer {
 
 		.posted-on {
 			font-size: 80%;
-			color: #888;
+			color: $text-sub-color;
 		}
 	}
 
-	/* 記事一覧 */
+	/*
+	 * 記事一覧の記事情報
+	 */
 	li.post-item {
 		margin: 0;
 		padding: 0 10px 5px 10px;
@@ -1241,6 +1228,7 @@ footer {
 			float: left;
 		}
 
+		// カテゴリー
 		ul.post-categories li a {
 			color: #555;
 			font-size: 80%;
@@ -1253,7 +1241,7 @@ footer {
 			font-size: 110%;
 
 			a {
-				color: #333;
+				color: $text-base-color;
 			}
 		}
 
@@ -1265,7 +1253,7 @@ footer {
 		// 投稿時刻など
 		.posted-on {
 			font-size: 80%;
-			color: #888;
+			color: $text-sub-color;
 		}
 	}
 
