@@ -273,64 +273,44 @@ main.site-main {
 }
 
 /*
- * おすすめ記事
+ * おすすめ記事（トップ）
  */
 li.post-pickup-main {
 	margin: 0 0 10px 0;
+	padding: 5px 0;
 	border-bottom: 1px solid #ddd;
 
+	// サムネのラッパー
 	.post-cover {
 		width: 320px;
-		margin: 5px 15px 5px 0;
+		margin: 0 15px 0 0;
 		float: left;
-
-		img {
-			width: 100%;
-			height: auto;
-		}
 	}
 
+	// 記事情報のラッパー
 	.post-preview {
 		line-height: 1.80em;
 		overflow: hidden;
 	}
 
-	// おすすめ記事のカテゴリー
-	.post-meta {
-		margin: 0;
-	}
-
+	// カテゴリー
 	ul.post-categories {
 		margin: 10px 0 0 0;
-
-		li a {
-			color: #555;
-			font-size: 100%;
-			line-height: 1.6em;
-		}
 	}
 
-	// おすすめ記事の記事タイトル
-	.title-post {
-		margin: 30px 0 5px 0;
+	// 記事タイトル
+	h2.title-post {
+		margin: 30px 0 15px 0;
 		font-size: 180%;
-		line-height: 1.6em;
-	
-		a {
-			color: $text-base-color;
-		}
 	}
 
-	// おすすめ記事の記事要旨
-	.post-excerpt {
-		margin: 0 0 0 0;
+	// 記事要旨
+	p.post-excerpt {
 		color: $text-sub-color;
-		font-size: 100%;
-		line-height: 1.6em;
 	}
 
-	// おすすめ記事の投稿時刻など
-	.posted-on {
+	// 投稿時刻など
+	span.posted-on {
 		font-size: 90%;
 		color: $text-sub-color;
 	}
