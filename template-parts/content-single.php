@@ -71,7 +71,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn sns-btn-pocket"></a>
 	</div>
 		
-	<div id="post-body" class="entry-content clearfix">
+	<div id="post-body" class="clearfix">
 <?php
 	//本文の表示
 	the_content();
@@ -132,7 +132,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		/* 同じカテゴリの記事一覧 */
 ?>
 		<div id="same-category">
-			<div class="header">このカテゴリーの最新記事</div>
+			<div id="same-category-header">このカテゴリーの最新記事</div>
 <?php
 		$this_article_ID = get_the_ID();
 		query_posts('cat='.$category->cat_ID.'&showposts=5');
@@ -146,21 +146,21 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 			}
 ?>
 			<a href="<?=get_permalink()?>">
-			<div class="article clearfix">
+			<article class="clearfix">
 				<div class="thumbnail"><?= get_the_post_thumbnail() ?></div>
 				<div class="info">
 					<div class="date"><?= get_the_date() ?></div>
 					<div class="title"><?= get_the_title() ?></div>
 					<div class="detail"><?= get_the_excerpt() ?></div>
 				</div>
-			</div>
+			</article>
 			</a>
 <?php
 			echo $end_div;
 		}
 		wp_reset_query();
 ?>
-			<div class="category-detail">
+			<div id="article-list-link">
 				<a href="<?= get_category_link($category->cat_ID) ?>">このカテゴリの全ての記事（<?= $category->count ?>件）を見る</a>
 			</div>
 		</div>

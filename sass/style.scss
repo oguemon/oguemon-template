@@ -51,7 +51,7 @@ $margin-site-side: 30px;
 	background: $main-color;
 }
 
-%colord-link-text {
+%colored-link-text {
 	color: $main-color;
 
 	&:hover {
@@ -350,25 +350,23 @@ ul#breadcrumb {
 6. Single Post/Page Styling
 ******************************************/
 
+// 記事のサムネイル
 #post-thumbnail {
 	width: 160px;
-	margin: 0 20px 0 0;
+	margin: 0 20px 0;
 	float: left;
 
 	img {
-		width: 100%;
 		height: auto;
 	}
 }
 
-/* 記事タイトルなど */
+// 記事タイトルなど
 #post-header {
-	margin: 0 0 10px 0;
+	margin: 0 0 10px;
 	overflow: hidden;
 
 	p#post-category {
-		margin: 0;
-	
 		a {
 			color: $text-sub-color;
 		}
@@ -377,27 +375,25 @@ ul#breadcrumb {
 	h1#post-title {
 		margin: 10px 0;
 		font-size: 180%;
-		line-height: 35px;
+		line-height: 1.5em;
 	}
 
-	#post-meta {
-		margin: 10px 0 0 0;
-		color: $text-sub-color;
-
-		#posted-on {
-			margin: 5px 0 0 0;
-			font-size: 90%;
-		}
-	}
 	p#post-excerpt {
-		margin: 0;
+		margin: 10px 0　0;
+		color: $text-sub-color;
+	}
+
+	#posted-on {
+		margin: 10px 0 0;
+		color: $text-sub-color;
+		font-size: 90%;
 	}
 }
 
 
-/* 所属カテゴリ詳細 */
+// 所属カテゴリ詳細
 .category-detail {
-	margin: 0 0 10px 0;
+	margin: 0 0 10px;
 	padding: 5px 10px;
 	border: 5px solid #6cf;
 
@@ -412,7 +408,7 @@ ul#breadcrumb {
 
 	.title {
 		margin: 5px 0;
-		padding: 0 0 2px 0;
+		padding: 0 0 2px;
 		border-bottom: 5px solid #eee;
 		font-weight: bold;
 		color: $text-base-color;
@@ -420,7 +416,7 @@ ul#breadcrumb {
 	}
 
 	.description {
-		color: #555;
+		color: $text-base-color;
 		font-size: 90%;
 		line-height: 1.8em;
 	}
@@ -428,133 +424,35 @@ ul#breadcrumb {
 	.link {
 		text-align: right;
 		font-size: 90%;
+
+		a {
+			@extend %colored-link-text;
+		}
 	}
 }
 
-/* 記事本文 */
-#post-body {
-	padding: 15px 0 0 0;
-	font-size: 110%;
-	line-height: 2.0em;
-	border-top: solid 1px #ddd;
-
-	strong {
-		font-weight: bold;
-		background: linear-gradient(transparent 40%, #fff888 40%);
-	}
-	h3 {
-		padding: 5px 0 5px 8px;
-		color: $main-color;
-		font-size: 150%;
-		border-left: 6px solid $main-color;
-		box-shadow: 2px 2px 0px #eee;
-	}
-	h4 {
-		margin: 25px 0 15px 0;
-		font-size: 140%;
-		border-bottom: 3px solid #eee;
-	}
-	h5 {
-		font-size: 110%;
-	}
-	
-	p {
-		margin: 0.7em 0;
-	}
-	
-	ul {
-		margin: 5px 0 5px 40px;
-		padding: 0;
-
-		li {
-			margin: 10px 0;
-			list-style-type: disc;
-			list-style-position: outside;
-		}
-	}
-
-	ol {
-		margin: 5px 0 5px 40px;
-		padding: 0;
-
-		li {
-			margin: 10px 0;
-			list-style-type: decimal;
-			list-style-position: outside;
-		}
-	}
-
-	img {
-		max-width: 480px;
-	}
-
-	dt {
-		font-weight: bold;
-		display: inline-block;
-		line-height: 1.5em;
-		border-bottom: 3px solid $main-color;
-	}
-
-	dd {
-		margin: 0 0 0 20px;
-	}
-	
-	blockquote {
-		margin: 5px 0;
-		padding: 10px;
-		border-width: 1px 1px 1px 5px;
-		border-style: solid;
-		border-color: $main-color;
-		font-size: 90%;
-		font-family: san-serif;
-		font-style: normal;
-		line-height: 1.8em;
-	}
-
-	.point-box {
-		margin: 10px 0;
-		padding: 10px 15px 0 15px;
-		background: #fffff0;
-		border: 1px solid $main-color;
-	}
-
-	.point-box-caption {
-		margin: -11px -16px 10px -16px;
-		padding: 2px 10px;
-		background: $main-color;
-		color: $white-color;
-		font-weight: bold;
-	}
-}
+// 記事本文
+@import "postbody";
 
 /* ページ番号 */
 .page-links {
 	height: 40px;
 	margin: 20px 0;
-	padding: 0;
 	position: relative;
 	text-align: center;
 	clear: both;
 
-	a {
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
 	// 記事本文内の次のページ・前のページの矢印
 	.page-link-arrow {
 		width: 125px;
-		height: 24px;
-		padding: 8px 20px;
+		height: 40px;
 		background: $main-color;
 		color: $white-color;
 		font-size: 100%;
 		font-weight: bold;
-		line-height: 24px;
+		line-height: 40px;
 		text-align: center;
 		position: absolute;
-
 
 		&.next {
 			right: 20px;
@@ -581,7 +479,6 @@ ul#breadcrumb {
 		}
 	}
 
-
 	// ページ番号
 	.page-number {
 		margin: 0 3px;
@@ -607,18 +504,11 @@ ul#breadcrumb {
 #same-category {
 	margin: 10px 0;
 
-	a:hover {
-		text-decoration: none;
+	#same-category-header {
+		@extend %general-header
 	}
 
-	.header {
-		margin: 0 0 5px 0;
-		padding: 2px 10px;
-		color: $white-color;
-		background: $main-color;
-	}
-
-	.article {
+	article {
 		padding: 5px 10px;
 		border-bottom: 1px solid #ddd;
 	
@@ -628,7 +518,6 @@ ul#breadcrumb {
 			float: left;
 		
 			img {
-				width: 100%;
 				height: auto;
 			}
 		}
@@ -639,20 +528,29 @@ ul#breadcrumb {
 			.date {
 				font-size: 80%;
 				color: $text-sub-color;
-				line-height: 1.6em;
 			}
 		
 			.title {
 				margin: 3px 0;
 				font-size: 120%;
-				color: #555;
+				color: $text-base-color;
 			}
 		
 			.detail {
 				font-size: 80%;
 				color: $text-sub-color;
-				line-height: 1.5em;
 			}
+		}
+	}
+
+	// このカテゴリの全ての記事（）
+	#article-list-link{
+		margin: 0 0 10px;
+		padding: 5px 10px;
+		border: 5px solid #6cf;
+
+		a {
+			@extend %colored-link-text;
 		}
 	}
 
@@ -666,7 +564,7 @@ ul#breadcrumb {
 			background: #ff8;
 		}
 	
-		.article {
+		article {
 			border-bottom: none;
 		}
 	}
@@ -676,25 +574,34 @@ ul#breadcrumb {
 h2.screen-reader-text {
 	display: none;
 }
+
 .nav-links {
-	margin: 30px 0;
+	margin: 30px 0 20px;
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 
 	a {
 		color: $white-color;
-
-		&:hover {
-			text-decoration: none;
-		}
 	}
 
 	.nav-previous,
 	.nav-next {
-		width: 300px;
-		padding: 10px 10px;
+		width: 320px;
 		background-color: $main-color;
 		font-size: 120%;
 		text-align: center;
 		display: inline-block;
+
+		a {
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+			display: block;
+		}
 	}
 
 	.nav-previous {
@@ -742,21 +649,22 @@ footer {
  *  ソーシャルボタン
  */
 #sns-btn-list-header {
-	margin: 0;
-	padding: 0;
+	margin: 0 0 20px;
+	padding: 0 0 10px;
 	text-align: center;
+	border-bottom: 1px solid $border-base-color;
 }
 #sns-btn-list-footer {
-	margin: 30px 0 20px 0;
+	margin: 30px 0 20px;
 	padding: 10px 0;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
+	border-top: 1px solid $border-base-color;
+	border-bottom: 1px solid $border-base-color;
 	text-align: center;
 }
 #sns-btn-list-sidebar {
-	margin: 5px 0 0 0;
-	padding: 5px 0 0 0;
-	border-top: 1px solid #ddd;
+	margin: 5px 0 0;
+	padding: 5px 0 0;
+	border-top: 1px solid $border-base-color;
 }
 
 /* 記事の途中・サイドバー共通 */

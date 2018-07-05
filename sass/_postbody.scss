@@ -1,0 +1,98 @@
+/*
+ *  記事本文のデザイン
+ */
+#post-body {
+	font-size: 110%;
+	line-height: 2.0em;
+
+	strong {
+		font-weight: bold;
+		background: linear-gradient(transparent 40%, #fff888 40%);
+	}
+
+	h3 {
+		padding: 5px 0 5px 8px;
+		color: $main-color;
+		font-size: 150%;
+		border-left: 6px solid $main-color;
+		box-shadow: 2px 2px 0px #eee;
+	}
+	
+	h4 {
+		margin: 25px 0 15px;
+		font-size: 140%;
+		border-bottom: 3px solid #eee;
+	}
+
+	h5 {
+		font-size: 110%;
+	}
+	
+	p {
+		margin: 10px 0;
+	}
+	
+	ul {
+		margin: 5px 0 5px 40px;
+		padding: 0;
+
+		li {
+			margin: 10px 0;
+			list-style-type: disc;
+			list-style-position: outside;
+		}
+	}
+
+	ol {
+		margin: 5px 0 5px 40px;
+		padding: 0;
+
+		li {
+			margin: 10px 0;
+			list-style-type: decimal;
+			list-style-position: outside;
+		}
+	}
+
+	img {
+		max-width: 480px;
+	}
+
+	dt {
+		font-weight: bold;
+		display: inline-block;
+		line-height: 1.5em;
+		border-bottom: 3px solid $main-color;
+	}
+
+	dd {
+		margin: 0 0 0 20px;
+	}
+	
+	blockquote {
+		margin: 5px 0;
+		padding: 10px;
+		border-width: 1px 1px 1px 5px;
+		border-style: solid;
+		border-color: $main-color;
+		font-size: 90%;
+		font-family: san-serif;
+		font-style: normal;
+		line-height: 1.8em;
+	}
+
+	.point-box {
+		margin: 10px 0;
+		padding: 10px 15px 0;
+		background: #fffff0;
+		border: 1px solid $main-color;
+	}
+
+	.point-box-caption {
+		margin: -11px -16px 10px;
+		padding: 2px 10px;
+		background: $main-color;
+		color: $white-color;
+		font-weight: bold;
+	}
+}

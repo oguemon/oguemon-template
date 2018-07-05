@@ -30,8 +30,8 @@ get_header();
 					}
 					echo '</ul>';
 
-					$args['prev_text'] = '<span class="nav-link-label">←</span>古い記事';
-					$args['next_text'] = '新しい記事<span class="nav-link-label">→</span>';
+					$args['prev_text'] = '←古い記事';
+					$args['next_text'] = '新しい記事→';
 					the_posts_navigation($args);
 				} else {
 					get_template_part( 'template-parts/content' );

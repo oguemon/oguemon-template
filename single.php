@@ -31,9 +31,6 @@ get_header();
 			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'template-parts/content', 'single' );
-				$args['prev_text'] = '←' . '%title';
-				$args['next_text'] = '%title' . '→';
-				echo get_the_post_navigation($args);
 			} // End of the loop.
 			?>
 			</div><!-- .site-content-wrapper .clearfix -->

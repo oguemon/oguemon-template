@@ -37,8 +37,8 @@
 	wp_link_pages( array(
 		'before'           => '<div class="page-links">',
 		'after'            => '</div>',
-		'previouspagelink' => '<div id="previous-page-link-before"></div><div id="previous-page-link">前のページ</div>',
-		'nextpagelink'     => '<div id="next-page-link-before"></div><div id="next-page-link">次のページ</div>',
+		'previouspagelink' => '<div class="page-link-arrow prev">前のページ</div><div></div>',
+		'nextpagelink'     => '<div class="page-link-arrow next">次のページ</div><div></div>',
 		'next_or_number'   => 'next',
 		'separator'        => ' ',
 		'echo'             => 1
