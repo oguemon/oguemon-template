@@ -213,6 +213,53 @@ aside#site-aside {
 	}
 }
 
+/* プロフィール */
+.profile {
+	padding: 15px 10px;
+
+	.icon {
+		width: 100px;
+		height: 100px;
+		margin: 0 auto;
+
+		img {
+			border-radius: 75px;
+		}
+	}
+
+	.name {
+		margin: 10px 0;
+		font-size: 150%;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.bio {
+		padding: 10px 0;
+		font-size: 90%;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.contact {
+		width: 200px;
+		height: 20px;
+		background: url(#{$base-url}/img/contact.png) no-repeat;
+		background-size: cover;
+		display: block;
+
+		&.twitter{
+			margin: 10px 0 0;
+			background-position: 0 0;
+		}
+
+		&.mail{
+			margin: 5px 0 0;
+			background-position: 0 -20px;
+		}
+	}
+}
+
 /* 人気記事ランキング */
 .view-ranking {
 	padding: 5px 5px 5px 0;
@@ -830,52 +877,6 @@ footer {
 		width: 240px;
 		float: right;
 		z-index: 0;
-
-		.profile {
-			padding: 15px 10px;
-
-			.icon {
-				width: 100px;
-				height: 100px;
-				margin: 0 auto;
-
-				img {
-					border-radius: 75px;
-				}
-			}
-
-			.name {
-				margin: 10px 0;
-				font-size: 150%;
-				font-weight: bold;
-				text-align: center;
-			}
-
-			.bio {
-				padding: 10px 0;
-				font-size: 80%;
-				border-top: 1px solid #ccc;
-				border-bottom: 1px solid #ccc;
-			}
-
-			.contact {
-				width: 200px;
-				height: 20px;
-				background: url(#{$base-url}/img/contact.png) no-repeat;
-				background-size: cover;
-				display: block;
-
-				&.twitter{
-					margin: 10px 0 0;
-					background-position: 0 0;
-				}
-
-				&.mail{
-					margin: 5px 0 0;
-					background-position: 0 -20px;
-				}
-			}
-		}
 
 		li {
 			a {

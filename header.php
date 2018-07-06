@@ -69,7 +69,7 @@ if (is_single()){
 				<img src="https://oguemon.com/wordpress/wp-content/themes/oguemon/img/profile.jpg">
 			</div>
 			<div class="name">おぐえもん</div>
-			<div class="bio">大学に通っていながらJKの肩書きを持つ情報系（=JK）大学生。Web開発やDTPに僅かな経験があるほか、渋谷系をはじめとする邦楽などに興味を持ってます。</div>
+		<div class="bio">大学に通う情報系の大学生です。WebプログラミングやDTPに僅かな経験があるほか、渋谷系をはじめとする邦楽などに興味を持ってます。</div>
 			<a class="contact twitter" href="https://twitter.com/oguemon_com" target="_blank"></a>
 			<div class="contact mail"></div>
 		</div>
@@ -87,8 +87,10 @@ if (is_single()){
 		)); 
 		?>
 	</div>
+
 <!-- スマホメニュー開放中のみ有効化 -->
 <div id="transparent" style="display: none;"></div>
+
 <!-- 以下、PC・スマホ共通コンテンツ -->
 <div id="container">
 	<!-- ヘッダー -->
