@@ -27,8 +27,8 @@ Tags: oguemon,site,blog
  */
 
 // URL
-//$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
-$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
+$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
+//$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
 
 // 色関係
 $main-color: #00A5DE;
@@ -374,7 +374,7 @@ ul#breadcrumb {
 	}
 	
 	h1#post-title {
-		margin: 10px 0;
+		margin: 5px 0 10px;
 		font-size: 180%;
 		line-height: 1.5em;
 	}
@@ -910,7 +910,7 @@ footer {
 
 	// パンくずリスト
 	ul#breadcrumb {
-		margin: 5px 0;
+		margin: 5px 0 0;
 		padding: 0 10px 10px;
 		font-size: 80%;
 		border-bottom: 1px solid #eee;
@@ -927,7 +927,7 @@ footer {
 
 	// 記事タイトルなど
 	#post-header {
-		margin: 0 10px 10px;
+		margin: 10px;
 	}
 
 	// 同じカテゴリの記事

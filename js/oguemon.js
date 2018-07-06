@@ -6,8 +6,9 @@ jQuery(document).ready(function($) {
 		$('#sp-right-menu-area').css('display','none');
 		$('#transparent').css('display','none');
 	});
-	//ボタンを押すとスライド
+	
 	$(function(){
+		//スマホの右上ボタンを押すとスライド
 		var $btn = $('#sp-menu-right-btn');
 		var $sp = $('#sp-right-menu-area');
 		var $tr = $('#transparent');
@@ -34,5 +35,16 @@ jQuery(document).ready(function($) {
 	  		},300);
 			$tr.css('display','none');
 		});
+
+		// #で始まるアンカーをクリックした場合にスクロールを実施処理
+		$('a[href^="#"]').click(function() {
+			var speed = 400; // ミリ秒
+			var href= $(this).attr("href");
+			var target = $(href == "#" || href == "" ? 'html' : href);
+			var position = target.offset().top - 10; //ゆとりを持たせる
+			$('body,html').animate({scrollTop:position}, speed, 'swing');
+			return false;
+		});
 	});
+
 });
