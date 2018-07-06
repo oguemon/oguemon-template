@@ -23,6 +23,24 @@ get_header();
 					</div>
 				</div>
 <style>
+#post-header {
+    margin: 0 0 10px;
+    padding: 20px;
+    overflow: hidden;
+    background: #00A5DE;
+	color: #fff;
+}
+#post-header h1#post-title {
+    margin: 0 0 10px;
+    padding: 0 0 5px;
+    font-size: 200%;
+    border-bottom: 3px solid #fff;
+}
+#post-header p#post-excerpt {
+    margin: 10px 0　0;
+    color: #fff;
+}
+
 h3{
 	margin: 10px 0 0;
 	padding: 5px 10px;
@@ -35,20 +53,27 @@ h3{
 	coloe: #333;
 }
 .article_list{
-	margin: 0 0 10px 5px;
-	border-left: 5px solid #ddd;
+	margin: 0 0 10px;
 }
 .article_list li{
-	margin: 0 0 5px 15px;
+    padding: 5px 5px 5px 15px;
+    border-bottom: 1px solid #cccccc;
 }
 .article_list li a{
 	margin: 0 10px 0 0;
+	color: #00A5DE;
 	font-size: 100%;
 	font-weight: bold;
 }
 .article_list li .detail{
 	color: #555;
 	font-size: 80%;
+    display: block;
+}
+@media (max-width: 640px){
+	#post-header {
+		margin: 0 0px 10px;
+	}
 }
 </style>
 まだまだコンテンツを追加・更新中！！以下に並ぶタイトルをクリックすると該当記事へジャンプします。
