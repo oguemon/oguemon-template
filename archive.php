@@ -19,7 +19,7 @@ get_header();
 				<div id="post-header">
 					<h1 id="post-title"><?= explode(':',get_the_archive_title(),2)[1] ?></h1><!-- 「カテゴリー：」は抜いてる -->
 					<div id="post-meta">
-						<p id="post-excerpt"><?= get_the_archive_description() ?></p>
+						<p id="post-excerpt"><?= strip_tags( get_the_archive_description() ) ?></p>
 					</div>
 				</div>
 				<?php
