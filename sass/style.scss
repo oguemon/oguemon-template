@@ -367,30 +367,50 @@ ul#breadcrumb {
 	margin: 0 0 10px;
 	overflow: hidden;
 
-	p#post-category {
+	p.category {
 		a {
 			color: $text-sub-color;
 		}
 	}
 	
-	h1#post-title {
+	h1.title {
 		margin: 5px 0 10px;
 		font-size: 180%;
 		line-height: 1.5em;
 	}
 
-	p#post-excerpt {
+	p.excerpt {
 		margin: 10px 0　0;
 		color: $text-sub-color;
 	}
 
-	#posted-on {
+	.posted-on {
 		margin: 10px 0 0;
 		color: $text-sub-color;
 		font-size: 90%;
 	}
 }
 
+// アーカイブタイトルなど
+#archive-header {
+    margin: 0 0 10px;
+    padding: 20px;
+    overflow: hidden;
+    background: #00A5DE;
+	color: #fff;
+
+	h1.title {
+		margin: 0 0 10px;
+		padding: 0 0 5px;
+		font-size: 200%;
+		line-height: 1.2em;
+		border-bottom: 3px solid #fff;
+	}
+	p.excerpt {
+		margin: 10px 0　0;
+		color: #fff;
+	}
+}
 
 // 所属カテゴリ詳細
 .category-detail {

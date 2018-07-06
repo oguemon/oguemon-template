@@ -14,11 +14,11 @@
 	}
 ?>
 	<div id="post-header">
-		<p id="post-category"><?php the_category(' '); ?></p>
-		<h1 id="post-title" class="entry-title"><?= get_the_title() ?></h1>
-		<div id="post-meta">
-			<p id="post-excerpt" class="entry-summary"><?= get_the_excerpt() ?></p>
-			<p id="posted-on">
+		<p class="category"><?php the_category(' '); ?></p>
+		<h1 class="title"><?= get_the_title() ?></h1>
+		<div class="meta">
+			<p class="excerpt"><?= get_the_excerpt() ?></p>
+			<p class="posted-on">
 <?php
 	if ( get_the_date() == get_the_modified_date() ){
 ?>

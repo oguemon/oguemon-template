@@ -15,9 +15,9 @@
 	}
 ?>
 	<div id="post-header">
-		<h1 id="post-title" class="entry-title"><?= get_the_title() ?></h1>
-		<div id="post-meta">
-			<p id="posted-on">
+		<h1 class="title"><?= get_the_title() ?></h1>
+		<div class="meta">
+			<p class="posted-on">
 <?php if ( get_the_date() == get_the_modified_date() ){ ?>
 				<span class="icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
 <?php } else { ?>
@@ -29,7 +29,7 @@
 		</div>
 	</div>
 
-	<div id="post-body" class="entry-content clearfix">
+	<div id="post-body" class="clearfix">
 <?php
 	//本文の表示
 	the_content();

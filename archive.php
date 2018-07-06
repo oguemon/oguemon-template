@@ -16,10 +16,10 @@ get_header();
 				//パンくずリスト
 				get_template_part( 'template-parts/content', 'breadcrumb' );
 				?>
-				<div id="post-header">
-					<h1 id="post-title"><?= explode(':',get_the_archive_title(),2)[1] ?></h1><!-- 「カテゴリー：」は抜いてる -->
-					<div id="post-meta">
-						<p id="post-excerpt"><?= strip_tags( get_the_archive_description() ) ?></p>
+				<div id="archive-header">
+					<h1 class="title"><?= explode(':',get_the_archive_title(),2)[1] ?></h1><!-- 「カテゴリー：」は抜いてる -->
+					<div class="meta">
+						<p class="excerpt"><?= strip_tags( get_the_archive_description() ) ?></p>
 					</div>
 				</div>
 				<?php
