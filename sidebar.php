@@ -15,7 +15,7 @@
 	<div class="title">プロフィール</div>
 	<div class="contents profile">
 		<img src="https://oguemon.com/wordpress/wp-content/uploads/2017/02/profile.png" width="160px">
-		<p><strong>著者：おぐえもん</strong></p>
+		<p><strong>おぐえもん</strong></p>
 		<p>大学に通っていながらJKの肩書きを持つ情報系（=JK）大学生。</p>
 		<p>Web開発やDTPに僅かな経験があるほか、渋谷系をはじめとする邦楽などに興味を持ってるよ。</p>
 		<p><a href="https://twitter.com/intent/follow?screen_name=oguemon_com" target="_blank">

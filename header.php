@@ -63,15 +63,30 @@ if (is_single()){
 		<a href="<?= get_bloginfo('url');?>"><div id="blog-title-sp"></div></a>
 		<div id="sp-menu-right-btn"></div>
 	</div>
-	<?php
-	// スマホ用メニュー
-	wp_nav_menu( array(
-		'container_id'   => 'sp-right-menu-area',
-		'menu_id'        => 'sp-right-menu',
-		'sort_column'    => 'menu_order', 
-		'theme_location' => 'sp-right',
-	)); 
-	?>
+	<div id="sp-right-menu-area">
+		<div class="profile">
+			<div class="icon">
+				<img src="https://oguemon.com/wordpress/wp-content/themes/oguemon/img/profile.jpg">
+			</div>
+			<div class="name">おぐえもん</div>
+			<div class="bio">大学に通っていながらJKの肩書きを持つ情報系（=JK）大学生。Web開発やDTPに僅かな経験があるほか、渋谷系をはじめとする邦楽などに興味を持ってます。</div>
+			<a class="contact twitter" href="https://twitter.com/oguemon_com" target="_blank"></a>
+			<div class="contact mail"></div>
+		</div>
+		<?php
+		// スマホ用メニュー
+		wp_nav_menu( array(
+			'menu'            => '',
+			'menu_class'      => 'menu',
+			'menu_id'         => 'sp-right-menu',
+			'container'       => '',
+			'container_class' => '',
+			'container_id'    => '',
+			'theme_location'  => 'sp-right',
+			'items_wrap'      => '<ul>%3$s</ul>'
+		)); 
+		?>
+	</div>
 <!-- スマホメニュー開放中のみ有効化 -->
 <div id="transparent" style="display: none;"></div>
 <!-- 以下、PC・スマホ共通コンテンツ -->
