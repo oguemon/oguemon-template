@@ -15,11 +15,15 @@
 	}
 
 	h3 {
-		padding: 5px 0 5px 8px;
-		color: $main-color;
+		margin: 25px 0px 15px;
+		background: #00A5De;
+		padding: 10px 15px;
+		color: #ffffff;
 		font-size: 150%;
-		border-left: 6px solid $main-color;
-		box-shadow: 2px 2px 0px #eee;
+
+		@include mq() {
+			margin: 25px -10px 20px;
+		}
 	}
 	
 	h4 {
@@ -28,12 +32,17 @@
 		border-bottom: 3px solid #eee;
 	}
 
+	// 見出しが連チャンの場合
+	h3 + h4 {
+		margin-top: 0;
+	}
+
 	h5 {
 		font-size: 110%;
 	}
 	
 	p {
-		margin: 10px 0;
+		margin: 15px 0;
 	}
 	
 	ul {

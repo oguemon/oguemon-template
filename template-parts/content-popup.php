@@ -68,9 +68,9 @@
 </script>
 
 <div id="popup-box">
-    <div id="wrapper">
-        <div id="title">行列式＆逆行列の自動計算サイトを公開！</div>
-        <div id="description">
+    <div class="wrapper">
+        <div class="title">行列式＆逆行列の自動計算サイトを公開！</div>
+        <div class="description">
         	線形代数のレポート＆試験対策の伴侶が登場！<br>
         	演習に役立つ計算ドリル機能も搭載！
         </div>

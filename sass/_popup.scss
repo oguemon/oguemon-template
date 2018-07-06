@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 #popup-box{
+    width: 420px;
+    right: 10px;
     margin: 10px;
     bottom: -200px;
     position: fixed;
@@ -8,14 +10,13 @@
     box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 
     @include mq() {
-        width: 420px;
-        right: 10px;
+        width: auto;
     }
 
     // ボタンの色
     $button-color: #ff8888;
 
-    #wrapper {
+    .wrapper {
         padding: 10px;
         background: #ffffff;
         border-top:   3px solid $button-color;
@@ -23,13 +24,13 @@
         border-left:  3px solid $button-color;
         border-radius: 5px 5px 0 0;
     
-        #title{
+        .title{
             font-size: 120%;
             font-weight: bold;
             color: $button-color;
         }
     
-        #description{
+        .description{
             margin: 5px 0 0 0;
             color: #333333;
         }

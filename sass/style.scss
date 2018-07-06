@@ -27,8 +27,8 @@ Tags: oguemon,site,blog
  */
 
 // URL
-$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
-//$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
+//$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
+$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
 
 // 色関係
 $main-color: #00A5DE;
@@ -330,7 +330,7 @@ li.post-item {
  * パンくずリスト
  */
 ul#breadcrumb {
-	margin: 0 0 30px;
+	margin: 0 0 20px;
 	color: $text-base-color;
 	font-size: 90%;
 
