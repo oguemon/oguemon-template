@@ -4,7 +4,7 @@
 
 // おすすめ記事（1段目）
 li.post-pickup-main {
-	margin: 0 0 10px 0;
+	margin: 0 0 10px;
 	padding: 5px 0;
 	border-bottom: 1px solid #ddd;
 
@@ -44,6 +44,31 @@ li.post-pickup-main {
 	}
 }
 
+@media (max-width: 640px) {
+	 li.post-pickup-main {
+		.post-cover {
+			width: 100%;
+			display: block;
+			float: none;
+	
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.post-preview {
+			padding: 0 10px;
+		}
+
+		// おすすめ記事の記事タイトル
+		h2.title-post {
+			margin: 10px 0;
+		}
+	}
+}
+
+
 // おすすめ記事のサブ（2段目）
 li.post-pickup-sub {
 	width: 200px;
@@ -82,5 +107,38 @@ li.post-pickup-sub {
 	p.post-meta {
 		font-size: 80%;
 		color: $text-sub-color;
+	}
+}
+
+@media (max-width: 640px) {
+	li.post-pickup-sub {
+		width: auto;
+		margin: 0 0 5px 0;
+		padding: 0 5px;
+		border-bottom: 1px solid #ddd;
+		float: none;
+
+		.post-cover {
+			width: 140px;
+			height: auto;
+			margin: 0 10px 0 0;
+			float: left;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		// おすすめ記事の記事タイトル
+		h2.title-post {
+			margin: 5px 0;
+			font-size: 120%;
+		}
+
+		// おすすめ記事の記事要旨
+		p.post-excerpt {
+			font-size: 80%;
+		}
 	}
 }
