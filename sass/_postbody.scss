@@ -10,6 +10,10 @@
 		background: linear-gradient(transparent 40%, #fff888 40%);
 	}
 
+	a {
+		@extend %colored-link-text;
+	}
+
 	h3 {
 		padding: 5px 0 5px 8px;
 		color: $main-color;
@@ -94,5 +98,19 @@
 		background: $main-color;
 		color: $white-color;
 		font-weight: bold;
+	}
+}
+
+@media (max-width: 640px) {
+	// 記事本文
+	#post-body {
+		padding: 0 10px;
+		font-size: 110%;
+		line-height: 2.0em;
+		border-style: none;
+
+		img {
+			max-width: 100%;
+		}
 	}
 }
