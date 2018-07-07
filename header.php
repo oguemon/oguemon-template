@@ -57,7 +57,7 @@ if (is_single()){
 	<meta name="twitter:site" content="@oguemon_com">
 </head>
 
-<body>
+<body ontouchstart="">
 	<!-- スマホ用ヘッドバー -->
 	<div id="sp-header">
 		<a href="<?= get_bloginfo('url');?>"><div id="blog-title-sp"></div></a>
