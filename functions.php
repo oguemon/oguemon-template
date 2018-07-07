@@ -42,7 +42,7 @@ add_action( 'after_setup_theme', 'oguemon_setup' );
 // スクリプト書き出し
 //remove_action( 'wp_head', 'wp_enqueue_scripts', 1);
 // リソースヒント(名前解決など)
-//remove_action( 'wp_head', 'wp_resource_hints', 2);
+remove_action( 'wp_head', 'wp_resource_hints', 2);
 // フィードリンク
 remove_action( 'wp_head', 'feed_links', 2);
 remove_action( 'wp_head', 'feed_links_extra', 3);
@@ -50,7 +50,7 @@ remove_action( 'wp_head', 'feed_links_extra', 3);
 remove_action( 'wp_head', 'rsd_link');
 remove_action( 'wp_head', 'wlwmanifest_link');
 // 関連ページ(次ページなど)のタグ表示
-//remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 // ローカライズなスタイルシートの読み込み
 //remove_action( 'wp_head', 'locale_stylesheet');
 // no-index
