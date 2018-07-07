@@ -34,6 +34,9 @@ function oguemon_setup() {
 //上の関数を、テーマの初期化後に実行
 add_action( 'after_setup_theme', 'oguemon_setup' );
 
+// 固定ページにおいて要旨フィールドをサポートさせる
+add_post_type_support( 'page', 'excerpt' );
+
 /**
  * headタグ内の不要なタグを除去
  */
@@ -81,7 +84,6 @@ function custom_title_separator() {
 	return '|';
 }
 add_filter( 'document_title_separator', 'custom_title_separator' );
-
 
 //タイトルタグの形式変更
 function custom_title_parts($title) {
