@@ -206,56 +206,54 @@ aside#site-aside {
 		margin: 0 0 10px;
 	}
 
+	// プロフィール
 	.profile {
-		@include mq() {
-			padding: 0 10px;
-		}
-	}
-}
-
-/* プロフィール */
-.profile {
-	padding: 15px 10px;
-
-	.icon {
-		width: 100px;
-		height: 100px;
-		margin: 0 auto;
-
-		img {
-			border-radius: 75px;
-		}
-	}
-
-	.name {
-		margin: 10px 0;
-		font-size: 150%;
-		font-weight: bold;
-		text-align: center;
-	}
-
-	.bio {
 		padding: 10px 0;
-		font-size: 90%;
-		border-top: 1px solid #ccc;
-		border-bottom: 1px solid #ccc;
-	}
 
-	.contact {
-		width: 200px;
-		height: 20px;
-		background: url(#{$base-url}/img/contact.png) no-repeat;
-		background-size: cover;
-		display: block;
-
-		&.twitter{
-			margin: 10px 0 0;
-			background-position: 0 0;
+		@include mq() {
+			padding: 10px 10px;
 		}
 
-		&.mail{
-			margin: 5px 0 0;
-			background-position: 0 -20px;
+		.icon {
+			width: 70px;
+			height: 70px;
+			margin: 0 auto;
+			float: left;
+	
+			img {
+				border-radius: 35px;
+			}
+		}
+	
+		.name {
+			margin: 5px 0 0 80px;
+			font-size: 150%;
+			font-weight: bold;
+		}
+	
+		.bio {
+			margin: 5px 0 10px 80px;
+			padding: 5px 0 0;
+			font-size: 90%;
+			text-align: justify;
+			border-top: 1px solid #ccc;
+		}
+	
+		.contact {
+			width: 200px;
+			height: 20px;
+			background: url(#{$base-url}/img/icons.svg) no-repeat;
+			display: block;
+	
+			&.twitter{
+				margin: 10px 0 0 80px;
+				background-position: 0 -100px;
+			}
+	
+			&.mail{
+				margin: 5px 0 0 80px;
+				background-position: 0 -120px;
+			}
 		}
 	}
 }
@@ -401,7 +399,7 @@ ul#breadcrumb {
 // 記事のサムネイル
 #post-thumbnail {
 	width: 160px;
-	margin: 0 20px 0;
+	margin: 0 20px 0 0;
 	float: left;
 
 	img {
@@ -707,11 +705,11 @@ footer {
 	height: 15px;
 	margin: 0 5px -3px 0;
 	display: inline-block;
-	background: url(#{$base-url}/img/icons.svg) left top;
+	background: url(#{$base-url}/img/icons.svg) no-repeat;
 }
-.icon-published {background-position: -15px -12px;}
-.icon-updated   {background-position: -30px -12px;}
-.icon-author    {background-position: -45px -12px;}
+.icon-published {background-position: -15px 0;}
+.icon-updated   {background-position: -30px 0;}
+.icon-author    {background-position: -45px 0;}
 
 /*
  *  ソーシャルボタン
@@ -730,14 +728,14 @@ footer {
 	text-align: center;
 }
 #sns-btn-list-sidebar {
-	margin: 5px 0 0;
+	margin: 10px 0 0;
 	padding: 5px 0 0;
 	border-top: 1px solid $border-base-color;
 }
 
 /* 記事の途中・サイドバー共通 */
 %base-sns-btn {
-	background: url(#{$base-url}/img/icons.svg) left top;
+	background: url(#{$base-url}/img/icons.svg) no-repeat;
 	display: inline-block;
 
 	&:hover {
@@ -767,12 +765,12 @@ footer {
 		margin: 10px 1%;
 	}
 
-	&.sns-btn-twitter  {background-position:    0px -80px;}
-	&.sns-btn-facebook {background-position:  -40px -80px;}
-	&.sns-btn-gplus    {background-position:  -80px -80px;}
-	&.sns-btn-hatena   {background-position: -120px -80px;}
-	&.sns-btn-line     {background-position: -160px -80px;}
-	&.sns-btn-pocket   {background-position: -200px -80px;}
+	&.sns-btn-twitter  {background-position:    0px -50px;}
+	&.sns-btn-facebook {background-position:  -40px -50px;}
+	&.sns-btn-gplus    {background-position:  -80px -50px;}
+	&.sns-btn-hatena   {background-position: -120px -50px;}
+	&.sns-btn-line     {background-position: -160px -50px;}
+	&.sns-btn-pocket   {background-position: -200px -50px;}
 }
 
 /* サイドバー用SNSボタン */
@@ -783,12 +781,12 @@ footer {
 	height: 30px;
 	margin: 0 3px;
 
-	&.sns-btn-twitter  {background-position:    0px -50px;}
-	&.sns-btn-facebook {background-position:  -40px -50px;}
-	&.sns-btn-gplus    {background-position:  -80px -50px;}
-	&.sns-btn-hatena   {background-position: -120px -50px;}
-	&.sns-btn-line     {background-position: -160px -50px;}
-	&.sns-btn-pocket   {background-position: -200px -50px;}
+	&.sns-btn-twitter  {background-position:    0px -20px;}
+	&.sns-btn-facebook {background-position:  -30px -20px;}
+	&.sns-btn-gplus    {background-position:  -60px -20px;}
+	&.sns-btn-hatena   {background-position:  -90px -20px;}
+	&.sns-btn-line     {background-position: -120px -20px;}
+	&.sns-btn-pocket   {background-position: -150px -20px;}
 }
 
 /* mathjax */
@@ -857,7 +855,8 @@ footer {
 			height: 50px;
 			position: absolute;
 			left: 5px;
-			background: url(#{$base-url}/img/blog-title.svg) no-repeat;
+			background: url(#{$base-url}/img/icons.svg) no-repeat;
+			background-position: 0 -140px;
 		}
 
 		#sp-menu-right-btn {
@@ -867,7 +866,7 @@ footer {
 			top: 10px;
 			right: 10px;
 			background: url(#{$base-url}/img/icons.svg) no-repeat;
-			background-position: -210px 0px;
+			background-position: -210px -20px;
 			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
 		}
@@ -877,6 +876,52 @@ footer {
 		width: 240px;
 		float: right;
 		z-index: 0;
+
+		.profile {
+			padding: 15px 10px;
+
+			.icon {
+				width: 100px;
+				height: 100px;
+				margin: 0 auto;
+		
+				img {
+					border-radius: 50px;
+				}
+			}
+		
+			.name {
+				margin: 10px 0;
+				font-size: 150%;
+				font-weight: bold;
+				text-align: center;
+			}
+		
+			.bio {
+				padding: 10px 0;
+				font-size: 90%;
+				text-align: justify;
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+		
+			.contact {
+				width: 200px;
+				height: 20px;
+				background: url(#{$base-url}/img/icons.svg) no-repeat;
+				display: block;
+		
+				&.twitter{
+					margin: 10px auto 0;
+					background-position: 0 -100px;
+				}
+		
+				&.mail{
+					margin: 5px auto 0;
+					background-position: 0 -120px;
+				}
+			}
+		}
 
 		li {
 			a {

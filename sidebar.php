@@ -5,13 +5,6 @@
  */
 ?>
 <aside id="site-aside" role="complementary">
-	<div class="title">メインコンテンツ</div>
-	<div class="contents">
-		<div class="side-banner"><a href="https://oguemon.com/topic/study/linear-algebra/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-study-linear-algebra.png"></a></div>
-		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/trivia/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-trivia.png"></a></div>
-		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/is/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-is.png"></a></div>
-	</div>
-
 	<div class="title">プロフィール</div>
 	<div class="contents profile">
 		<div class="icon">
@@ -43,7 +36,14 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-side sns-btn-pocket"></a>
 		</div>
 	</div>
-	
+
+	<div class="title">メインコンテンツ</div>
+	<div class="contents">
+		<div class="side-banner"><a href="https://oguemon.com/topic/study/linear-algebra/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-study-linear-algebra.png"></a></div>
+		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/trivia/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-trivia.png"></a></div>
+		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/is/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-is.png"></a></div>
+	</div>
+
 	<div class="title">人気記事</div>
 	<div class="contents">
 		<?php
