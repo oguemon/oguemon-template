@@ -927,8 +927,10 @@ footer {
 			a {
 				display: block;
 				position: relative;
+				margin: 0 0 1px;
 				padding: 10px 20px;
 				color: $text-base-color;
+				border-left: 5px solid $main-color;
 				border-bottom: 1px solid $border-base-color;
 			}
 
