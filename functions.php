@@ -74,6 +74,15 @@ remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);
 //remove_action( 'wp_head', 'wp_site_icon', 99);
 
 /**
+ * タイトルタグの最適化
+ */
+// 区切り文字の変更
+function custom_title_separator() {
+	return '|';
+}
+add_filter( 'document_title_separator', 'custom_title_separator' );
+
+/**
  * 画像などのコンテンツの最大幅を指定
  */
 function oguemon_content_width() {
