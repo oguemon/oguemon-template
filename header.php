@@ -11,41 +11,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <?php wp_head(); ?>
 
-<!--OGP設定  -->
+
 <?php
+/*
+ *  SEOに関する処理を行う
+ */
+
 //デフォルトサムネ画像のURLを入れよう！
 $ogp_img = get_bloginfo('template_directory') . '/img/ogp.png';
-//ページの種別で条件分岐
-if (is_single()){
-	while(have_posts()){
+
+// 一般的な記事なら
+if (is_single())
+{
+	while(have_posts())
+	{
 		the_post();
 		$ogp_title = get_the_title();
 		$ogp_description = mb_substr(get_the_excerpt(), 0, 100);
 		$ogp_url = get_permalink();
 		$ogp_type = 'article';
+
 		//サムネイル
-		if (has_post_thumbnail()){
+		if (has_post_thumbnail())
+		{
 			//アイキャッチ画像を使用
 			$image_id = get_post_thumbnail_id();
 			$image = wp_get_attachment_image_src( $image_id, 'full');
 			$ogp_img = $image[0];
-		} else if ( preg_match( '/<img.*?src=(["\'])(.+?)\1.*?>/i', $post->post_content, $imgurl )){
+		}
+		else if ( preg_match( '/<img.*?src=(["\'])(.+?)\1.*?>/i', $post->post_content, $imgurl ))
+		{
 			//一番上の画像を使用
 			$ogp_img = $imgurl[2];
 		}
 	}
-} else if(is_category()){
+}
+// カテゴリートップなら
+else if(is_category())
+{
+
 		$ogp_title = single_cat_title('', false);
 		$ogp_description = mb_substr( strip_tags(get_the_archive_description()), 0, 100);
 		$ogp_url = get_category_link(get_query_var('cat'));
 		$ogp_type = 'article';
-} else {
+}
+// それ以外（基本は固定ページ）なら
+else
+{
 		$ogp_title = get_bloginfo('name');
 		$ogp_description = get_bloginfo('description');
 		$ogp_url = get_bloginfo('url');
 		$ogp_type = 'website';
 }
 ?>
+	<!-- OGP設定 -->
 	<meta property="og:title" content="<?= $ogp_title ?>">
 	<meta property="og:type" content="<?= $ogp_type ?>">
 	<meta property="og:url" content="<?= $ogp_url ?>">
