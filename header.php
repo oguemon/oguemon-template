@@ -9,14 +9,13 @@
 <head>
 	<meta charset="<?= get_bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<?php wp_head(); ?>
-
-
 <?php
-/*
- *  SEOに関する処理を行う
- */
+// ヘッダーの出力
+wp_head();
 
+/*
+ *  SEOに関する処理
+ */
 //デフォルトサムネ画像のURLを入れよう！
 $ogp_img = get_bloginfo('template_directory') . '/img/ogp.png';
 

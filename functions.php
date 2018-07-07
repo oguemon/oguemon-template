@@ -37,16 +37,41 @@ add_action( 'after_setup_theme', 'oguemon_setup' );
 /**
  * headタグ内の不要なタグを除去
  */
-//絵文字対応
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles');
-//外部記事投稿ツール
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wlwmanifest_link');
-//WordPressのバージョン
-remove_action('wp_head', 'wp_generator');
-//短縮リンク
-remove_action('wp_head', 'wp_shortlink_wp_head');
+// タイトルタグ生成
+//remove_action( 'wp_head', '_wp_render_title_tag', 1);
+// スクリプト書き出し
+//remove_action( 'wp_head', 'wp_enqueue_scripts', 1);
+// リソースヒント(名前解決など)
+//remove_action( 'wp_head', 'wp_resource_hints', 2);
+// フィードリンク
+remove_action( 'wp_head', 'feed_links', 2);
+remove_action( 'wp_head', 'feed_links_extra', 3);
+// 外部記事投稿系
+remove_action( 'wp_head', 'rsd_link');
+remove_action( 'wp_head', 'wlwmanifest_link');
+// 関連ページ(次ページなど)のタグ表示
+//remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+// ローカライズなスタイルシートの読み込み
+//remove_action( 'wp_head', 'locale_stylesheet');
+// no-index
+//remove_action( 'wp_head', 'noindex', 1);
+// 絵文字対応
+remove_action( 'wp_head', 'print_emoji_detection_script', 7);
+remove_action( 'wp_print_styles', 'print_emoji_styles');
+// スタイルの表示（wp_print_stylesアクションの実行）
+//remove_action( 'wp_head', 'wp_print_styles', 8);
+// ヘッダにスクリプトを表示（wp_print_head_scriptsアクションの実行）
+//remove_action( 'wp_head', 'wp_print_head_scripts', 9);
+// WordPressのバージョン
+remove_action( 'wp_head', 'wp_generator');
+// rel="canonical"の出力
+//remove_action( 'wp_head', 'rel_canonical');
+// 短縮リンク
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);
+// カスタムCSSの出力
+//remove_action( 'wp_head', 'wp_custom_css_cb', 101);
+// faviconなどの出力
+//remove_action( 'wp_head', 'wp_site_icon', 99);
 
 /**
  * 画像などのコンテンツの最大幅を指定
@@ -158,7 +183,6 @@ function setPostViews($postID) {
 		}
 	}
 }
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 /**
  * Quick Tagsの追加（投稿編集画面のタグボタン）
