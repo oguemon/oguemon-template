@@ -65,7 +65,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles');
 // WordPressのバージョン
 remove_action( 'wp_head', 'wp_generator');
 // rel="canonical"の出力
-//remove_action( 'wp_head', 'rel_canonical');
+remove_action( 'wp_head', 'rel_canonical');
 // 短縮リンク
 remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);
 // カスタムCSSの出力
