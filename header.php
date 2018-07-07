@@ -68,8 +68,8 @@ if (is_single()){
 			<div class="icon">
 				<img src="https://oguemon.com/wordpress/wp-content/themes/oguemon/img/profile.jpg">
 			</div>
-			<div class="name">おぐえもん</div>
-		<div class="bio">大学に通う情報系の大学生です。WebプログラミングやDTPに僅かな経験があるほか、渋谷系をはじめとする邦楽などに興味を持ってます。</div>
+			<div class="name"><?=get_the_author_meta('nickname', 1)?></div>
+			<div class="bio"><?=get_the_author_meta('description', 1)?></div>
 			<a class="contact twitter" href="https://twitter.com/oguemon_com" target="_blank"></a>
 			<div class="contact mail"></div>
 		</div>
