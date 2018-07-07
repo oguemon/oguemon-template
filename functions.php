@@ -82,6 +82,44 @@ function custom_title_separator() {
 }
 add_filter( 'document_title_separator', 'custom_title_separator' );
 
+
+//タイトルタグの形式変更
+function custom_title_parts($title) {
+
+	// トップページでなければサイト説明文要素を削除
+	if ( !is_front_page() ) {
+		unset($title['tagline']);
+	}
+
+	// ページ数があるならタイトル直後に「（xページ目）」と追記
+	if (isset($title['page'])) {
+		$pageinfo = explode(" ", $title['page']);
+		$title['title'] .= '（' . $pageinfo[1] . 'ページ目）';
+		// 元のページ数要素を削除
+		unset($title['page']);
+	}
+
+	// 一般的な記事なら
+	if (is_single()) {
+		while(have_posts()) {
+			the_post();
+
+			// カテゴリがあるなら
+			if(has_category()){
+				$category = get_the_category()[0];
+				$title['tagline'] = $category->name;
+				unset($title['site']);
+			}
+		}
+	// カテゴリートップなら
+	} else if(is_category()) {
+		unset($title['site']);
+	}
+
+	return $title;
+}
+add_filter( 'document_title_parts', 'custom_title_parts' );
+
 /**
  * 画像などのコンテンツの最大幅を指定
  */
