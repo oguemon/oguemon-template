@@ -13,12 +13,12 @@ get_header();
 		<main id="site-content" class="site-main" role="main">
 			<!-- 【広告】スマホページ上部 -->
 			<style type="text/css">
-			.ad-h-item{display: none;}
 			@media (max-width: 640px) {
-				.ad-h-item{display: block; width: 320px; height: 50px;}
+				.ad-h-item{width: 320px; height: 50px;}
 			}
 			</style>
 			<ins class="adsbygoogle ad-h-item"
+				 data-full-width-responsive="false"
 			     data-ad-client="ca-pub-6941251424797111"
 			     data-ad-slot="7244203783"></ins>
 			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>

@@ -763,7 +763,7 @@ footer {
 	margin: 0 20px;
 
 	@include mq() {
-		margin: 10px 1%;
+		margin: 0 1%;
 	}
 
 	&.sns-btn-twitter  {background-position:    0px -50px;}
@@ -803,11 +803,23 @@ footer {
 }
 
 /* Google広告 */
-.ad-side-large {
-	margin: 30px 0 10px;
-	text-align: center;
+// スマホトップ
+.ad-h-item{
+	display: none !important;
+
+	@include mq() {
+		display: block !important;
+		margin: 0 auto;
+	}
 }
 
+// サイドバー
+.ad-s-item {
+	margin: 30px auto 10px;
+	display: block !important;
+}
+
+// 記事下部
 .ad-article-footer {
 	text-align: center;
 
@@ -816,7 +828,7 @@ footer {
 		display: inline-block !important;
 	
 		@include mq() {
-			margin: 5px 0;
+			margin: 5px auto;
 			display: block;
 		}
 	}

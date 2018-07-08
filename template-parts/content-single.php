@@ -14,7 +14,7 @@
 	}
 ?>
 	<div id="post-header">
-		<p class="category"><?php the_category(' '); ?></p>
+		<!--<p class="category"><?php the_category(' '); ?></p>-->
 		<h1 class="title"><?= get_the_title() ?></h1>
 		<div class="meta">
 			<p class="excerpt"><?= get_the_excerpt() ?></p>
@@ -117,12 +117,14 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		<!-- 【広告】サイト下部1 -->
 		<ins class="adsbygoogle ad-f-item"
 		     style="display:block"
+			 data-full-width-responsive="true"
 		     data-ad-client="ca-pub-6941251424797111"
 		     data-ad-slot="2627690984"></ins>
 		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 		<!-- 【広告】サイト下部2 -->
 		<ins class="adsbygoogle ad-f-item"
 		     style="display:block"
+			 data-full-width-responsive="true"
 		     data-ad-client="ca-pub-6941251424797111"
 		     data-ad-slot="7057890583"></ins>
 		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>

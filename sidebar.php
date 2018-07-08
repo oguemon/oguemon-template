@@ -36,14 +36,14 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-side sns-btn-pocket"></a>
 		</div>
 	</div>
-
+	<!--
 	<div class="title">メインコンテンツ</div>
 	<div class="contents">
 		<div class="side-banner"><a href="https://oguemon.com/topic/study/linear-algebra/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-study-linear-algebra.png"></a></div>
 		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/trivia/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-trivia.png"></a></div>
 		<div class="side-banner"><a href="https://oguemon.com/topic/knowledge/is/"><img src="<?= get_bloginfo('template_directory') ?>/img/side-knowledge-is.png"></a></div>
 	</div>
-
+	-->
 	<div class="title">人気記事</div>
 	<div class="contents">
 		<?php
@@ -71,13 +71,11 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		}
 		?>
 	</div>
-		
-	<div class="ad-side-large">
-		<!-- 【広告】サイドバー（PC） -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:300px;height:600px"
-		     data-ad-client="ca-pub-6941251424797111"
-		     data-ad-slot="4920179380"></ins>
-		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-	</div>
+	
+	<!-- 【広告】サイドバー（PC） -->
+	<ins class="adsbygoogle ad-s-item"
+		 style="width: 300px; height: 600px;"
+		 data-ad-client="ca-pub-6941251424797111"
+		 data-ad-slot="4920179380"></ins>
+	<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </aside><!-- #site-aside -->
