@@ -169,13 +169,14 @@ function oguemon_scripts() {
 	wp_deregister_script('jquery');
 	//最新のJQueryを読み込み
 	wp_enqueue_script( 'jquery-alt', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
-	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script( 'original', get_template_directory_uri() . '/js/oguemon.js', array('jquery-alt'), '1.0.180707', true);
 	//Anime.jsの読み込み
 	wp_enqueue_script( 'animejs', get_template_directory_uri() . '/js/anime.min.js', array(), false, true);
+	//toc.js(目次生成)の読み込み
+	wp_enqueue_script( 'tocjs', get_template_directory_uri() . '/js/toc.min.js', array(), false, true);
 	//Google Adsenseの読み込み
 	wp_enqueue_script( 'g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
-	
+	//オリジナルのjavascriptの読み込み
+	wp_enqueue_script( 'original', get_template_directory_uri() . '/js/oguemon.js', array('jquery-alt'), '1.0.180707', true);
 }
 add_action( 'wp_enqueue_scripts', 'oguemon_scripts' );
 

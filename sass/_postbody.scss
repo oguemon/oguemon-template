@@ -123,3 +123,54 @@
 		}
 	}
 }
+/*
+ *  目次
+ */
+#toc-box {
+	width: 360px;
+	border: 1px solid $border-base-color;
+	padding: 10px;
+
+	@include mq() {
+		width: 100%;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+#toc-box-caption {
+	margin: 0 0 10px 0;
+	font-size: 120%;
+	text-align: center;
+	border-bottom: 1px solid $border-base-color;
+
+	.description {
+		font-size: 60%;
+	}
+}
+#toc {
+	font-size: 90%;
+
+	ul {
+		margin: 0 0 0 20px;  
+	}
+
+	li {
+		margin: 5px 0;
+		list-style-type: disc;
+
+		&.toc-h3 {
+			margin: 0;
+		}
+
+		&.toc-h4 {
+			margin: 0 0 0 20px;
+
+			a {
+				color: $text-base-color;
+			}
+		}
+
+	}
+}

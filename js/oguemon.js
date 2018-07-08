@@ -45,6 +45,12 @@ jQuery(document).ready(function($) {
 			$('body,html').animate({scrollTop:position}, speed, 'swing');
 			return false;
 		});
+
+		// 目次生成(toc.js)
+		$('#toc').toc({
+			'selectors': 'h3, h4', //目次として表示する要素のCSSセレクターを指定
+			'container': '#post-body'
+		});
 	});
 
 });
