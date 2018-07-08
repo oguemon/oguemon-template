@@ -13,7 +13,7 @@
 /*
  *  Google Analytics（ログイン中でなければ表示）
  */
-if (!is_admin() && !is_admin_bar_showing()) {
+if (!is_user_logged_in()) {
 ?>
 	<script type="text/javascript" >
 		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -101,7 +101,7 @@ else
 	<meta name="twitter:site" content="@oguemon_com">
 </head>
 
-<body ontouchstart="">
+<body>
 	<!-- スマホ用ヘッドバー -->
 	<div id="sp-header">
 		<a href="<?= get_bloginfo('url');?>"><div id="blog-title-sp"></div></a>

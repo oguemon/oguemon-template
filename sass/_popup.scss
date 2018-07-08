@@ -13,64 +13,50 @@
         width: auto;
     }
 
-    // ボタンの色
-    $button-color: #ff8888;
-
-    .wrapper {
+    #popup-wrapper {
         padding: 10px;
-        background: #ffffff;
-        border-top:   3px solid $button-color;
-        border-right: 3px solid $button-color;
-        border-left:  3px solid $button-color;
+        background: $white-color;
+        border-width: 3px 3px 0;
+        border-style: solid;
+        border-color:  $popup-color;
         border-radius: 5px 5px 0 0;
     
         .title{
             font-size: 120%;
             font-weight: bold;
-            color: $button-color;
+            color: $popup-color;
         }
     
         .description{
-            margin: 5px 0 0 0;
-            color: #333333;
+            margin: 5px 0 0;
+            color: $text-base-color;
         }
     }
 
-    table {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        border-collapse: collapse;
-        border-width: 0px;
-    }
-
-    td{
+    #popup-open {
         width: 50%;
-        margin: 0;
-        padding: 0;
-        border-width: 0px;
-    }
-
-    #open {
         padding: 10px 0;
         text-align: center;
-        background: $button-color;
-        color: #ffffff;
+        background: $popup-color;
+        color: $white-color;
         font-weight: bold;
         border-radius: 0 0 0 5px;
+        float: left;
     
         &:hover {
             background: #ffcccc;
         }
     }
 
-    #close {
+    #popup-close {
+        width: 50%;
         padding: 10px 0;
         text-align: center;
         background: #888888;
-        color: #ffffff;
+        color: $white-color;
         font-weight: bold;
         border-radius: 0 0 5px 0;
+        float: left;
     
         &:hover {
             background: #bbbbbb;
