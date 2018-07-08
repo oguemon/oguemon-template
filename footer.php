@@ -10,7 +10,7 @@
 		<div class="wrapper wrapper-footer ">
 		</div><!-- .wrapper .wrapper-footer -->
 		<div class="wrapper wrapper-copy">
-			<p id="copyright">Copyright © 2017 おぐえもん All Rights Reserved.</p>
+			<p id="copyright">Copyright © 2016-2018 おぐえもん All Rights Reserved.</p>
 		</div><!-- .wrapper .wrapper-copy -->
 	</footer><!-- .site-footer -->
 </div><!-- end #container -->

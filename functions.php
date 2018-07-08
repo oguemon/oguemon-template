@@ -163,7 +163,7 @@ add_action( 'widgets_init', 'oguemon_widgets_init' );
 function oguemon_scripts() {
 
 	//CSSスタイルの追加
-	wp_enqueue_style( 'oguemon-style', get_stylesheet_uri(), false, '1.0.180708.3', 'all');
+	wp_enqueue_style( 'oguemon-style', get_stylesheet_uri(), false, '1.0.180709', 'all');
 
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
@@ -176,7 +176,7 @@ function oguemon_scripts() {
 	//Google Adsenseの読み込み
 	wp_enqueue_script( 'g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script( 'original', get_template_directory_uri() . '/js/oguemon.js', array('jquery-alt'), '1.0.180707', true);
+	wp_enqueue_script( 'original', get_template_directory_uri() . '/js/oguemon.js', array('jquery-alt'), '1.0.180709', true);
 }
 add_action( 'wp_enqueue_scripts', 'oguemon_scripts' );
 
