@@ -98,6 +98,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 ?>
 		<!-- ソーシャルボタン（記事上部にもあり） -->
 		<div id="sns-btn-list-footer">
+			<p>この記事がお役に立ったらシェアしていただけると嬉しいです♪</p>
 			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn sns-btn-twitter"></a>
 			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn sns-btn-facebook"></a>
 			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn sns-btn-gplus"></a>

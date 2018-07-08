@@ -123,12 +123,14 @@
 		}
 	}
 }
+
 /*
  *  目次
  */
 #toc-box {
 	width: 360px;
 	border: 1px solid $border-base-color;
+	margin: 0 0 10px;
 	padding: 10px;
 
 	@include mq() {

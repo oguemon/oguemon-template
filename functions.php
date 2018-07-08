@@ -252,3 +252,51 @@ function add_quicktags() {
 <?php
 }
 add_action( 'admin_print_footer_scripts', 'add_quicktags' );
+
+/**
+ * 記事本文の最初の見出しの前に目次と広告を適宜挟む
+ */
+function add_string_to_content($content) {
+
+    if (!is_single() && !is_page()) {
+        // 記事ページと固定ページ以外に目次を表示させない
+        return $content;
+    }
+
+	// 大見出し<h3>があるなら
+	if (preg_match_all('/<h3>/', $content, $matches, PREG_OFFSET_CAPTURE) !== false) {
+
+		// 2個以上あるなら
+		if (count($matches[0]) > 1) {
+			// 目次を入れる
+			$add_string = <<< EOM
+			<div id="toc-box">
+				<div id="toc-box-caption">目次<span class="description">（クリックで該当箇所へ移動）</span></div>
+				<div id="toc"></div>
+			</div>
+EOM;
+			// 記事ページなら
+			if (is_single()) {
+				// 広告を追記
+				$add_string .= <<< EOM
+				<ins class="adsbygoogle"
+					 style="display:block; text-align:center;"
+					 data-ad-layout="in-article"
+					 data-ad-format="fluid"
+					 data-ad-client="ca-pub-6941251424797111"
+					 data-ad-slot="9452886211">
+				</ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+EOM;
+			}
+
+			// 最初のhタグの前の位置を取得
+			$pos = $matches[0][0][1];
+			// 最初のhタグの前に指定した文字列を挟む
+			$content = substr($content, 0, $pos) . $add_string . substr($content, $pos);
+		}
+	}
+
+	return $content;
+}
+add_filter('the_content', 'add_string_to_content');

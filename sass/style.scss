@@ -724,10 +724,16 @@ footer {
 }
 #sns-btn-list-footer {
 	margin: 30px 0 20px;
-	padding: 10px 0;
+	padding: 5px 0 10px;
 	border-top: 1px solid $border-base-color;
 	border-bottom: 1px solid $border-base-color;
 	text-align: center;
+
+	p {
+		margin: 0 0 5px;
+		font-size: 80%;
+		font-weight: bold;
+	}
 }
 #sns-btn-list-sidebar {
 	margin: 10px 0 0;
