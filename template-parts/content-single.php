@@ -110,21 +110,16 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	<div class="ad-article-footer">
 		<style type="text/css">
 		.ad-f-item{width: 300px; height: 250px;}
-		@media (max-width: 640px) {
-			.ad-f-item{width: 320px; height: 100px;}
-		}
 		</style>
-		<!-- 【広告】サイト下部1 -->
-		<ins class="adsbygoogle ad-f-item"
-		     style="display:block"
+		<!-- 【広告】サイト下部1(スマホは全幅表示) -->
+		<ins class="adsbygoogle ad-f-item ad-f-item1"
 			 data-full-width-responsive="true"
 		     data-ad-client="ca-pub-6941251424797111"
 		     data-ad-slot="2627690984"></ins>
 		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-		<!-- 【広告】サイト下部2 -->
-		<ins class="adsbygoogle ad-f-item"
-		     style="display:block"
-			 data-full-width-responsive="true"
+		<!-- 【広告】サイト下部2(スマホは非表示) -->
+		<ins class="adsbygoogle ad-f-item ad-f-item2"
+			 data-full-width-responsive="false"
 		     data-ad-client="ca-pub-6941251424797111"
 		     data-ad-slot="7057890583"></ins>
 		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>

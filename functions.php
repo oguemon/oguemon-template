@@ -163,7 +163,7 @@ add_action( 'widgets_init', 'oguemon_widgets_init' );
 function oguemon_scripts() {
 
 	//CSSスタイルの追加
-	wp_enqueue_style( 'oguemon-style', get_stylesheet_uri(), false, '1.0.180708.2', 'all');
+	wp_enqueue_style( 'oguemon-style', get_stylesheet_uri(), false, '1.0.180708.3', 'all');
 
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
