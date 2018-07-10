@@ -143,7 +143,7 @@ function oguemon_scripts() {
 	$theme_root = get_template_directory_uri();
 
 	//CSSスタイルの追加
-	wp_enqueue_style('oguemon-style', $theme_root . '/css/common.css', false, '1.0.180710', 'all');
+	wp_enqueue_style('oguemon-style', $theme_root . '/css/common.css', false, '1.0.180711', 'all');
 
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
