@@ -22,7 +22,6 @@ function oguemon_setup() {
 	//メニュー（wp_nav_menu()）とその説明を登録する
 	register_nav_menus( array(
 		'primary'	=> 'メインメニュー',
-		'secondary'	=> '右上メニュー',
 		'footer'	=> 'フッターメニュー',
 		'sp-right'  => 'スマホ右メニュー'
 	) );
@@ -140,24 +139,6 @@ function oguemon_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'oguemon_excerpt_length', 999 );
 
 /**
- * ウィジェットの設定
- */
-/*
-function oguemon_widgets_init() {
-	register_sidebar( array(
-		'name'          => 'サイドバー',
-		'id'            => 'sidebar-main',
-		'description'   => '全ページに表示されるサイドバー',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<p class="widget-title">',
-		'after_title'   => '</p>',
-	) );
-}
-add_action( 'widgets_init', 'oguemon_widgets_init' );
-*/
-
-/**
  * CSSやスクリプトなどの読み込み
  */
 function oguemon_scripts() {
@@ -206,19 +187,6 @@ add_filter( 'clean_url', 'add_async_to_enqueue_script', 11, 1 );
 /**
  *  記事ごとのアクセス数集計
  */
-/*
-function getPostViews($postID){
-	$count_key = 'post_views_count';
-	$count = get_post_meta($postID, $count_key, true);
-	if($count == ''){
-		delete_post_meta($postID, $count_key);
-		add_post_meta($postID, $count_key, '0');
-		return "0";
-	}else{
-		return $count;
-	}
-}
-*/
 function setPostViews($postID) {
 	if (is_single() && !is_admin_bar_showing()) {
 		$count_key = 'post_views_count';

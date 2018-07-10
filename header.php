@@ -141,22 +141,6 @@ else
 	<header class="clearfix">
 		<!-- ロゴとか -->
 		<div class="wrapper clearfix">
-			<?php
-			if ( has_nav_menu( 'secondary' ) ) {
-				// 右上メニュー
-				echo '<nav id="menu-secondary" role="navigation" aria-label="Secondary Navigation">';
-				wp_nav_menu( array(
-					'container' => '', 
-					'container_class' => '', 
-					'menu_class' => '', 
-					'menu_id' => 'menu-main-secondary', 
-					'sort_column' => 'menu_order', 
-					'theme_location' => 'secondary', 
-					'link_after' => '', 
-					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ));
-				echo '</nav>';
-			}
-			?>
 			<div id="blog-info">
 				<div id="blog-title"><a href="<?= get_bloginfo('url')?>"><?= get_bloginfo('name')?></a></div>
 				<div id="blog-description">たぶん今すぐ使えるテクニックから、きっと全く使えない豆知識まで。</div>
