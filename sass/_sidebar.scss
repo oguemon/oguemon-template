@@ -1,0 +1,123 @@
+
+/*
+ * サイドバー
+ */
+aside#site-aside {
+	width: 320px;
+	float: right;
+
+	@include mq() {
+		width: 100%;
+    }
+
+	.title {
+		@extend %general-header;
+	}
+
+	.contents {
+		margin: 0 0 10px;
+	}
+
+	// プロフィール
+	.profile {
+		padding: 10px 0;
+
+		@include mq() {
+			padding: 10px 10px;
+		}
+
+		.icon {
+			width: 70px;
+			height: 70px;
+			margin: 0 auto;
+			float: left;
+	
+			img {
+				border-radius: 35px;
+			}
+		}
+	
+		.name {
+			margin: 5px 0 0 80px;
+			font-size: 150%;
+			font-weight: bold;
+		}
+	
+		.bio {
+			margin: 5px 0 10px 80px;
+			padding: 5px 0 0;
+			font-size: 90%;
+			text-align: justify;
+			border-top: 1px solid #ccc;
+		}
+	
+		.contact {
+			width: 200px;
+			height: 20px;
+			background: url(#{$base-url}/img/icons.svg) no-repeat;
+			display: block;
+	
+			&.twitter{
+				margin: 10px 0 0 80px;
+				background-position: 0 -100px;
+			}
+	
+			&.mail{
+				margin: 5px 0 0 80px;
+				background-position: 0 -120px;
+			}
+		}
+	}
+}
+
+// 人気記事ランキング
+.view-ranking {
+	padding: 5px 5px 5px 0;
+	border-bottom: 1px solid $border-base-color;
+
+	.view-ranking-num {
+		margin: -5px 10px 0 0;
+		padding: 5px;
+		font-weight: bold;
+		font-size: 150%;
+		color: #aaa;
+		border-top: 4px solid #aaa;
+		float: left;
+	}
+
+	.rank-1 {
+		border-top-color: #e00;
+		color: #e00;
+	}
+
+	.rank-2 {
+		border-top-color: #00A5DE;
+		color: #00A5DE;
+	}
+
+	.rank-3 {
+		border-top-color: #00A5DE;
+		color: #00A5DE;
+	}
+
+	.view-ranking-thum {
+		width: 80px;
+		height: 60px;
+		margin: 0 5px 0 0;
+		float: left;
+	}
+
+	.view-ranking-title {
+		overflow: hidden;
+
+		a {
+			font-weight: bold;
+		}
+	}
+}
+
+// サイドバーのGoogle広告
+.ad-s-item {
+	margin: 30px auto 10px;
+	display: block !important;
+}

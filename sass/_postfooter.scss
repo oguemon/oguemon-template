@@ -1,0 +1,168 @@
+/*
+ *  ページ下部
+ */
+// ページ番号
+.page-links {
+	height: 40px;
+	margin: 20px 0;
+	position: relative;
+	text-align: center;
+	clear: both;
+
+	// 記事本文内の次のページ・前のページの矢印
+	.page-link-arrow {
+		width: 125px;
+		height: 40px;
+		background: $main-color;
+		color: $white-color;
+		font-size: 100%;
+		font-weight: bold;
+		line-height: 40px;
+		text-align: center;
+		position: absolute;
+
+		@include mq() {
+			width: 80px;
+		}
+
+		&.next {
+			right: 20px;
+
+			+ div {
+				position: absolute;
+				right: 0;
+				border-left: 20px solid $main-color;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+			}
+		}
+
+		&.prev {
+			left: 20px;
+	
+			+ div {
+				position: absolute;
+				left: 0;
+				border-right: 20px solid $main-color;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+			}
+		}
+	}
+
+	// ページ番号
+	.page-number {
+		margin: 0 3px;
+		padding: 8px;
+		border: 1px solid $main-color;
+		background: $main-color;
+		color: $white-color;
+		font-size: 120%;
+	}
+
+	// 特にページ番号がリンクで囲まれているもの（現在のページでない）
+	a .page-number {
+		color: $main-color;
+		background: $white-color;
+
+		&:hover {
+			background: #ff8;
+		}
+	}
+}
+
+// 記事下部のGoogle広告
+.ad-article-footer {
+	text-align: center;
+
+	.ad-f-item {
+		margin: 0 10px;
+		display: inline-block !important;
+	
+		@include mq() {
+			margin: 5px auto;
+			display: block;
+		}
+
+		&.ad-f-item2 {
+			@include mq() {
+				display: none !important;
+			}
+		}
+	}
+}
+
+// 同じカテゴリの記事一覧
+#same-category {
+	margin: 10px 0;
+
+	#same-category-header {
+		@extend %general-header
+	}
+
+	article {
+		padding: 5px 10px;
+		border-bottom: 1px solid #ddd;
+	
+		.thumbnail {
+			width: 120px;
+			margin: 0 10px 0 0;
+			float: left;
+		
+			@include mq(){
+				width: 90px;
+				margin: 5px 10px 0 0;
+			}
+
+			img {
+				height: auto;
+			}
+		}
+
+		.info {
+			overflow: hidden;
+		
+			.date {
+				font-size: 80%;
+				color: $text-sub-color;
+			}
+		
+			.title {
+				margin: 3px 0;
+				font-size: 120%;
+				color: $text-base-color;
+			}
+		
+			.detail {
+				font-size: 80%;
+				color: $text-sub-color;
+			}
+		}
+	}
+
+	// このカテゴリの全ての記事
+	#article-list-link{
+		margin: 0 0 10px;
+		padding: 5px 10px;
+		border: 5px solid #6cf;
+
+		a {
+			@extend %colored-link-text;
+		}
+	}
+
+	#same-article {
+		border: 4px solid #ff8;
+	
+		#same-article-header {
+			padding: 0 5px;
+			color: $text-base-color;
+			font-size: 90%;
+			background: #ff8;
+		}
+	
+		article {
+			border-bottom: none;
+		}
+	}
+}

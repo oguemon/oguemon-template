@@ -142,3 +142,8 @@ li.post-pickup-sub {
 		}
 	}
 }
+
+// 「最新記事」みたいな見出し
+#latest-posts-header {
+	@extend %general-header;
+}
