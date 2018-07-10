@@ -54,7 +54,7 @@ aside#site-aside {
 		.contact {
 			width: 200px;
 			height: 20px;
-			background: url(#{$base-url}/img/icons.svg) no-repeat;
+			background: url($splite-url) no-repeat;
 			display: block;
 	
 			&.twitter{

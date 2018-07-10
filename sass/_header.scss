@@ -79,7 +79,7 @@ header {
 			height: 50px;
 			position: absolute;
 			left: 5px;
-			background: url(#{$base-url}/img/icons.svg) no-repeat;
+			background: url($splite-url) no-repeat;
 			background-position: 0 -140px;
 		}
 
@@ -89,7 +89,7 @@ header {
 			position: absolute;
 			top: 10px;
 			right: 10px;
-			background: url(#{$base-url}/img/icons.svg) no-repeat;
+			background: url($splite-url) no-repeat;
 			background-position: -210px -20px;
 			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
@@ -132,7 +132,7 @@ header {
 			.contact {
 				width: 200px;
 				height: 20px;
-				background: url(#{$base-url}/img/icons.svg) no-repeat;
+				background: url($splite-url) no-repeat;
 				display: block;
 		
 				&.twitter{

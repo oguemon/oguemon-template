@@ -10,8 +10,9 @@
 }
 
 // URL
-//$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
-$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
+$base-url: "http://localhost/wordpress/wp-content/themes/oguemon";
+//$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
+$splite-url: "#{$base-url}/img/splite.svg";
 
 // 色関係
 $main-color: #00A5DE;
@@ -48,7 +49,7 @@ $margin-site-side: 30px;
 
 // シェアアイコン
 %base-sns-btn {
-	background: url(#{$base-url}/img/icons.svg) no-repeat;
+	background: url($splite-url) no-repeat;
 	display: inline-block;
 
 	&:hover {
