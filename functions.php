@@ -142,24 +142,26 @@ add_filter( 'excerpt_length', 'oguemon_excerpt_length', 999 );
  * CSSやスクリプトなどの読み込み
  */
 function oguemon_scripts() {
+	//テーマのルート
+	$theme_root = get_template_directory_uri();
 
 	//CSSスタイルの追加
-	wp_enqueue_style( 'oguemon-style', get_stylesheet_uri(), false, '1.0.180709', 'all');
+	wp_enqueue_style('oguemon-style', $theme_root . '/css/common.css', false, '1.0.180710', 'all');
 
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
 	//最新のJQueryを読み込み
-	wp_enqueue_script( 'jquery-alt', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
+	wp_enqueue_script('jquery-alt', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
 	//Anime.jsの読み込み
-	wp_enqueue_script( 'animejs', get_template_directory_uri() . '/js/anime.min.js', array(), false, true);
+	wp_enqueue_script('animejs', $theme_root . '/js/anime.min.js', array(), false, true);
 	//toc.js(目次生成)の読み込み
-	wp_enqueue_script( 'tocjs', get_template_directory_uri() . '/js/toc.min.js', array(), false, true);
+	wp_enqueue_script('tocjs', $theme_root . '/js/toc.min.js', array(), false, true);
 	//Google Adsenseの読み込み
-	wp_enqueue_script( 'g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
+	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script( 'original', get_template_directory_uri() . '/js/oguemon.js', array('jquery-alt'), '1.0.180709', true);
+	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array('jquery-alt'), '1.0.180709', true);
 }
-add_action( 'wp_enqueue_scripts', 'oguemon_scripts' );
+add_action('wp_enqueue_scripts', 'oguemon_scripts' );
 
 /**
  * スクリプトの非同期読み込みを実現

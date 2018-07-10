@@ -103,8 +103,8 @@ h2.screen-reader-text {
 		display: inline-block;
 
 		@include mq(){
-			width: auto;
-			margin: 10px 0;
+			width: 35%;
+			margin: 10px;
 			float: none;
 			display: block;
 		}

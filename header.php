@@ -102,6 +102,12 @@ else
 </head>
 
 <body ontouchstart="">
+	<?php
+		// CSSのインライン読み込み
+		$inline_css = file_get_contents(get_template_directory_uri() . '/css/common-inline.css');
+		$inline_css = preg_replace('/^\xEF\xBB\xBF/', '', $inline_css);
+		echo '<style>' . $inline_css . '</style>';
+	?>
 	<!-- スマホ用ヘッドバー -->
 	<div id="sp-header">
 		<a href="<?= get_bloginfo('url');?>"><div id="blog-title-sp"></div></a>
