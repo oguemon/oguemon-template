@@ -1,0 +1,79 @@
+/*
+ *  雑多なもの（アイコンなど）
+ */
+
+// 色々なアイコン
+.icon-published, .icon-updated, .icon-author {
+	width: 15px;
+	height: 15px;
+	margin: 0 5px -3px 0;
+	display: inline-block;
+	background: url(#{$base-url}/img/icons.svg) no-repeat;
+}
+.icon-published {background-position: -15px 0;}
+.icon-updated   {background-position: -30px 0;}
+.icon-author    {background-position: -45px 0;}
+
+// SNSボタンの描画領域
+#sns-btn-list-header {
+	margin: 0 0 20px;
+	padding: 0 0 10px;
+	text-align: center;
+	border-bottom: 1px solid $border-base-color;
+}
+
+#sns-btn-list-footer {
+	margin: 30px 0 20px;
+	padding: 5px 0 10px;
+	border-top: 1px solid $border-base-color;
+	border-bottom: 1px solid $border-base-color;
+	text-align: center;
+
+	p {
+		margin: 0 0 5px;
+		font-size: 80%;
+		font-weight: bold;
+	}
+}
+
+#sns-btn-list-sidebar {
+	margin: 10px 0 0;
+	padding: 5px 0 0;
+	border-top: 1px solid $border-base-color;
+}
+
+// SNSボタン（記事の途中）
+.sns-btn {
+	@extend %base-sns-btn;
+
+	width: 40px;
+	height: 50px;
+	margin: 0 20px;
+
+	@include mq() {
+		margin: 0 1%;
+	}
+
+	&.sns-btn-twitter  {background-position:    0px -50px;}
+	&.sns-btn-facebook {background-position:  -40px -50px;}
+	&.sns-btn-gplus    {background-position:  -80px -50px;}
+	&.sns-btn-hatena   {background-position: -120px -50px;}
+	&.sns-btn-line     {background-position: -160px -50px;}
+	&.sns-btn-pocket   {background-position: -200px -50px;}
+}
+
+// SNSボタン（サイドバー）
+.sns-btn-side {
+	@extend %base-sns-btn;
+
+	width: 30px;
+	height: 30px;
+	margin: 0 3px;
+
+	&.sns-btn-twitter  {background-position:    0px -20px;}
+	&.sns-btn-facebook {background-position:  -30px -20px;}
+	&.sns-btn-gplus    {background-position:  -60px -20px;}
+	&.sns-btn-hatena   {background-position:  -90px -20px;}
+	&.sns-btn-line     {background-position: -120px -20px;}
+	&.sns-btn-pocket   {background-position: -150px -20px;}
+}

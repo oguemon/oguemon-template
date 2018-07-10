@@ -1,7 +1,7 @@
 /*
  * 記事上部
  */
- // 記事のサムネイル
+// 記事のサムネイル
 #post-thumbnail {
 	width: 160px;
 	margin: 0 20px 0 0;
@@ -87,5 +87,26 @@
 		a {
 			@extend %colored-link-text;
 		}
+	}
+}
+
+// アーカイブタイトルなど
+#archive-header {
+    margin: 0 0 10px;
+    padding: 20px;
+    overflow: hidden;
+    background: #00A5DE;
+	color: #fff;
+
+	h1.title {
+		margin: 0 0 10px;
+		padding: 0 0 5px;
+		font-size: 200%;
+		line-height: 1.2em;
+		border-bottom: 3px solid #fff;
+	}
+	p.excerpt {
+		margin: 10px 0　0;
+		color: #fff;
 	}
 }

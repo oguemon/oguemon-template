@@ -1,6 +1,7 @@
 /*
  *  記事本文のデザイン
  */
+// 記事本文
 #post-body {
 	font-size: 110%;
 	line-height: 2.0em;
@@ -108,6 +109,18 @@
 		color: $white-color;
 		font-weight: bold;
 	}
+
+	// mathjax
+	.MathJax_Display {
+		max-width: 100% !important;
+		margin: 0;
+		padding: 5px 0;
+		overflow: hidden;
+
+		@include mq() {
+			overflow: scroll;
+		}
+	}
 }
 
 @media (max-width: 640px) {
@@ -141,6 +154,8 @@
 		margin: 0;
 	}
 }
+
+// 目次の箱
 #toc-box-caption {
 	margin: 0 0 10px 0;
 	font-size: 120%;
@@ -151,6 +166,8 @@
 		font-size: 60%;
 	}
 }
+
+// 目次本体
 #toc {
 	font-size: 90%;
 
