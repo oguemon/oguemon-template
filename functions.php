@@ -16,9 +16,6 @@ function oguemon_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//サムネイルの一般的なサイズ
 	set_post_thumbnail_size( 640, 480, true );
-	//画像サイズの定義（トップページのピックアップ用サムネ）
-	//add_image_size( 'oguemon-large-thumbnail', 660, 320, true );//余剰分は切取
-	//add_image_size( 'oguemon-small-thumbnail', 230, 170, true );//余剰分は切取
 	//メニュー（wp_nav_menu()）とその説明を登録する
 	register_nav_menus( array(
 		'primary'	=> 'メインメニュー',
@@ -159,7 +156,7 @@ function oguemon_scripts() {
 	//Google Adsenseの読み込み
 	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array('jquery-alt'), '1.0.180709', true);
+	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array('jquery-alt'), '1.0.180710', true);
 }
 add_action('wp_enqueue_scripts', 'oguemon_scripts' );
 
