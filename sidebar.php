@@ -50,11 +50,16 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		//記事のPVをインクリメントする（function.php参照）
 		setPostViews(get_the_ID());
 		// ループ開始
-		query_posts('meta_key=post_views_count&orderby=meta_value_num&posts_per_page=5&order=DESC');
+		$rank_posts = get_posts(array(
+			'meta_key' => 'post_views_count',
+			'orderby' => 'meta_value_num',
+			'posts_per_page' => 5,
+			'order' => 'DESC'
+		));
 		$ranking = 0;
-		while(have_posts()) {
+		foreach ( $rank_posts as $post ) {
 			$ranking++;
-			the_post();
+			setup_postdata($post);
 		?>
 		<!-- サムネイルの表示 -->
 		<div class="view-ranking clearfix">
@@ -69,6 +74,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		</div>
 		<?php
 		}
+		wp_reset_postdata();
 		?>
 	</div>
 	
