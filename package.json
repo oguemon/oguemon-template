@@ -1,0 +1,12 @@
+{
+  "name": "oguemon-template",
+  "version": "1.0.0",
+  "scripts": {
+    "build-sass": "node-sass -w --output-style compressed sass/style.scss style.css; node-sass -w --output-style compressed sass/style-inline.scss css/style-inline.css"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.5.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
