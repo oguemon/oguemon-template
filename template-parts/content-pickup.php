@@ -4,6 +4,7 @@
  * @package oguemon
  */
 
+// おすすめ記事を探す
 $custom_loop = new WP_Query( array(
 	'post_type'      => 'post',
 	'posts_per_page' => 4,

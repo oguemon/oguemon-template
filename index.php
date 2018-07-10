@@ -10,8 +10,13 @@ get_header();
 	<div id="site-main" class="content-home">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content" class="site-main" role="main">
-				<div class="site-content-wrapper clearfix">
 				<?php
+				// CSSのインライン読み込み
+				$inline_css = file_get_contents(get_template_directory_uri() . '/css/index-inline.css');
+				$inline_css = preg_replace('/^\xEF\xBB\xBF/', '', $inline_css);
+				echo '<style>' . $inline_css . '</style>';
+
+				// 記事があるなら(基本ある笑)
 				if ( have_posts() ) {
 					if ( is_home() && ! is_front_page() ) { ?>
 						<header>
@@ -37,7 +42,6 @@ get_header();
 					get_template_part( 'template-parts/content' );
 				}
 				?>
-				</div><!-- .site-content-wrapper .clearfix -->
 			</main><!-- #site-content -->
 			<?php 
 			get_sidebar(); 

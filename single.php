@@ -22,8 +22,6 @@ get_header();
 			     data-ad-client="ca-pub-6941251424797111"
 			     data-ad-slot="7244203783"></ins>
 			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-			<div class="site-content-wrapper clearfix">
 			<?php 
 			//パンくずリスト
 			get_template_part( 'template-parts/content', 'breadcrumb' );
@@ -33,7 +31,6 @@ get_header();
 				get_template_part( 'template-parts/content', 'single' );
 			} // End of the loop.
 			?>
-			</div><!-- .site-content-wrapper .clearfix -->
 		</main><!-- #site-content -->
 		<?php get_sidebar(); ?>
 	</div><!-- .wrapper .wrapper-main -->

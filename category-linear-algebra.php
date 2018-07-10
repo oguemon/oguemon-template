@@ -11,17 +11,16 @@ get_header();
 <div id="site-main" class="content-home">
 	<div class="wrapper wrapper-main clearfix">
 		<main id="site-content" class="site-main" role="main">
-			<div class="site-content-wrapper clearfix">
-				<?php
-				//パンくずリスト
-				get_template_part( 'template-parts/content', 'breadcrumb' );
-				?>
-				<div id="archive-header">
-					<h1 class="title"><?= explode(':',get_the_archive_title(),2)[1] ?></h1><!-- 「カテゴリー：」は抜いてる -->
-					<div class="meta">
-						<p class="excerpt"><?= strip_tags( get_the_archive_description() ) ?></p>
-					</div>
+			<?php
+			//パンくずリスト
+			get_template_part( 'template-parts/content', 'breadcrumb' );
+			?>
+			<div id="archive-header">
+				<h1 class="title"><?= explode(':',get_the_archive_title(),2)[1] ?></h1><!-- 「カテゴリー：」は抜いてる -->
+				<div class="meta">
+					<p class="excerpt"><?= strip_tags( get_the_archive_description() ) ?></p>
 				</div>
+			</div>
 <style>
 /*
  *  記事ヘッダー
@@ -270,9 +269,7 @@ h3 {
 		<dt>正規直交基底と直交行列</dt>
 		<dd>正規直交基底とは何か、どうやって作るのかを解説。正規直交基底の変換に使う行列の性質も考えます。</dd>
 	</a>
-</dl>
-			</div><!-- .site-content-wrapper .clearfix -->
-			
+</dl>		
 		</main><!-- #site-content -->
 		<?php get_sidebar(); ?>
 	</div><!-- .wrapper .wrapper-main -->
