@@ -8,5 +8,8 @@
     "gulp": "^3.9.1",
     "gulp-less": "^3.5.0",
     "gulp-sass": "^4.0.1"
+  },
+  "devDependencies": {
+    "gulp-closurecompiler": "^0.1.0"
   }
 }
