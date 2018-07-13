@@ -156,7 +156,7 @@ function oguemon_scripts() {
 	//Google Adsenseの読み込み
 	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array('jquery-alt'), '1.0.180713.2', true);
+	wp_enqueue_script('original', $theme_root . '/js/oguemon.min.js', array('jquery-alt'), '1.0.180713', true);
 }
 add_action('wp_enqueue_scripts', 'oguemon_scripts' );
 
