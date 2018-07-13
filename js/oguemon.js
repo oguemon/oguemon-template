@@ -1,13 +1,13 @@
-jQuery(document).ready(function($) { 
-    'use strict';
+jQuery(document).ready(function ($) {
+	'use strict';
 
 	//起動時
-	$(window).load(function(){
-		$('#sp-right-menu-area').css('display','none');
-		$('#transparent').css('display','none');
+	$(window).load(function () {
+		$('#sp-right-menu-area').css('display', 'none');
+		$('#transparent').css('display', 'none');
 	});
-	
-	$(function(){
+
+	$(function () {
 		/*
 		 * スマホの右上ボタンを押すとスライド
 		 */
@@ -15,38 +15,38 @@ jQuery(document).ready(function($) {
 		var $sp = $('#sp-right-menu-area');
 		var $tr = $('#transparent');
 		var $container = $('#container');
-		$btn.on('click', function(){
+		$btn.on('click', function () {
 			$container.toggleClass('side-open');
-			if($container.hasClass('side-open')){ //横に開いていたら
-				$sp.css('display','block');
-				$tr.css('display','block');
-				$btn.css('transform','rotate(180deg)');
-			}else{
-				$tr.css('display','none');
-				$btn.css('transform','rotate(0)');
-	   			setTimeout(function(){
-				$sp.css('display','none');
-	  			},300);
+			if ($container.hasClass('side-open')) { //横に開いていたら
+				$sp.css('display', 'block');
+				$tr.css('display', 'block');
+				$btn.css('transform', 'rotate(180deg)');
+			} else {
+				$tr.css('display', 'none');
+				$btn.css('transform', 'rotate(0)');
+				setTimeout(function () {
+					$sp.css('display', 'none');
+				}, 300);
 			}
 		});
-		$tr.on('click', function(){
-			$btn.css('transform','rotate(0)');
+		$tr.on('click', function () {
+			$btn.css('transform', 'rotate(0)');
 			$container.toggleClass('side-open');
-	   		setTimeout(function(){
-				$sp.css('display','none');
-	  		},300);
-			$tr.css('display','none');
+			setTimeout(function () {
+				$sp.css('display', 'none');
+			}, 300);
+			$tr.css('display', 'none');
 		});
 
 		/*
 		 * #で始まるアンカーをクリックした場合にスクロールを実施処理
 		 */
-		$('a[href^="#"]').click(function() {
+		$('a[href^="#"]').click(function () {
 			var speed = 400; // ミリ秒
-			var href= $(this).attr("href");
+			var href = $(this).attr("href");
 			var target = $(href == "#" || href == "" ? 'html' : href);
 			var position = target.offset().top - 10; //ゆとりを持たせる
-			$('body,html').animate({scrollTop:position}, speed, 'swing');
+			$('body,html').animate({ scrollTop: position }, speed, 'swing');
 			return false;
 		});
 
@@ -56,8 +56,8 @@ jQuery(document).ready(function($) {
 		$('#toc').toc({
 			'selectors': 'h3, h4', //目次として表示する要素のCSSセレクターを指定
 			'container': '#post-body',
-			'anchorName': function(i, heading, prefix) { //アンカーネームのカスタマイズ
-				return prefix+i;
+			'anchorName': function (i, heading, prefix) { //アンカーネームのカスタマイズ
+				return prefix + i;
 			}
 		});
 
@@ -66,12 +66,11 @@ jQuery(document).ready(function($) {
 		 */
 		//既に出したかどうかのフラグ
 		var popup_flg = false;
-		$(window).scroll(function() {
+		$(window).scroll(function () {
 			//一定以上のスクロールandまだポップアップしてないand表示ページである
-			if ($(this).scrollTop() > 500 && popup_flg == false && checkWhiteList())
-			{
+			if ($(this).scrollTop() > 500 && popup_flg == false && checkWhiteList()) {
 				//イベント送信（表示）
-				ga('send','event','popup-box','show',location.pathname, 1,{'nonInteraction':1});
+				ga('send', 'event', 'popup-box', 'show', location.pathname, 1, { 'nonInteraction': 1 });
 				//ひょっこり表示する
 				anime({
 					targets: '#popup-box',
@@ -82,16 +81,16 @@ jQuery(document).ready(function($) {
 			}
 		});
 		// ポップアップを開く
-		$('#popup-open').click(function() {
+		$('#popup-open').click(function () {
 			//イベント送信（ページ遷移）
-			ga('send','event','popup-box','open',location.pathname, 1,{'nonInteraction':1});
+			ga('send', 'event', 'popup-box', 'open', location.pathname, 1, { 'nonInteraction': 1 });
 			//指定したリンクへ飛ぶ
 			location.href = "https://oguemon.com/tools/calc/mat-det-inv.html";
 		});
 		// ポップアップを閉じる
-		$('#popup-close').click(function() {
+		$('#popup-close').click(function () {
 			//イベント送信（閉じる）
-			ga('send','event','popup-box','close',location.pathname, 1,{'nonInteraction':1});
+			ga('send', 'event', 'popup-box', 'close', location.pathname, 1, { 'nonInteraction': 1 });
 			//ボックスを下に引っ込める
 			anime({
 				targets: '#popup-box',
@@ -126,6 +125,6 @@ jQuery(document).ready(function($) {
 			// 文字列を検索
 			return re.test(location.pathname);
 		}
-		
+
 	});
 });
