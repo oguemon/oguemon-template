@@ -14,19 +14,13 @@
  *  Google Analytics（ログイン中でなければ表示）
  */
 if (!is_user_logged_in()) {
-?>
-	<script type="text/javascript" >
-		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-		ga('create', 'UA-89114839-2', { 'cookieDomain': 'oguemon.com' } );
-		ga('send', 'pageview');
-	</script>
-	<script async src="https://www.google-analytics.com/analytics.js"></script>
-<?php
 	// 余因子展開のページかつテストページでない（ABテスト用コード）
 	$url = parse_url($_SERVER["REQUEST_URI"]);
     if ($url["path"] == '/study/linear-algebra/cofactor-expansion/') {
         if (get_query_var('type') == 'beta') {
-			echo '<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">';
+?>
+			<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">
+<?php
         } else {
 ?>
 			<!-- Google Analytics Content Experiment code -->
@@ -45,7 +39,15 @@ if (!is_user_logged_in()) {
 			<!-- End of Google Analytics Content Experiment code -->
 <?php
 		}
-    }
+	}	
+?>
+	<script type="text/javascript">
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-89114839-2', { 'cookieDomain': 'oguemon.com' } );
+		ga('send', 'pageview');
+	</script>
+	<script async src="https://www.google-analytics.com/analytics.js"></script>
+<?php
 }
 
 // ヘッダーの出力
