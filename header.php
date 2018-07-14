@@ -23,7 +23,8 @@ if (!is_user_logged_in()) {
 	<script async src="https://www.google-analytics.com/analytics.js"></script>
 <?php
 	// 余因子展開のページかつテストページでない（ABテスト用コード）
-    if ($_SERVER["REQUEST_URI"] == '/study/linear-algebra/cofactor-expansion/') {
+	$url = parse_url($_SERVER["REQUEST_URI"]);
+    if ($url["path"] == '/study/linear-algebra/cofactor-expansion/') {
         if (get_query_var('type') == 'beta') {
 			echo '<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">';
         } else {
