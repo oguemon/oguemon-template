@@ -39,6 +39,7 @@ if (!is_user_logged_in()) {
 		'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 		</script><script>utmx('url','A/B');</script>
 		<!-- End of Google Analytics Content Experiment code -->
+		<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">
 <?php
     }
 }
