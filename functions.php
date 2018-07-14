@@ -267,3 +267,10 @@ EOM;
 	return $content;
 }
 add_filter('the_content', 'add_string_to_content');
+
+// GETパラメータとして使用できるnameを追加（ABテスト用）
+function add_query_vars_filter($vars) {
+	$vars[] = "type";
+	return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
