@@ -25,11 +25,9 @@ if (!is_user_logged_in()) {
 	// 余因子展開のページかつテストページでない（ABテスト用コード）
     if ($_SERVER["REQUEST_URI"] == '/study/linear-algebra/cofactor-expansion/') {
         if (get_query_var('type') == 'beta') {
-?>
-			<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">
-<?php
+			echo '<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">';
         } else {
-            ?>
+?>
 			<!-- Google Analytics Content Experiment code -->
 			<script>function utmx_section(){}function utmx(){}(function(){var
 			k='136223162-0',d=document,l=d.location,c=d.cookie;
