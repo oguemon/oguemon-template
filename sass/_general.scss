@@ -15,7 +15,6 @@ body {
 	font-size: 14px;
     font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	color: $text-base-color;
-	background: #f6fcff;
 
 	@include mq() {
 		font-size: 13px;
@@ -63,7 +62,11 @@ li {
 	}
 }
 
-main.site-main {
+#site-main {
+	background: #f6fcff;
+}
+
+#site-content {
 	width: 660px;
 	float: left;
 

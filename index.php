@@ -7,9 +7,9 @@
 get_header();
 ?>
 	<!-- サイトのメイン部分 -->
-	<div id="site-main" class="content-home">
+	<div id="site-main">
 		<div class="wrapper wrapper-main clearfix">
-			<main id="site-content" class="site-main" role="main">
+			<main id="site-content">
 				<?php
 				// CSSのインライン読み込み
 				$inline_css = file_get_contents(get_template_directory_uri() . '/css/index-inline.css');

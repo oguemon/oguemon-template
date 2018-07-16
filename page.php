@@ -7,9 +7,9 @@
 get_header();
 ?>
 <!-- サイトのメイン部分 -->
-<div id="site-main" class="content-home">
+<div id="site-main">
 	<div class="wrapper wrapper-main clearfix">
-		<main id="site-content" class="site-main" role="main">
+		<main id="site-content">
 			<?php 
 			//パンくずリスト
 			get_template_part( 'template-parts/content', 'breadcrumb' );

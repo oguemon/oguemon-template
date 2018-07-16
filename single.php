@@ -8,9 +8,9 @@ get_header();
 ?>
 
 <!-- サイトのメイン部分 -->
-<div id="site-main" class="content-home">
+<div id="site-main">
 	<div class="wrapper wrapper-main clearfix">	
-		<main id="site-content" class="site-main" role="main">
+		<main id="site-content">
 			<?php
 			// ABテスト用の条件文（beta版は広告非表示）
 			if (get_query_var('type') != 'beta') {
