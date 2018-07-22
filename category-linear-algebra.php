@@ -110,6 +110,7 @@ h3 {
 			<li><a href="#section-det">行列式編</a></li>
 			<li><a href="#section-space-vector">空間ベクトル編</a></li>
 			<li><a href="#section-linear-space">ベクトル空間編</a></li>
+			<li><a href="#section-eigenvalue">固有値編</a></li>
 		</ul>
 	</div>
 </div>
@@ -269,7 +270,28 @@ h3 {
 		<dt>正規直交基底と直交行列</dt>
 		<dd>正規直交基底とは何か、どうやって作るのかを解説。正規直交基底の変換に使う行列の性質も考えます。</dd>
 	</a>
-</dl>		
+	<a href="https://oguemon.com/study/linear-algebra/gram-schmidt/">
+		<dt>シュミットの直交化法</dt>
+		<dd>複雑な数式が並ぶ「シュミットの直交化法」について、空間ベクトルを例にしてその方法を図解。</dd>
+	</a>
+</dl>
+
+<h3 id="section-eigenvalue">固有値編</h3>
+<div class="description">線形代数の応用の中でも特に重要な位置に立つ固有値と固有ベクトルを扱います。（現在執筆中）</div>
+<dl class="article_list">
+	<a href="https://oguemon.com/study/linear-algebra/eigenvalue/">
+		<dt>固有値と固有ベクトルって何？</dt>
+		<dd>固有値や固有ベクトルとは何なのか。その意味や利用事例、簡単な行列を用いた具体例をまとめました。</dd>
+	</a>
+	<a href="https://oguemon.com/study/linear-algebra/characteristic-equation/">
+		<dt>固有方程式で固有値問題を解く</dt>
+		<dd>固有値と固有ベクトルを手っ取り早く求める方法を、簡単な具体例を添えて解説。</dd>
+	</a>
+	<a href="https://oguemon.com/study/linear-algebra/trace/">
+		<dt>対角和（トレース）の意味と固有値との関係</dt>
+		<dd>対角和と呼ばれる指標を扱うとともに、固有多項式というものを用いて、その驚きの性質を明らかに。</dd>
+	</a>
+</dl>
 		</main><!-- #site-content -->
 		<?php get_sidebar(); ?>
 	</div><!-- .wrapper .wrapper-main -->

@@ -143,7 +143,7 @@ function oguemon_scripts() {
 	$theme_root = get_template_directory_uri();
 
 	//CSSスタイルの追加
-	wp_enqueue_style('oguemon-style', $theme_root . '/css/common.css', false, '1.0.180713', 'all');
+	wp_enqueue_style('oguemon-style', $theme_root . '/css/common.css', false, '1.0.180716', 'all');
 
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
@@ -156,7 +156,7 @@ function oguemon_scripts() {
 	//Google Adsenseの読み込み
 	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script('original', $theme_root . '/js/oguemon.min.js', array('jquery-alt'), '1.0.180713', true);
+	wp_enqueue_script('original', $theme_root . '/js/oguemon.min.js', array('jquery-alt'), '1.0.180716', true);
 }
 add_action('wp_enqueue_scripts', 'oguemon_scripts' );
 
@@ -178,7 +178,7 @@ function add_async_to_enqueue_script( $url ) {
 	{
 		//return "$url' async charset='UTF-8";
 	}
-	
+
 	return $url;
 }
 add_filter( 'clean_url', 'add_async_to_enqueue_script', 11, 1 );
