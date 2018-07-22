@@ -205,11 +205,11 @@ h3 {
 		<dd>「余因子」を使うことで逆行列が求められます。余因子とは何なのか、「余因子展開」の性質を解説。</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/inverse-matrix/">
-		<dt>逆行列の求め方を画像付きで解説！</dt>
+		<dt>逆行列の求め方</dt>
 		<dd>余因子を用いた逆行列の求め方を解説。行列式と逆行列の間に潜む興味深い関係も教えます。</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/cramers-rule/">
-		<dt>「クラメルの公式」で連立方程式を行列式で表す！</dt>
+		<dt>クラメルの公式</dt>
 		<dd>行列式の割り算を使って連立方程式の解を表すことができるスゴい公式「クラメルの公式」を解説。</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/sol-rank-det/">
@@ -226,7 +226,7 @@ h3 {
 		<dd>高校までの「向きと大きさ」で定義されるベクトルの基本や計算方法を復習。</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/inner-and-cross-product/">
-		<dt>内積と外積を徹底解説！</dt>
+		<dt>内積と外積</dt>
 		<dd>高校で習ったベクトルの「内積」を復習。大学で新しく登場する「外積」という概念にも触れます！</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/coordinate-system/">
@@ -234,7 +234,7 @@ h3 {
 		<dd>「座標×ベクトル」をテーマに掲げ、ベクトルを使って馴染み深い3次元座標を作る方法を解説。</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/vector-figure/">
-		<dt>ベクトルで色々な図形を表現する</dt>
+		<dt>ベクトルで色々な図形やサイズを表現する</dt>
 		<dd>ベクトルを使って、直線や平面、そしてベクトルが作る図形の面積や体積を表現する方法を解説。</dd>
 	</a>
 	<a href="https://oguemon.com/study/linear-algebra/inner-cross-element/">
