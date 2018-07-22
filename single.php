@@ -9,11 +9,12 @@ get_header();
 
 <!-- サイトのメイン部分 -->
 <div id="site-main">
-	<div class="wrapper wrapper-main clearfix">	
+	<div class="wrapper wrapper-main clearfix">
 		<main id="site-content">
 			<?php
+			$url = parse_url($_SERVER["REQUEST_URI"]);
 			// ABテスト用の条件文（beta版は広告非表示）
-			if (get_query_var('type') != 'beta') {
+			if ($url["path"] != '/study/linear-algebra/hello-world/' && get_query_var('type') != 'beta') {
 			?>
 				<!-- 【広告】スマホページ上部 -->
 				<style type="text/css">
