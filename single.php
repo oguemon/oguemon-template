@@ -14,7 +14,7 @@ get_header();
 			<?php
 			$url = parse_url($_SERVER["REQUEST_URI"]);
 			// ABテスト用の条件文（beta版は広告非表示）
-			if ($url["path"] != '/study/linear-algebra/hello-world/' && get_query_var('type') != 'beta') {
+			if ($url["path"] == '/study/linear-algebra/cofactor-expansion/' && get_query_var('type') != 'beta') {
 			?>
 				<!-- 【広告】スマホページ上部 -->
 				<style type="text/css">
