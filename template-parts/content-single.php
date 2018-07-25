@@ -4,20 +4,55 @@
  * @package oguemon
  */
 ?>
+
+<!-- 記事の構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "image": [
+    "<?php
+			if ( has_post_thumbnail() ) {
+				echo get_the_post_thumbnail_url();
+			} else {
+        echo "https://oguemon.com/wordpress/wp-content/themes/oguemon/img/ogp.png";
+      }
+		?>"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "おぐえもん"
+  },
+  "datePublished": "<?= get_the_date('c') ?>",
+  "dateModified": "<?= get_the_modified_date('c') ?>",
+  "headline": "<?= get_the_title() ?>",
+  "publisher": {
+    "@type": "Organization",
+    "name": "おぐえもん.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://oguemon.com/wordpress/wp-content/themes/oguemon/img/ogp.png"
+    }
+  },
+  "mainEntityOfPage": "<?= get_permalink() ?>"
+}
+</script>
+
+<!-- 記事開始 -->
 <article class="hentry">
-<?php 
+<?php
 	//.thumbnail-post-intro
 	if ( has_post_thumbnail() ){
 ?>
 		<div id="post-thumbnail"><?= get_the_post_thumbnail() ?></div>
-<?php 
+<?php
 	}
 ?>
 	<div id="post-header">
 		<!--<p class="category"><?php the_category(' '); ?></p>-->
-		<h1 class="title"><?= get_the_title() ?></h1>
+		<h1 class="title entry-title"><?= get_the_title() ?></h1>
 		<div class="meta">
-			<p class="excerpt"><?= get_the_excerpt() ?></p>
+			<p class="excerpt entry-summary"><?= get_the_excerpt() ?></p>
 			<p class="posted-on">
 <?php
 	if ( get_the_date() == get_the_modified_date() ){
@@ -70,8 +105,8 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn sns-btn-line"></a>
 		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn sns-btn-pocket"></a>
 	</div>
-		
-	<div id="post-body" class="clearfix">
+
+	<div id="post-body" class="entry-content clearfix">
 <?php
 	//本文の表示
 	the_content();
