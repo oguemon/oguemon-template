@@ -15,9 +15,9 @@
 	}
 ?>
 	<div id="post-header">
-		<h1 class="title"><?= get_the_title() ?></h1>
+		<h1 class="title entry-title"><?= get_the_title() ?></h1>
 		<div class="meta">
-			<p class="excerpt"><?= get_the_excerpt() ?></p>
+			<p class="excerpt entry-summary"><?= get_the_excerpt() ?></p>
 			<p class="posted-on">
 <?php if ( get_the_date() == get_the_modified_date() ){ ?>
 				<span class="icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 
-	<div id="post-body" class="clearfix">
+	<div id="post-body" class="entry-content clearfix">
 <?php
 	//本文の表示
 	the_content();
