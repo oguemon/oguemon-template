@@ -39,7 +39,7 @@ if (!is_user_logged_in()) {
 			<!-- End of Google Analytics Content Experiment code -->
 <?php
 		}
-	}	
+	}
 ?>
 	<script type="text/javascript">
 		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -56,6 +56,12 @@ wp_head();
 /*
  *  SEOに関する処理
  */
+
+// 検索ページならインデックス登録させない
+if (is_search()) {
+	echo '<meta name=”robots” content=”noindex”>';
+}
+
 //デフォルトサムネ画像のURLを入れよう！
 $ogp_img = get_bloginfo('template_directory') . '/img/ogp.png';
 
@@ -65,7 +71,7 @@ if (is_single() || is_page())
 	while(have_posts())
 	{
 		the_post();
-		
+
 		$description = mb_substr(get_the_excerpt(), 0, 100);
 
 		$ogp_title = get_the_title();
@@ -105,7 +111,7 @@ else if(is_category())
 else
 {
 		$description = 'JKの肩書きを持つ大学生が、地味に役立つ情報から、誰得な実験的コンテンツまで幅広く扱う最強のWebサイトがここに。';
-		
+
 		$ogp_title = get_bloginfo('name');
 		$ogp_description = get_bloginfo('description');
 		$ogp_url = get_bloginfo('url');
@@ -154,7 +160,7 @@ else
 			'container_id'    => '',
 			'theme_location'  => 'sp-right',
 			'items_wrap'      => '<ul>%3$s</ul>'
-		)); 
+		));
 		?>
 	</div>
 
@@ -179,12 +185,12 @@ else
 			<?php
 			if ( has_nav_menu( 'primary' ) ) {
 				wp_nav_menu( array(
-					'container' => '', 
+					'container' => '',
 					'container_class' => '',
-					'menu_id' => 'menu-main-list', 
-					'sort_column' => 'menu_order', 
-					'theme_location' => 'primary', 
-					'link_after' => '', 
+					'menu_id' => 'menu-main-list',
+					'sort_column' => 'menu_order',
+					'theme_location' => 'primary',
+					'link_after' => '',
 					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ));
 			}
 			?>

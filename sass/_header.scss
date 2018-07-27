@@ -1,5 +1,5 @@
 /*
- *  ヘッダー類 
+ *  ヘッダー類
  */
 
 // PC用ヘッダー
@@ -108,19 +108,19 @@ header {
 				width: 100px;
 				height: 100px;
 				margin: 0 auto;
-		
+
 				img {
 					border-radius: 50px;
 				}
 			}
-		
+
 			.name {
 				margin: 10px 0;
 				font-size: 150%;
 				font-weight: bold;
 				text-align: center;
 			}
-		
+
 			.bio {
 				padding: 10px 0;
 				font-size: 90%;
@@ -128,18 +128,18 @@ header {
 				border-top: 1px solid #ccc;
 				border-bottom: 1px solid #ccc;
 			}
-		
+
 			.contact {
 				width: 200px;
 				height: 20px;
 				background: url($splite-url) no-repeat;
 				display: block;
-		
+
 				&.twitter{
 					margin: 10px auto 0;
 					background-position: 0 -100px;
 				}
-		
+
 				&.mail{
 					margin: 5px auto 0;
 					background-position: 0 -120px;
@@ -185,6 +185,67 @@ header {
 			transform: translate(-240px, 0);
 		}
     }
+}
+
+// 検索窓
+#search-box {
+	width: 80%;
+	height: 40px;
+	margin: 15px;
+
+	@include mq() {
+		width: 90%;
+		margin: 25px 15px 5px;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	#search-input {
+		width: 100%;
+		height: 40px;
+		padding: 0 15px;
+		font-size: 150%;
+		line-height: 40px;
+		border-width: 1px 0 1px 1px;
+		border-style: solid;
+		border-color: $border-base-color;
+		border-radius: 4px 0 0 4px;
+		background: $white-color;
+		vertical-align:top;
+
+		&:focus {
+			border-color: $main-color;
+			outline: none;
+		}
+	}
+
+	#search-submit {
+		width: 100%;
+		height: 40px;
+		padding: 0 20px;
+		color: $white-color;
+		line-height: 40px;
+		border: none;
+		border-radius: 0 4px 4px 0;
+		background: $main-color;
+		vertical-align:top;
+
+		&:focus {
+			outline: none;
+
+			svg {
+				fill: #FFFF00;
+			}
+		}
+
+		svg {
+			height: 100%;
+			fill: #FFFFFF;
+		}
+	}
 }
 
 // スマホトップのGoogle広告
