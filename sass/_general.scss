@@ -5,9 +5,11 @@
 	margin: 0;
 	padding: 0;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-appearance: none;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
@@ -95,6 +97,60 @@ ul#breadcrumb {
 
 		a {
 			@extend %colored-link-text;
+		}
+	}
+}
+
+// 検索窓
+.search-box {
+	height: 40px;
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.search-input {
+		width: 100%;
+		height: 40px;
+		padding: 0 15px;
+		font-size: 150%;
+		line-height: 40px;
+		border-width: 1px 0 1px 1px;
+		border-style: solid;
+		border-color: $border-base-color;
+		border-radius: 4px 0 0 4px;
+		background: $white-color;
+		vertical-align:top;
+
+		&:focus {
+			border-color: $main-color;
+			outline: none;
+		}
+	}
+
+	.search-submit {
+		width: 100%;
+		height: 40px;
+		padding: 0 20px;
+		color: $white-color;
+		line-height: 40px;
+		border: none;
+		border-radius: 0 4px 4px 0;
+		background: $main-color;
+		vertical-align:top;
+
+		&:focus {
+			outline: none;
+
+			svg {
+				fill: #FFFF00;
+			}
+		}
+
+		svg {
+			height: 100%;
+			fill: #FFFFFF;
 		}
 	}
 }

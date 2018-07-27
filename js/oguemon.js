@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
 
 	$(function () {
 		/*
-		 * スマホの右上ボタンを押すとスライド
+		 * スマホの右上のメニューボタンを押すとスライド
 		 */
 		var $btn = $('#sp-menu-right-btn');
 		var $sp = $('#sp-right-menu-area');
@@ -36,6 +36,20 @@ jQuery(document).ready(function ($) {
 				$sp.css('display', 'none');
 			}, 300);
 			$tr.css('display', 'none');
+		});
+
+		/*
+		 * スマホの右上の検索ボタンを押すとスライド
+		 */
+		var $btn_search = $('#sp-search-btn');
+		var $sp_search = $('#sp-search-area');
+		$btn_search.on('click', function () {
+			$sp_search.toggleClass('open');
+			if ($sp_search.hasClass('open')) { //横に開いていたら
+				$btn_search.css('transform', 'rotate(180deg)');
+			} else {
+				$btn_search.css('transform', 'rotate(0)');
+			}
 		});
 
 		/*

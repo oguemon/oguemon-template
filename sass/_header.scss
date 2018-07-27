@@ -55,7 +55,7 @@ header {
 	}
 }
 
-#sp-header, #sp-right-menu-area {
+#sp-header, #sp-search-area, #sp-right-menu-area {
 	display: none;
 }
 
@@ -83,6 +83,18 @@ header {
 			background-position: 0 -140px;
 		}
 
+		#sp-search-btn {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 10px;
+			right: 50px;
+			background: url($splite-url) no-repeat;
+			background-position: -180px -20px;
+			-webkit-transition: all .3s ease;
+			transition: all .3s ease;
+		}
+
 		#sp-menu-right-btn {
 			width: 30px;
 			height: 30px;
@@ -93,6 +105,46 @@ header {
 			background-position: -210px -20px;
 			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
+		}
+	}
+
+	#sp-search-area {
+		margin: 10px;
+		background: none;
+		border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+		display: block;
+		position: absolute;
+		top: -150px;
+		z-index: 11;
+		-webkit-transition: all .3s ease;
+		transition: all .3s ease;
+
+		&.open {
+			-webkit-transform: translate(0, 200px);
+			transform: translate(0, 200px);
+		}
+
+		#search-header {
+			padding: 5px 10px;
+			color: $white-color;
+			font-size: 120%;
+			font-weight: bold;
+			background: $main-color;
+			border-radius: 3px 3px 0 0;
+		}
+
+		#search-body {
+			padding: 10px 15px 15px;
+			background: $white-color;
+			border-width: 0 1px 1px 1px;
+			border-style: solid;
+			border-color: #ccc;
+			border-radius: 0 0 3px 3px;
+
+			p {
+				margin: 0 0 5px;
+			}
 		}
 	}
 
@@ -185,67 +237,6 @@ header {
 			transform: translate(-240px, 0);
 		}
     }
-}
-
-// 検索窓
-#search-box {
-	width: 80%;
-	height: 40px;
-	margin: 15px;
-
-	@include mq() {
-		width: 90%;
-		margin: 25px 15px 5px;
-	}
-
-	table {
-		width: 100%;
-		border-collapse: collapse;
-	}
-
-	#search-input {
-		width: 100%;
-		height: 40px;
-		padding: 0 15px;
-		font-size: 150%;
-		line-height: 40px;
-		border-width: 1px 0 1px 1px;
-		border-style: solid;
-		border-color: $border-base-color;
-		border-radius: 4px 0 0 4px;
-		background: $white-color;
-		vertical-align:top;
-
-		&:focus {
-			border-color: $main-color;
-			outline: none;
-		}
-	}
-
-	#search-submit {
-		width: 100%;
-		height: 40px;
-		padding: 0 20px;
-		color: $white-color;
-		line-height: 40px;
-		border: none;
-		border-radius: 0 4px 4px 0;
-		background: $main-color;
-		vertical-align:top;
-
-		&:focus {
-			outline: none;
-
-			svg {
-				fill: #FFFF00;
-			}
-		}
-
-		svg {
-			height: 100%;
-			fill: #FFFFFF;
-		}
-	}
 }
 
 // スマホトップのGoogle広告
