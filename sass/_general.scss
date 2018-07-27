@@ -86,7 +86,7 @@ ul#breadcrumb {
 
 	@include mq() {
 		margin: 5px 0 0;
-		padding: 0 10px 10px;
+		padding: 0 10px 5px;
 		font-size: 80%;
 		border-bottom: 1px solid #eee;
 	}

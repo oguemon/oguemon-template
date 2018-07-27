@@ -141,9 +141,9 @@ else
 		<div id="sp-menu-right-btn"></div>
 	</div>
 	<div id="sp-search-area">
-		<div id="search-header">記事内検索</div>
+		<div id="search-header">サイト内検索</div>
 		<div id="search-body">
-			<p>お好きな言葉を入れて関連記事を調べてみてください！</p>
+			<p>あらゆるワードの関連記事を検索できます！</p>
 			<div class="search-box">
 				<form method="get" action="<?= get_bloginfo('url');?>">
 					<table>

@@ -10,6 +10,20 @@ get_header();
 	<div id="site-main">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
+				<!-- パンくずリスト -->
+				<ul id="breadcrumb">
+					<li><a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></li>
+					<li>></li>
+					<li>サイト内検索</li>
+				</ul>
+				<!-- 記事ヘッダー -->
+				<div id="archive-header">
+					<h1 class="title">サイト内検索</h1>
+					<div class="meta">
+						<p class="excerpt">あらゆるワードの関連記事を検索できます。</p>
+					</div>
+				</div>
+				<!-- 検索窓 -->
 				<div id="article-search-area">
 					<div class="search-box">
 						<form method="get" action="<?= get_bloginfo('url');?>">
@@ -28,6 +42,7 @@ get_header();
 						</form>
 					</div>
 				</div>
+				<!-- 検索結果 -->
 				<script>
 					(function() {
 						var cx = '007526837167341457552:r6fbpgyb66s';
