@@ -111,8 +111,9 @@
 	}
 }
 
-// 検索ページの検索ボックスコンテナ
+// サイト内検索ページの検索窓コンテナ
 #article-search-area {
+	max-width: 480px;
 	margin: 15px;
 
 	@include mq() {
