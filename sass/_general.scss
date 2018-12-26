@@ -37,6 +37,37 @@ li {
 	list-style-type: none;
 }
 
+table {
+	min-width: 420px;
+	margin: 10px auto;
+	border: 2px solid $main-color;
+	border-collapse: collapse;
+
+	@include mq() {
+		min-width: auto;
+		width: 100%;
+	}
+
+	th, td {
+		padding: 6px 15px;
+	}
+
+	th {
+		color: $white-color;
+		font-weight: bold;
+		background: $main-color;
+		border: 1px solid $white-color;
+	}
+
+	td {
+		border: 1px solid $main-color;
+	}
+
+	tr:nth-child(even) {
+		background: #f8f8f8;
+	}
+}
+
 .wrapper {
 	width: 1080px;
 	margin: 0 auto;
