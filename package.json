@@ -1,15 +1,16 @@
 {
   "name": "oguemon-template",
   "version": "1.0.0",
+  "description": "SASSとjsのコンパイル。",
+  "private": true,
   "scripts": {
-    "build-sass": "node-sass -w --output-style compressed sass/style.scss style.css; node-sass -w --output-style compressed sass/style-inline.scss css/style-inline.css"
+    "build-sass": "node-sass -w --output-style compressed sass/common.scss css/common.css; node-sass -w --output-style compressed sass/index-inline.scss css/index-inline.css; node-sass"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-less": "^3.5.0",
-    "gulp-sass": "^4.0.1"
-  },
-  "devDependencies": {
-    "gulp-closurecompiler": "^0.1.0"
+    "google-closure-compiler": "^20181125.0.1",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-less": "^4.0.1",
+    "gulp-sass": "^4.0.2"
   }
 }

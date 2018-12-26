@@ -1,22 +1,31 @@
 // Sass configuration
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var minifyjs = require("gulp-closurecompiler");
+var closureCompiler = require('google-closure-compiler').gulp();
 
 gulp.task('sass', function() {
-    gulp.src('./sass/*.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./css'))
+    return gulp.src('./sass/*.scss')
+            .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+            .pipe(gulp.dest('./css'))
 });
 gulp.task('minifyjs', function() {
     gulp.src('./js/oguemon.js')
-        .pipe(minifyjs({
-            compilerPath: 'node_modules/closurecompiler/compiler/closure-compiler-v20180610.jar',
-            fileName: 'oguemon.min.js'
-        }))
-        .pipe(gulp.dest('./js'));
+            .pipe(closureCompiler({
+                compilation_level: 'SIMPLE',
+                warning_level: 'QUIET',
+                language_in: 'ECMASCRIPT_2015',
+                language_out: 'ECMASCRIPT_2015',
+                js_output_file: 'oguemon.min.js'
+                }, {
+                platform: ['native', 'java', 'javascript']
+                }))
+            .pipe(gulp.dest('./js'));
 });
-gulp.task('default', ['sass', 'minifyjs'], function() {
-    gulp.watch('./sass/*.scss', ['sass']);
-    gulp.watch('./js/oguemon.js', ['minifyjs']);
-})
+
+gulp.task('watch', function() {
+    gulp.watch('./sass/*.scss', gulp.parallel('sass'));
+    gulp.watch('./js/oguemon.js', gulp.parallel('minifyjs'));
+});
+
+const defaultTasks = gulp.series('watch');
+gulp.task('default', defaultTasks);
