@@ -77,7 +77,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		wp_reset_postdata();
 		?>
 	</div>
-	
+
 	<!-- 【広告】サイドバー（PC） -->
 	<ins class="adsbygoogle ad-s-item"
 		 style="width: 300px; height: 600px;"
