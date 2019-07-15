@@ -29,8 +29,26 @@
 
 	h4 {
 		margin: 25px 0 15px;
+    padding: 0 3px 5px;
 		font-size: 140%;
-		border-bottom: 3px solid #eee;
+		position: relative;
+		overflow: hidden;
+
+		&:before,
+		&:after{
+			content: "";
+			width: 100%;
+			border-bottom: 4px solid $border-sub-color;
+			position: absolute;
+			bottom: 0;
+		}
+		&:before{
+			margin: 0 0 0 -3px;
+			border-color: $main-color;
+		}
+		&:after{
+			margin: 0 -3px 0 5px;
+		}
 	}
 
 	// 見出しが連チャンの場合
