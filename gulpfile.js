@@ -9,7 +9,7 @@ gulp.task('sass', function() {
             .pipe(gulp.dest('./css'))
 });
 gulp.task('minifyjs', function() {
-    gulp.src('./js/oguemon.js')
+    return gulp.src('./js/oguemon.js')
             .pipe(closureCompiler({
                 compilation_level: 'SIMPLE',
                 warning_level: 'QUIET',
