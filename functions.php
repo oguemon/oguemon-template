@@ -72,6 +72,15 @@ remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);
 // faviconなどの出力
 //remove_action( 'wp_head', 'wp_site_icon', 99);
 
+
+// wp-embedのスタイルを表示しない
+remove_action('embed_head', 'print_embed_styles');
+// wp-embedのスタイルを設定する
+function oguemon_embed_style() {
+	wp_enqueue_style('wp-embed-template-org', get_stylesheet_directory_uri() . '/css/embed.css');
+}
+add_filter('embed_head', 'oguemon_embed_style');
+
 /**
  * タイトルタグの最適化
  */
