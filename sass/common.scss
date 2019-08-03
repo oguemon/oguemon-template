@@ -3,11 +3,17 @@
  *  外部参照用（全記事）
  */
 
+// Googleフォント(Poppins)
+@import url('https://fonts.googleapis.com/css?family=Poppins:600&display=swap');
+
 // 変数などの宣言
 @import "define";
 
 // 全般的なレイアウト
 @import "general";
+
+// おすすめ記事
+@import "pickup";
 
 // ヘッダー
 @import "header";

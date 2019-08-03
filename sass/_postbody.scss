@@ -3,8 +3,9 @@
  */
 // 記事本文
 #post-body {
-	font-size: 110%;
-	line-height: 2.0em;
+	font-size: 16px;
+	line-height: 2.0;
+	text-align: justify;
 
 	strong {
 		font-weight: bold;
@@ -16,14 +17,15 @@
 	}
 
 	h3 {
-		margin: 25px 0px 15px;
+		margin: 25px 0 15px;
 		background: #00A5De;
 		padding: 10px 15px;
 		color: #ffffff;
 		font-size: 150%;
+		line-height: 1.5;
 
 		@include mq() {
-			margin: 25px -10px 20px;
+			margin-bottom: 20px;
 		}
 	}
 
@@ -31,8 +33,14 @@
 		margin: 25px 0 15px;
     padding: 0 3px 5px;
 		font-size: 140%;
+		line-height: 1.5;
 		position: relative;
 		overflow: hidden;
+
+		@include mq() {
+			margin-left: $sp-postbody-side-margin;
+			margin-right: $sp-postbody-side-margin;
+		}
 
 		&:before,
 		&:after{
@@ -51,17 +59,17 @@
 		}
 	}
 
-	// 見出しが連チャンの場合
-	h3 + h4 {
-		margin-top: 0;
-	}
-
 	h5 {
 		font-size: 110%;
 	}
 
 	p {
 		margin: 15px 0;
+
+		@include mq() {
+			margin-left: $sp-postbody-side-margin;
+			margin-right: $sp-postbody-side-margin;
+		}
 	}
 
 	ul {
@@ -87,7 +95,7 @@
 	}
 
 	img {
-		max-width: 480px;
+		max-width: 100%;
 	}
 
 	dt {
@@ -101,23 +109,59 @@
 		margin: 0 0 0 20px;
 	}
 
+	table {
+		min-width: 420px;
+		margin: 10px auto;
+		border: 2px solid $main-color;
+		border-collapse: collapse;
+
+		@include mq() {
+			min-width: auto;
+			width: 100%;
+		}
+
+		th, td {
+			padding: 6px 15px;
+		}
+
+		th {
+			color: $white-color;
+			font-weight: bold;
+			background: $main-color;
+			border: 1px solid $white-color;
+		}
+
+		td {
+			border: 1px solid $main-color;
+		}
+
+		tr:nth-child(even) {
+			background: #f8f8f8;
+		}
+	}
+
 	blockquote {
-		margin: 5px 0;
-		padding: 10px;
-		border-width: 1px 1px 1px 5px;
-		border-style: solid;
-		border-color: $main-color;
+    margin: 5px 0;
+    padding: 25px 25px 10px;
+		background: url("#{$base-url}/img/quotation.svg") no-repeat, $gray-light-color;
+    background-size: 30px;
+    background-position: 15px 15px;
+    border-radius: 5px;
 		font-size: 90%;
 		font-family: san-serif;
 		font-style: normal;
-		line-height: 1.8em;
+
+		@include mq() {
+			margin-left: $sp-postbody-side-margin;
+			margin-right: $sp-postbody-side-margin;
+			padding: 10px;
+		}
 	}
 
 	.point-box {
 		margin: 10px 0;
 		padding: 15px;
-		background: #fffff0;
-		border: 1px solid $main-color;
+		background: $gray-light-color;
 
 		p:last-child {
 			margin-bottom: 0;
@@ -125,7 +169,7 @@
 	}
 
 	.point-box-caption {
-		margin: -16px -16px 15px;
+		margin: -15px -15px 15px;
 		padding: 2px 10px;
 		background: $main-color;
 		color: $white-color;
@@ -145,28 +189,15 @@
 	}
 }
 
-@media (max-width: 640px) {
-	// 記事本文
-	#post-body {
-		padding: 0 10px;
-		font-size: 110%;
-		line-height: 2.0em;
-		border-style: none;
-
-		img {
-			max-width: 100%;
-		}
-	}
-}
-
 /*
  *  目次
  */
 #toc-box {
 	width: 360px;
-	border: 1px solid $border-base-color;
 	margin: 0 0 10px;
 	padding: 10px;
+	background: $gray-light-color;
+	border-radius: $border-radius;
 
 	@include mq() {
 		width: 100%;
@@ -181,9 +212,17 @@
 #toc-box-caption {
 	margin: 0 0 10px 0;
 	font-size: 120%;
+	font-weight: bold;
 	text-align: center;
 	border-bottom: 1px solid $border-base-color;
 
+	.toc-icon {
+		width: 20px;
+		height: 20px;
+    margin: 0 5px -3px 0;
+    background: url("#{$base-url}/img/icon-book-solid.svg") no-repeat;
+		display: inline-block;
+	}
 	.description {
 		font-size: 60%;
 	}
@@ -213,5 +252,82 @@
 			}
 		}
 
+	}
+}
+
+// セリフ
+.testimony {
+	margin: 15px;
+	overflow: hidden;
+
+	.testimony_icon {
+		display: table-cell;
+		vertical-align: top;
+		width: 60px;
+
+		@include mq() {
+			width: 50px;
+		}
+
+		img {
+			width: 100%;
+			border: 1px solid $border-base-color;
+			border-radius: 30px;
+
+			@include mq() {
+				border-radius: 25px;
+			}
+		}
+	}
+	.testimony_text {
+		display: table-cell;
+		padding-left: 20px;
+		text-align: justify;
+	}
+	.testimony_content {
+		border: 1px solid $border-base-color;
+		border-radius: 5px;
+		padding: 10px 15px;
+		background: $white-color;
+		position: relative;
+		z-index: 3;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 24px;
+			left: -9px;
+			margin-top: -9px;
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 9px 9px 9px 0;
+			border-color: transparent $white-color transparent transparent;
+			z-index: 0;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 24px;
+			left: -10px;
+			margin-top: -10px;
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10px 10px 10px 0;
+			border-color: transparent $border-base-color transparent transparent;
+			z-index: -1;
+		}
+
+		.name {
+			font-weight: bold;
+		}
+
+		p {
+			margin: 0 !important;
+		}
 	}
 }

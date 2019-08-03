@@ -10,10 +10,12 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 body {
-	line-height: 1.6em;
+	line-height: 1.6;
 	font-size: 14px;
     font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	color: $text-base-color;
@@ -31,45 +33,15 @@ a {
 
 img {
 	max-width: 100%;
+	height: auto;
 }
 
 li {
 	list-style-type: none;
 }
 
-table {
-	min-width: 420px;
-	margin: 10px auto;
-	border: 2px solid $main-color;
-	border-collapse: collapse;
-
-	@include mq() {
-		min-width: auto;
-		width: 100%;
-	}
-
-	th, td {
-		padding: 6px 15px;
-	}
-
-	th {
-		color: $white-color;
-		font-weight: bold;
-		background: $main-color;
-		border: 1px solid $white-color;
-	}
-
-	td {
-		border: 1px solid $main-color;
-	}
-
-	tr:nth-child(even) {
-		background: #f8f8f8;
-	}
-}
-
 .wrapper {
-	width: 1080px;
+	width: 1100px;
 	margin: 0 auto;
 
 	@include mq() {
@@ -79,7 +51,6 @@ table {
 
 .wrapper-main {
 	padding: 20px $margin-site-side;
-	background: $white-color;
 
 	@include mq() {
 		padding: 0;
@@ -95,11 +66,12 @@ table {
 }
 
 #site-content {
-	width: 660px;
+	width: 680px;
 	float: left;
 
 	@include mq() {
 		width: 100%;
+		background: $white-color;
 		float: none;
 	}
 }

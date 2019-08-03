@@ -8,14 +8,32 @@ aside#site-aside {
 
 	@include mq() {
 		width: 100%;
-    }
+  }
 
 	.title {
-		@extend %general-header;
-	}
+		padding: 5px 10px;
+		font-size: 110%;
+		font-weight: bold;
+		color: $white-color;
+		background: $main-color;
 
-	.contents {
-		margin: 0 0 10px;
+		// 人気記事一覧のアイコン
+		.rank-icon {
+			width: 25px;
+			height: 25px;
+			margin: 0 5px -8px 0;
+			background: url("#{$base-url}/img/icon-crown-solid.svg") no-repeat;
+			display: inline-block;
+		}
+
+		// カテゴリ一覧のアイコン
+		.category-icon {
+			width: 25px;
+			height: 25px;
+			margin: 0 5px -8px 0;
+			background: url("#{$base-url}/img/icon-folder-open-solid.svg") no-repeat;
+			display: inline-block;
+		}
 	}
 
 	// プロフィール
@@ -31,18 +49,18 @@ aside#site-aside {
 			height: 70px;
 			margin: 0 auto;
 			float: left;
-	
+
 			img {
 				border-radius: 35px;
 			}
 		}
-	
+
 		.name {
 			margin: 5px 0 0 80px;
 			font-size: 150%;
 			font-weight: bold;
 		}
-	
+
 		.bio {
 			margin: 5px 0 10px 80px;
 			padding: 5px 0 0;
@@ -50,69 +68,119 @@ aside#site-aside {
 			text-align: justify;
 			border-top: 1px solid #ccc;
 		}
-	
+
 		.contact {
 			width: 200px;
 			height: 20px;
+			margin: 5px 0 0 80px;
 			background: url($splite-url) no-repeat;
 			display: block;
-	
+
 			&.twitter{
-				margin: 10px 0 0 80px;
 				background-position: 0 -100px;
 			}
-	
+
 			&.mail{
-				margin: 5px 0 0 80px;
+				margin-bottom: 10px;
 				background-position: 0 -120px;
 			}
 		}
 	}
 }
 
-// 人気記事ランキング
-.view-ranking {
-	padding: 5px 5px 5px 0;
-	border-bottom: 1px solid $border-base-color;
+// 人気記事一覧
+#popular {
+	margin: 0 0 10px;
+	padding: 10px;
+	background: $main-light-color;
+}
 
-	.view-ranking-num {
-		margin: -5px 10px 0 0;
-		padding: 5px;
-		font-weight: bold;
-		font-size: 150%;
-		color: #aaa;
-		border-top: 4px solid #aaa;
-		float: left;
+a.view-popular {
+	height: 70px;
+	margin: 10px 0 0;
+	padding: 5px;
+	background: $white-color;
+	display: block;
+
+	&:hover {
+		transform: translate(-2px -2px);
+		box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
+		transition: all .2s ease-in-out;
 	}
 
-	.rank-1 {
-		border-top-color: #e00;
-		color: #e00;
+	&:first-child {
+		margin: 0;
 	}
 
-	.rank-2 {
-		border-top-color: #00A5DE;
-		color: #00A5DE;
-	}
-
-	.rank-3 {
-		border-top-color: #00A5DE;
-		color: #00A5DE;
-	}
-
-	.view-ranking-thum {
-		width: 80px;
+	.view-popular-thum {
+		width: 60px;
 		height: 60px;
 		margin: 0 5px 0 0;
+		position: relative;
+		overflow: hidden;
 		float: left;
+
+		img {
+			max-width: none;
+			height: 60px;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+		}
 	}
 
-	.view-ranking-title {
+	.view-popular-title {
+		height: 60px;
+		font-weight: bold;
+    vertical-align: middle;
+    display: table-cell;
 		overflow: hidden;
+	}
+}
 
-		a {
-			font-weight: bold;
+// カテゴリー
+ul#category-list {
+	padding: 10px;
+
+	li {
+    font-weight: bold;
+		line-height: 2.5;
+	}
+
+	a {
+		&:hover {
+			color: $main-color;
+			transition: all .2s ease-in-out;
 		}
+	}
+
+	.category-icon {
+		width: 25px;
+		height: 25px;
+		margin: 0 10px -8px 0;
+		display: inline-block;
+	}
+
+	// 線形代数のアイコン
+	.study-icon {
+		background: url("#{$base-url}/img/icon-graduation-cap-solid.svg") no-repeat;
+	}
+	// 豆知識のアイコン
+	.heart-icon {
+		background: url("#{$base-url}/img/icon-heart-solid.svg") no-repeat;
+	}
+	// 西国巡礼のアイコン
+	.hike-icon {
+		background: url("#{$base-url}/img/icon-hiking-solid.svg") no-repeat;
+	}
+	// web開発のアイコン
+	.code-icon {
+		background: url("#{$base-url}/img/icon-code-solid.svg") no-repeat;
+	}
+	// おぐえもん日記のアイコン
+	.dialy-icon {
+		background: url("#{$base-url}/img/icon-book-blue-solid.svg") no-repeat;
 	}
 }
 

@@ -11,11 +11,6 @@ get_header();
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
 				<?php
-				// CSSのインライン読み込み
-				$inline_css = file_get_contents(get_template_directory_uri() . '/css/index-inline.css');
-				$inline_css = preg_replace('/^\xEF\xBB\xBF/', '', $inline_css);
-				echo '<style>' . $inline_css . '</style>';
-
 				// 記事があるなら(基本ある笑)
 				if ( have_posts() ) {
 					if ( is_home() && ! is_front_page() ) { ?>
@@ -43,8 +38,8 @@ get_header();
 				}
 				?>
 			</main><!-- #site-content -->
-			<?php 
-			get_sidebar(); 
+			<?php
+			get_sidebar();
 			?>
 		</div><!-- .wrapper .wrapper-main -->
 	</div><!-- #site-main -->

@@ -15,7 +15,7 @@ function oguemon_setup() {
 	//投稿にサムネイルを適用可能
 	add_theme_support( 'post-thumbnails' );
 	//サムネイルの一般的なサイズ
-	set_post_thumbnail_size( 640, 480, true );
+	set_post_thumbnail_size( 800, 450, array( 'center', 'center' ) );
 	//メニュー（wp_nav_menu()）とその説明を登録する
 	register_nav_menus( array(
 		'primary'	=> 'メインメニュー',
@@ -221,6 +221,24 @@ function add_quicktags() {
 add_action( 'admin_print_footer_scripts', 'add_quicktags' );
 
 /**
+ * 画像にwidthとheightの属性を加えない
+ */
+function custom_attribute( $html ){
+    // width height を削除する
+    $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
+    return $html;
+}
+add_filter( 'post_thumbnail_html', 'custom_attribute' );
+
+/**
+ * 画像をpタグで囲まない
+ */
+function remove_p_on_images($content){
+    return preg_replace('/<p>(\s*)(<img .*>)(\s*)<\/p>/iU', '\2', $content);
+}
+add_filter('the_content', 'remove_p_on_images');
+
+/**
  * 記事本文の最初の見出しの前に目次と広告を適宜挟む
  */
 function add_string_to_content($content) {
@@ -238,7 +256,7 @@ function add_string_to_content($content) {
 			// 目次を入れる
 			$add_string = <<< EOM
 			<div id="toc-box">
-				<div id="toc-box-caption">目次<span class="description">（クリックで該当箇所へ移動）</span></div>
+				<div id="toc-box-caption"><i class="toc-icon"></i>目次<span class="description">（クリックで該当箇所へ移動）</span></div>
 				<div id="toc"></div>
 			</div>
 EOM;

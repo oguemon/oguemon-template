@@ -5,51 +5,61 @@
 // PC用ヘッダー
 header {
 	width: 100%;
-	min-width: 1080px;
-	background: $white-color;
+	height: 80px;
+	min-width: 1100px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
 
 	#blog-info {
-		padding: 30px $margin-site-side 20px;
+		padding: 0 $margin-site-side;
+		position: relative;
 	}
 
 	// ブログタイトル
 	#blog-title {
-		margin: 0 0 10px;
-		font-size: 220%;
-		font-weight: bold;
+		width: 384px;
+    height: 80px;
+		background: url("#{$base-url}/img/logo.svg") no-repeat;
+		position: absolute;
+		top: 0;
+		left: 10px;
+		display: block;
 	}
 
-	// ブログの説明
-	#blog-description {
-		color: $text-sub-color;
-	}
+	// メニュー
+	#menu-list {
+		width: 650px;
+		height: 80px;
+		position: absolute;
+		top: 0;
+		right: 10px;
+		display: flex;
+		justify-content: flex-end;
 
-	// メインメニュー
-	#menu-main {
-		width: 100%;
-		height: 45px;
-		background: $main-color;
-		color: $white-color;
-		font-size: 110%;
-		line-height: 45px;
-		box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
-
-		ul {
-			margin: 0 30px;
-		}
-
-		li {
-			margin: 0 30px 0 0;
-			padding: 0;
-			float: left;
-		}
-
-		a {
-			color: $white-color;
+		a.menu-item {
+			width: 130px;
+			height: 80px;
+			line-height: 1;
+			text-align: center;
+			display: inline-block;
 
 			&:hover {
-				color: #ff0;
-				text-decoration: none;
+				border-bottom: 4px solid $main-color;
+
+				.en {
+					color: $main-color;
+				}
+			}
+
+			.en {
+				margin: 24px 0 3px;
+				color: $text-base-color;
+				font-size: 24px;
+				font-family: 'Poppins', sans-serif;
+			}
+			.jp {
+				color: $text-sub-color;
+				font-size: 12px;
+				font-weight: bold;
 			}
 		}
 	}
@@ -61,9 +71,9 @@ header {
 
 // スマホ用ヘッダー
 @media (max-width: 640px) {
-    header {
+  header {
 		display: none;
-    }
+  }
 
 	#sp-header {
 		width: 100%;
@@ -72,15 +82,13 @@ header {
 		position: relative;
 		display: block;
 		z-index: 999;
-		box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+		box-shadow: 0 0 5px rgba(0,0,0,0.1);
 
 		#blog-title-sp {
-			width: 200px;
+			width: 240px;
 			height: 50px;
-			position: absolute;
-			left: 5px;
-			background: url($splite-url) no-repeat;
-			background-position: 0 -140px;
+			background: url("#{$base-url}/img/logo.svg") no-repeat;
+			display: block;
 		}
 
 		#sp-search-btn {
@@ -89,8 +97,9 @@ header {
 			position: absolute;
 			top: 10px;
 			right: 50px;
-			background: url($splite-url) no-repeat;
-			background-position: -180px -20px;
+			background: url("#{$base-url}/img/search.svg") no-repeat;
+			background-size: 80%;
+			background-position: center;
 			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
 		}
@@ -101,10 +110,31 @@ header {
 			position: absolute;
 			top: 10px;
 			right: 10px;
-			background: url($splite-url) no-repeat;
-			background-position: -210px -20px;
 			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
+
+			span{
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				left: 0;
+				background: $menu-icon-color;
+				display: inline-block;
+				//transition-property: transform,opacity;
+				//transition-duration: .5s;
+
+				&:nth-child(1) {
+					top: 7px;
+				}
+
+				&:nth-child(2) {
+					top: 14px;
+				}
+
+				&:nth-child(3) {
+					top: 21px;
+				}
+			}
 		}
 	}
 
@@ -237,14 +267,4 @@ header {
 			transform: translate(-240px, 0);
 		}
     }
-}
-
-// スマホトップのGoogle広告
-.ad-h-item{
-	display: none !important;
-
-	@include mq() {
-		display: block !important;
-		margin: 0 auto !important;
-	}
 }

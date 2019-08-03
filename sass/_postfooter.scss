@@ -39,7 +39,7 @@
 
 		&.prev {
 			left: 20px;
-	
+
 			+ div {
 				position: absolute;
 				left: 0;
@@ -78,7 +78,7 @@
 	.ad-f-item {
 		margin: 0 10px;
 		display: inline-block !important;
-	
+
 		@include mq() {
 			margin: 5px auto;
 			display: block;
@@ -92,77 +92,113 @@
 	}
 }
 
-// 同じカテゴリの記事一覧
-#same-category {
-	margin: 10px 0;
+// 関連記事
+#relative-article {
+	padding: 15px;
+	background: $gray-light-color;
 
-	#same-category-header {
-		@extend %general-header
+	@include mq(){
+		margin: 0 0 10px;
+		padding: 10px;
 	}
 
-	article {
-		padding: 5px 10px;
-		border-bottom: 1px solid #ddd;
-	
+	#relative-article-header {
+		font-size: 180%;
+		font-weight: bold;
+		text-align: center;
+		border-bottom: 2px solid $border-base-color;
+	}
+
+	#relative-article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	}
+
+	a.relative-article-item {
+		width: 317px;
+    margin: 15px 0 0;
+		background: $white-color;
+		position: relative;
+		display: block;
+
+		@include mq(){
+			width: auto;
+			margin: 10px 0 0;
+		}
+
+		&:hover {
+			transform: translate(-2px -2px);
+			box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
+			transition: all .2s ease-in-out;
+		}
+
 		.thumbnail {
-			width: 120px;
+			width: 90px;
+			height: 90px;
 			margin: 0 10px 0 0;
+			position: relative;
+			overflow: hidden;
 			float: left;
-		
-			@include mq(){
-				width: 90px;
-				margin: 5px 10px 0 0;
-			}
+			display: table-cell;
 
 			img {
-				height: auto;
+				max-width: none;
+				height: 90px;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%, -50%);
 			}
 		}
 
 		.info {
+			display: table;
 			overflow: hidden;
-		
-			.date {
-				font-size: 80%;
-				color: $text-sub-color;
-			}
-		
+
 			.title {
-				margin: 3px 0;
-				font-size: 120%;
+				height: 90px;
+				padding: 0 10px 0 0;
+				display: table-cell;
+				vertical-align: middle;
+				font-size: 100%;
+				font-weight: bold;
 				color: $text-base-color;
+
+				@include mq(){
+					height: 75px;
+				}
 			}
-		
-			.detail {
-				font-size: 80%;
-				color: $text-sub-color;
+		}
+
+		.date {
+			font-size: 80%;
+			line-height: 1;
+			color: $text-sub-color;
+			position: absolute;
+			left: 100px;
+			bottom: 8px;
+			display: none;
+
+			@include mq(){
+				display: block;
 			}
 		}
 	}
+}
 
-	// このカテゴリの全ての記事
-	#article-list-link{
-		margin: 0 0 10px;
-		padding: 5px 10px;
-		border: 5px solid #6cf;
+a#same-category {
+	width: 360px;
+	margin: 10px auto 0;
+	padding: 10px;
+	color: $white-color;
+	font-weight: bold;
+	text-align: center;
+	background: $main-color;
+	border-radius: 5px;
+	display: block;
 
-		a {
-			@extend %colored-link-text;
-		}
-	}
-
-	#same-article {
-		border: 4px solid #ff8;
-	
-		#same-article-header {
-			padding: 0 5px;
-			color: $text-base-color;
-			font-size: 90%;
-			background: #ff8;
-		}
-	
-		article {
-			border-bottom: none;
-		}
+	@include mq(){
+		width: 100%;
 	}
 }

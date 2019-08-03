@@ -136,9 +136,13 @@ else
 <body ontouchstart="">
 	<!-- スマホ用ヘッドバー -->
 	<div id="sp-header">
-		<a href="<?= get_bloginfo('url');?>"><div id="blog-title-sp"></div></a>
+		<a id="blog-title-sp" href="<?= get_bloginfo('url');?>"></a>
 		<div id="sp-search-btn"></div>
-		<div id="sp-menu-right-btn"></div>
+		<div id="sp-menu-right-btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	</div>
 	<div id="sp-search-area">
 		<div id="search-header">サイト内検索</div>
@@ -198,26 +202,34 @@ else
 		<!-- ロゴとか -->
 		<div class="wrapper clearfix">
 			<div id="blog-info">
-				<div id="blog-title"><a href="<?= get_bloginfo('url')?>"><?= get_bloginfo('name')?></a></div>
-				<div id="blog-description">たぶん今すぐ使えるテクニックから、きっと全く使えない豆知識まで。</div>
+				<?php
+					$url = get_bloginfo('url');
+				?>
+				<a id="blog-title" href="<?=$url?>"></a>
+				<div id="menu-list">
+					<a class="menu-item" href="<?=$url?>/about/">
+						<div class="en">PROFILE</div>
+						<div class="jp">おぐえもんについて</div>
+					</a>
+					<a class="menu-item" href="<?=$url?>">
+						<div class="en">BLOG</div>
+						<div class="jp">役立つ記事たち</div>
+					</a>
+					<a class="menu-item" href="<?=$url?>/services/">
+						<div class="en">SERVICE</div>
+						<div class="jp">便利な自作サービス</div>
+					</a>
+					<!--
+					<a class="menu-item" href="">
+						<div class="en">CONTACT</div>
+						<div class="jp">お問い合わせ</div>
+					</a>
+					-->
+					<a class="menu-item" href="<?=$url?>/terms/">
+						<div class="en">TERMS</div>
+						<div class="jp">利用規約</div>
+					</a>
+				</div>
 			</div>
 		</div>
-
-		<!-- メインメニュー -->
-		<nav id="menu-main">
-			<div class="wrapper clearfix">
-			<?php
-			if ( has_nav_menu( 'primary' ) ) {
-				wp_nav_menu( array(
-					'container' => '',
-					'container_class' => '',
-					'menu_id' => 'menu-main-list',
-					'sort_column' => 'menu_order',
-					'theme_location' => 'primary',
-					'link_after' => '',
-					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ));
-			}
-			?>
-			</div>
-		</nav>
 	</header>

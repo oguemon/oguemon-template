@@ -41,7 +41,6 @@
 <!-- 記事開始 -->
 <article class="hentry">
 <?php
-	//.thumbnail-post-intro
 	if ( has_post_thumbnail() ){
 ?>
 		<div id="post-thumbnail"><?= get_the_post_thumbnail() ?></div>
@@ -49,42 +48,15 @@
 	}
 ?>
 	<div id="post-header">
-		<!--<p class="category"><?php the_category(' '); ?></p>-->
+		<p class="category"><?php the_category(' '); ?></p>
 		<h1 class="title entry-title"><?= get_the_title() ?></h1>
 		<div class="meta">
-			<p class="excerpt entry-summary"><?= get_the_excerpt() ?></p>
 			<p class="posted-on">
-<?php
-	if ( get_the_date() == get_the_modified_date() ){
-?>
-				<span class="icon-published"></span><time class="published updated" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
-<?php
-	} else {
-?>
-				<span class="icon-published"></span><time class="published" datetime="<?= get_the_date('c') ?>"><?= get_the_date() ?></time>
-				<span class="icon-updated"></span><time class="updated" datetime="<?= get_the_modified_date('c') ?>"><?= get_the_modified_date() ?></time>
-<?php
-	}
-?>
-				<span class="icon-author"></span><span class="vcard author"><span class="fn">おぐえもん</span></span>
+				<i class="icon-updated"></i><time class="updated" datetime="<?= get_the_modified_date('c') ?>"><?= get_the_modified_date() ?></time>
 			</p>
 		</div>
 	</div>
-<?php
-	if(has_category()){
-		$category = get_the_category()[0];
-?>
-	<div class="category-detail">
-		<span class="icon">本カテゴリ</span>
-		<div class="title" rel="tag"><?= $category->name ?></div>
-		<div class="description"><?= $category->description ?></div>
-		<div class="link">
-			<a href="<?= get_category_link($category->cat_ID) ?>">＞＞このカテゴリの記事一覧（<?= $category->count ?>件）を見る</a>
-		</div>
-	</div>
-<?php
-	}
-?>
+
 	<!-- ソーシャルボタン -->
 <?php
 //リンクの生成
@@ -92,18 +64,16 @@ $title = urlencode(get_the_title());
 $url   = urlencode(get_permalink());
 $link_twitter = 'http://twitter.com/share?url=' . $url . '&text=' . $title . '&related=oguemon_com';
 $link_fb      = 'https://www.facebook.com/dialog/feed?app_id=1846956072250071&link='. $url;
-$link_gplus   = 'https://plus.google.com/share?url=' . $url;
 $link_hatena  = 'http://b.hatena.ne.jp/entry/' . $url;
 $link_line    = 'http://line.me/R/msg/text/?'. $url;
 $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 ?>
-	<div id="sns-btn-list-header">
-		<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn sns-btn-twitter"></a>
-		<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn sns-btn-facebook"></a>
-		<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn sns-btn-gplus"></a>
-		<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn sns-btn-hatena"></a>
-		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn sns-btn-line"></a>
-		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn sns-btn-pocket"></a>
+	<div id="sns-btn-list">
+		<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-twitter"></span></a>
+		<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-facebook"></span></a>
+		<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-hatena"></span></a>
+		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-line"></span></a>
+		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-pocket"></span></a>
 	</div>
 
 	<div id="post-body" class="entry-content clearfix">
@@ -131,18 +101,17 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		'echo'             => 1
 	) );
 ?>
-		<!-- ソーシャルボタン（記事上部にもあり） -->
-		<div id="sns-btn-list-footer">
-			<p>この記事がお役に立ったらシェアしていただけると嬉しいです♪</p>
-			<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn sns-btn-twitter"></a>
-			<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn sns-btn-facebook"></a>
-			<a href="<?= $link_gplus ?>"   target="_blank" class="sns-btn sns-btn-gplus"></a>
-			<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn sns-btn-hatena"></a>
-			<a href="<?= $link_line ?>"    target="_blank" class="sns-btn sns-btn-line"></a>
-			<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn sns-btn-pocket"></a>
-		</div>
-
 	</div><!-- id="post-body" -->
+
+	<!-- ソーシャルボタン -->
+	<div id="sns-btn-list">
+		<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-twitter"></span></a>
+		<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-facebook"></span></a>
+		<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-hatena"></span></a>
+		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-line"></span></a>
+		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-pocket"></span></a>
+	</div>
+
 	<div class="ad-article-footer">
 		<style type="text/css">
 		.ad-f-item{width: 300px; height: 250px;}
@@ -160,44 +129,36 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		     data-ad-slot="7057890583"></ins>
 		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 	</div>
+
 <?php
-	if(has_category()){
-		/* 同じカテゴリの記事一覧 */
+	if(has_category()):
+		/* 関連記事 */
 ?>
-		<div id="same-category">
-			<div id="same-category-header">このカテゴリーの最新記事</div>
+		<div id="relative-article">
+			<div id="relative-article-header">関連記事</div>
+			<div id="relative-article-list">
 <?php
-		$this_article_ID = get_the_ID();
+		$category = get_the_category()[0];
 		query_posts('cat='.$category->cat_ID.'&showposts=5');
-		while(have_posts()){
+		while(have_posts()):
 			the_post();//記事情報の取得
 			$end_div = '';
-			if(get_the_ID() == $this_article_ID){
-				echo '<div id="same-article">';
-				echo '<div id="same-article-header">この記事です！</div>';
-				$end_div = '</div>';
-			}
 ?>
-			<a href="<?=get_permalink()?>">
-			<article class="clearfix">
+			<a href="<?=get_permalink()?>" class="relative-article-item">
 				<div class="thumbnail"><?= get_the_post_thumbnail() ?></div>
 				<div class="info">
-					<div class="date"><?= get_the_date() ?></div>
 					<div class="title"><?= get_the_title() ?></div>
-					<div class="detail"><?= get_the_excerpt() ?></div>
 				</div>
-			</article>
+				<div class="date"><?= get_the_date() ?></div>
 			</a>
 <?php
-			echo $end_div;
-		}
+		endwhile;
 		wp_reset_query();
 ?>
-			<div id="article-list-link">
-				<a href="<?= get_category_link($category->cat_ID) ?>">このカテゴリの全ての記事（<?= $category->count ?>件）を見る</a>
 			</div>
+			<a id="same-category" href="<?= get_category_link($category->cat_ID) ?>">このカテゴリの全ての記事（<?= $category->count ?>件）を見る</a>
 		</div>
 <?php
-	}
+	endif;
 ?>
 </article>

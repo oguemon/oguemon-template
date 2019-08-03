@@ -2,20 +2,29 @@
  *  変数等の宣言
  */
 
-// PCサイズのとき
+// SPサイズのとき
 @mixin mq() {
 	@media screen and (max-width: 640px) {
 		@content;
 	}
 }
 
+// SPの横幅狭いもののとき
+@mixin mqn() {
+	@media screen and (max-width: 360px) {
+		@content;
+	}
+}
+
 // URL
-//$base-url: "https://oguemon.localhost/wordpress/wp-content/themes/oguemon";
-$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
+//$base-url: "https://192.168.1.19:3000/wordpress/wp-content/themes/oguemon";
+$base-url: "https://oguemon.localhost/wordpress/wp-content/themes/oguemon";
+//$base-url: "https://oguemon.com/wordpress/wp-content/themes/oguemon";
 $splite-url: "#{$base-url}/img/splite.svg";
 
 // 色関係
 $main-color: #00A5DE;
+$main-light-color: #bbe8ff;
 $white-color: #fff;
 
 $text-base-color: #333;
@@ -24,20 +33,23 @@ $text-sub-color: #888;
 $border-base-color: #ccc;
 $border-sub-color: #eee;
 
+$gray-light-color: #f7f7f7;
+
+$menu-icon-color: #333;
+
+$category-color: $main-color;
+
 $popup-color: #f88;
 
 // サイズ関係
 $margin-site-side: 30px;
 
-// タイトルヘッダー
-%general-header {
-	margin: 0 0 5px;
-	padding: 5px 10px;
-	font-size: 110%;
-	font-weight: bold;
-	color: $white-color;
-	background: $main-color;
-}
+$sp-postbody-side-margin: 10px;
+
+$border-radius: 5px;
+
+$sns-icon-width: 30px;
+$sns-icon-height: 30px;
 
 // 色付きリンク
 %colored-link-text {
@@ -48,22 +60,3 @@ $margin-site-side: 30px;
 	}
 }
 
-// シェアアイコン
-%base-sns-btn {
-	background: url($splite-url) no-repeat;
-	display: inline-block;
-
-	&:hover {
-		/*アニメーション*/
-		animation: poyopoyo 0.4s ease-out;
-		transform-origin: 50% 50%;
-		animation-play-state:running;
-
-		@keyframes poyopoyo {
-			0%   { transform: scale(1.0, 1.0); }
-			30%  { transform: scale(0.8, 0.8); }
-			60%  { transform: scale(1.2, 1.2); }
-			100% { transform: scale(1.0, 1.0); }
-		}
-	}
-}

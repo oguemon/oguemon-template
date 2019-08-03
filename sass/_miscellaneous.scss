@@ -2,155 +2,54 @@
  *  雑多なもの（アイコンなど）
  */
 
-// 色々なアイコン
-.icon-published, .icon-updated, .icon-author {
-	width: 15px;
-	height: 15px;
-	margin: 0 5px -3px 0;
-	display: inline-block;
-	background: url($splite-url) no-repeat;
-}
-.icon-published {background-position: -15px 0;}
-.icon-updated   {background-position: -30px 0;}
-.icon-author    {background-position: -45px 0;}
-
 // SNSボタンの描画領域
-#sns-btn-list-header {
-	margin: 0 0 20px;
-	padding: 0 0 10px;
-	text-align: center;
-	border-bottom: 1px solid $border-base-color;
-}
+#sns-btn-list {
+	height: $sns-icon-height + 20px;
+	padding: 10px;
+	background: $gray-light-color;
+	border-radius: $border-radius;
 
-#sns-btn-list-footer {
-	margin: 30px 0 20px;
-	padding: 5px 0 10px;
-	border-top: 1px solid $border-base-color;
-	border-bottom: 1px solid $border-base-color;
-	text-align: center;
-
-	p {
-		margin: 0 0 5px;
-		font-size: 80%;
-		font-weight: bold;
+	@include mq(){
+		margin: 0 $sp-postbody-side-margin;
+		display: flex;
+		justify-content: space-between;
 	}
 }
 
-#sns-btn-list-sidebar {
-	margin: 10px 0 0;
-	padding: 5px 0 0;
-	border-top: 1px solid $border-base-color;
+// SNSボタン
+.sns-btn-bg {
+	width: $sns-icon-width + 20px;
+	height: $sns-icon-height;
+	margin: 0 2px;
+	padding: 0 10px;
+	background: $white-color;
+	border-radius: $border-radius;
+	display: inline-block;
 }
 
-// SNSボタン（記事の途中）
 .sns-btn {
-	@extend %base-sns-btn;
+	width: $sns-icon-width;
+	height: $sns-icon-height;
+	background: url($splite-url) no-repeat;
+	display: inline-block;
 
-	width: 40px;
-	height: 50px;
-	margin: 0 20px;
+	&:hover {
+		/*アニメーション*/
+		animation: poyopoyo 0.4s ease-out;
+		transform-origin: 50% 50%;
+		animation-play-state:running;
 
-	@include mq() {
-		margin: 0 1%;
+		@keyframes poyopoyo {
+			0%   { transform: scale(1.0, 1.0); }
+			30%  { transform: scale(0.8, 0.8); }
+			60%  { transform: scale(1.2, 1.2); }
+			100% { transform: scale(1.0, 1.0); }
+		}
 	}
-
-	&.sns-btn-twitter  {background-position:    0px -50px;}
-	&.sns-btn-facebook {background-position:  -40px -50px;}
-	&.sns-btn-gplus    {background-position:  -80px -50px;}
-	&.sns-btn-hatena   {background-position: -120px -50px;}
-	&.sns-btn-line     {background-position: -160px -50px;}
-	&.sns-btn-pocket   {background-position: -200px -50px;}
-}
-
-// SNSボタン（サイドバー）
-.sns-btn-side {
-	@extend %base-sns-btn;
-
-	width: 30px;
-	height: 30px;
-	margin: 0 3px;
 
 	&.sns-btn-twitter  {background-position:    0px -20px;}
 	&.sns-btn-facebook {background-position:  -30px -20px;}
-	&.sns-btn-gplus    {background-position:  -60px -20px;}
 	&.sns-btn-hatena   {background-position:  -90px -20px;}
 	&.sns-btn-line     {background-position: -120px -20px;}
 	&.sns-btn-pocket   {background-position: -150px -20px;}
-}
-
-// セリフ
-.testimony {
-	margin: 15px auto;
-	overflow: hidden;
-
-	.testimony_icon {
-		display: table-cell;
-		vertical-align: top;
-		width: 60px;
-
-		@include mq() {
-			width: 50px;
-		}
-
-		img {
-			width: 100%;
-			border: 1px solid $border-base-color;
-			border-radius: 30px;
-
-			@include mq() {
-				border-radius: 25px;
-			}
-		}
-	}
-	.testimony_text {
-		display: table-cell;
-		padding-left: 20px;
-		text-align: justify;
-	}
-	.testimony_content {
-		border: 1px solid $border-base-color;
-		border-radius: 5px;
-		padding: 10px 15px;
-		background: $white-color;
-		position: relative;
-		z-index: 3;
-
-		&:before {
-			content: "";
-			position: absolute;
-			top: 24px;
-			left: -9px;
-			margin-top: -9px;
-			display: block;
-			width: 0px;
-			height: 0px;
-			border-style: solid;
-			border-width: 9px 9px 9px 0;
-			border-color: transparent $white-color transparent transparent;
-			z-index: 0;
-		}
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 24px;
-			left: -10px;
-			margin-top: -10px;
-			display: block;
-			width: 0px;
-			height: 0px;
-			border-style: solid;
-			border-width: 10px 10px 10px 0;
-			border-color: transparent $border-base-color transparent transparent;
-			z-index: -1;
-		}
-
-		.name {
-			font-weight: bold;
-		}
-
-		p {
-			margin: 0 !important;
-		}
-	}
 }
