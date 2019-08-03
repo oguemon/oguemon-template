@@ -2,12 +2,14 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var closureCompiler = require('google-closure-compiler').gulp();
+const browsersync = require('browser-sync');
 
 gulp.task('sass', function() {
     return gulp.src('./sass/*.scss')
             .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
             .pipe(gulp.dest('./css'))
 });
+
 gulp.task('minifyjs', function() {
     return gulp.src('./js/oguemon.js')
             .pipe(closureCompiler({
@@ -22,10 +24,25 @@ gulp.task('minifyjs', function() {
             .pipe(gulp.dest('./js'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('./sass/*.scss', gulp.parallel('sass'));
-    gulp.watch('./js/oguemon.js', gulp.parallel('minifyjs'));
+gulp.task('build-server', function (done) {
+    browsersync.init({
+        files: ['./**/*.php'],
+        proxy: 'https://oguemon.localhost/study/linear-algebra/overview-1/',
+    });
+    done();
 });
 
-const defaultTasks = gulp.series('watch');
+gulp.task('browser-reload', function (done){
+    browsersync.reload();
+    done();
+});
+
+gulp.task('watch', function() {
+    gulp.watch('./**/*.php', gulp.series('browser-reload'));
+    gulp.watch('./sass/*.scss', gulp.series('sass', 'browser-reload'));
+    gulp.watch('./js/oguemon.ts', gulp.series('minifyjs', 'browser-reload'));
+
+});
+
+const defaultTasks = gulp.series('build-server', 'watch');
 gulp.task('default', defaultTasks);
