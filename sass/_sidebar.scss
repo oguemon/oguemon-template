@@ -3,8 +3,12 @@
  * サイドバー
  */
 aside#site-aside {
-	width: 320px;
+	width: 340px;
 	float: right;
+	margin: -10px;
+	padding: 10px;
+	background: $white-color;
+	border-radius: 5px;
 
 	&.front-page {
 		margin-top: -100px;
@@ -12,6 +16,9 @@ aside#site-aside {
 
 	@include mq() {
 		width: 100%;
+		margin: 0;
+		padding: 0;
+
 
 		&.front-page {
 			margin-top: 0;
@@ -46,13 +53,11 @@ aside#site-aside {
 
 	// プロフィール
 	.profile {
-    margin: 0 -10px;
-    padding: 10px;
     background: #fff;
-    border-radius: 5px;
 
 		@include mq() {
 			margin: 0;
+			padding: 10px;
 		}
 
 		.icon {

@@ -4,9 +4,13 @@
 
 #pickup-posts {
 	margin: -100px -10px 0;
-	padding: 10px 10px 0;
-	background: $white-color;
+	padding: 0 10px;
+	//background: $white-color;
 	border-radius: $border-radius $border-radius 0 0;
+
+	@include mq() {
+		display: none;
+	}
 }
 /*
 // おすすめ記事（1段目）
@@ -73,10 +77,6 @@
 	display:	flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-
-	@include mq() {
-		display: none;
-	}
 }
 .post-puckup-sub-wrapper {
 	width: calc(50% - 10px);
@@ -88,13 +88,15 @@
 }
 .post-pickup-sub {
 	height: 100%;
+	padding: 10px;
 	border-radius: $border-radius;
 	position: relative;
+	background: $white-color;
 	display: block;
-	transition: all .2s ease-in-out;
+	transition: all .1s ease-in-out;
 
 	&:hover {
-		box-shadow: 1px 1px 10px  rgba(0,0,0,0.1);
+		box-shadow: 1px 1px 10px  rgba(0,0,0,0.15);
 	}
 
 	// サムネのラッパー
@@ -123,7 +125,7 @@
 	// おすすめ記事の記事タイトル
 	h2.title-post {
     margin-bottom: 18px;
-		padding: 10px;
+		padding: 10px 0 ;
 		font-size: 120%;
 		line-height: 1.5;
 

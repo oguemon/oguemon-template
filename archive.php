@@ -23,18 +23,34 @@ get_header();
 			</div>
 			<?php
 			if ( have_posts() ) {
-				echo '<ul id="recent-posts" class="clearfix">';
+				echo '<div id="recent-posts" class="clearfix">';
+				$article_count = 0;
 				while ( have_posts() ){
+					$article_count++;
 					the_post();
-					get_template_part( 'template-parts/content', get_post_format() );
+			?>
+					<a class="post-item <?php if($article_count == 1) echo 'first-article'; ?> clearfix" href="<?= get_permalink() ?>">
+						<div class="post-cover">
+						<?php if ( has_post_thumbnail() ) { ?>
+							<img src="<?= get_the_post_thumbnail_url(); ?>">
+						<?php } ?>
+						</div><!-- .post-cover-wrapper -->
+						<div class="post-preview">
+							<h2 class="title-post"><?= get_the_title() ?></h2>
+							<p class="post-meta">
+								<span class="posted-on"><span class="icon-published"></span><time><?= get_the_date() ?></time></span>
+							</p>
+						</div>
+					</a>
+			<?php
 				}
-				echo '</ul>';
+				echo '</div>';
 
 				$args['prev_text'] = '<span class="nav-link-label">←</span>古い記事';
 				$args['next_text'] = '新しい記事<span class="nav-link-label">→</span>';
 				the_posts_navigation($args);
 			}else{
-				get_template_part( 'template-parts/content' ); 
+				get_template_part( 'template-parts/content' );
 			}
 			?>
 		</main><!-- #site-content -->
