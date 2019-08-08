@@ -2,144 +2,145 @@
  * トップで使用するデザイン
  */
 
+#pickup-posts {
+	margin: -100px -10px 0;
+	padding: 10px 10px 0;
+	background: $white-color;
+	border-radius: $border-radius $border-radius 0 0;
+}
+/*
 // おすすめ記事（1段目）
-li.post-pickup-main {
-	margin: 0 0 10px;
-	padding: 5px 0;
-	border-bottom: 1px solid #ddd;
+.post-pickup-main {
+	margin: -100px 0 10px;
+	padding: 10px;
+	background: $white-color;
+	border-radius: $border-radius;
+	position: relative;
 
 	// サムネのラッパー
 	.post-cover {
 		width: 320px;
 		margin: 0 15px 0 0;
 		float: left;
+
+		@include mq() {
+			width: 100%;
+			display: block;
+			float: none;
+		}
 	}
 
 	// 記事情報のラッパー
 	.post-preview {
-		line-height: 1.80em;
 		overflow: hidden;
-	}
-
-	// カテゴリー
-	ul.post-categories {
-		margin: 10px 0 0 0;
 	}
 
 	// 記事タイトル
 	h2.title-post {
-		margin: 30px 0 15px 0;
+    height: 130px;
 		font-size: 180%;
+    line-height: 1.5;
+    vertical-align: middle;
+		display: table-cell;
+
+		@include mq() {
+			margin: 10px 0 40px;
+			height: auto;
+			font-size: 120%;
+			display: block;
+		}
 	}
 
-	// 記事要旨
-	p.post-excerpt {
-		color: $text-sub-color;
+	// カテゴリー
+	ul.post-categories {
+		line-height: 1;
+    position: absolute;
+    bottom: 30px;
 	}
 
 	// 投稿時刻など
 	p.post-meta {
 		font-size: 90%;
 		color: $text-sub-color;
+		line-height: 1;
+		position: absolute;
+		bottom: 10px;
 	}
 }
-
-@media (max-width: 640px) {
-	 li.post-pickup-main {
-		.post-cover {
-			width: 100%;
-			display: block;
-			float: none;
-
-			img {
-				width: 100%;
-				height: auto;
-			}
-		}
-
-		.post-preview {
-			padding: 0 10px;
-		}
-
-		// おすすめ記事の記事タイトル
-		h2.title-post {
-			margin: 10px 0;
-		}
-	}
-}
-
-
+*/
 // おすすめ記事のサブ（2段目）
-li.post-pickup-sub {
-	width: 200px;
-	margin: 10px;
-	float: left;
+.post-pickup-sub-list {
+	display:	flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	@include mq() {
+		display: none;
+	}
+}
+.post-puckup-sub-wrapper {
+	width: calc(50% - 10px);
+	margin: 0 0 20px;
+
+	&.second-line {
+		width: calc(33.3% - 10px);
+	}
+}
+.post-pickup-sub {
+	height: 100%;
+	border-radius: $border-radius;
+	position: relative;
+	display: block;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		box-shadow: 1px 1px 10px  rgba(0,0,0,0.1);
+	}
 
 	// サムネのラッパー
 	.post-cover {
 		width: 100%;
-		height: 160px;
+    padding-top: 56.23%;
+		overflow: hidden;
+		position: relative;
 
 		img {
-			height: auto;
+			width: 100%;
+			border-radius: $border-radius $border-radius 0 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 	}
 
 	// 記事情報のラッパー
 	.post-preview {
-		line-height: 1.80em;
+		line-height: 1.5;
 		overflow: hidden;
 	}
 
 	// おすすめ記事の記事タイトル
 	h2.title-post {
-		margin: 0 0 10px 0;
+    margin-bottom: 18px;
+		padding: 10px;
 		font-size: 120%;
-	}
+		line-height: 1.5;
 
-	// おすすめ記事の記事要旨
-	p.post-excerpt {
-		color: $text-sub-color;
-		font-size: 90%;
+		&.second-line {
+			font-size: 100%;
+			line-height: 1.2;
+		}
 	}
 
 	// おすすめ記事の投稿時刻など
 	p.post-meta {
 		font-size: 80%;
+    line-height: 1;
 		color: $text-sub-color;
-	}
-}
-
-@media (max-width: 640px) {
-	li.post-pickup-sub {
-		width: auto;
-		margin: 0 0 5px 0;
-		padding: 0 5px;
-		border-bottom: 1px solid #ddd;
-		float: none;
-
-		.post-cover {
-			width: 140px;
-			height: auto;
-			margin: 0 10px 0 0;
-			float: left;
-
-			img {
-				width: 100%;
-				height: auto;
-			}
-		}
-
-		// おすすめ記事の記事タイトル
-		h2.title-post {
-			margin: 5px 0;
-			font-size: 120%;
-		}
-
-		// おすすめ記事の記事要旨
-		p.post-excerpt {
-			font-size: 80%;
-		}
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
 	}
 }
 

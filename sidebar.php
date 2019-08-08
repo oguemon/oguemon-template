@@ -4,8 +4,7 @@
  * @package oguemon
  */
 ?>
-<aside id="site-aside" role="complementary">
-	<div class="title">プロフィール</div>
+<aside id="site-aside" class="<?php if(is_front_page()) echo 'front-page';?>" role="complementary">
 	<div class="contents profile">
 		<div class="icon">
 			<img src="https://oguemon.com/wordpress/wp-content/themes/oguemon/img/profile.jpg">

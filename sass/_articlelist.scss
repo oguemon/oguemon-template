@@ -2,52 +2,107 @@
  *  記事の一覧とページ送り
  */
 // 記事一覧
-li.post-item {
-	margin: 0 0 5px;
-	padding: 0 0 5px;
-	border-bottom: 1px solid $border-base-color;
+a.post-item {
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: $border-radius;
+	position: relative;
+	display: block;
+	transition: all .2s ease-in-out;
 
 	@include mq() {
-		margin: 0;
-		padding: 0 10px 5px;
+		margin-left: 10px;
+		margin-right: 10px;
+		padding: 0;
+	}
+
+	&:hover {
+		box-shadow: 1px 1px 10px  rgba(0,0,0,0.1);
+	}
+
+	@include mq() {
+		&.first-article {
+			.post-cover {
+				width: 100%;
+				padding: 56.23% 0 0;
+				border-radius: $border-radius;
+				overflow: hidden;
+				position: relative;
+
+				img {
+					height: 100%;
+					border-radius: $border-radius;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			// おすすめ記事の記事タイトル
+			h2.title-post {
+				margin-bottom: 18px;
+				padding: 10px;
+				font-size: 120%;
+				line-height: 1.5;
+			}
+
+			// おすすめ記事の投稿時刻など
+			p.post-meta {
+				font-size: 80%;
+				line-height: 1;
+				color: $text-sub-color;
+				position: absolute;
+				left: 10px;
+				bottom: 10px;
+			}
+		}
 	}
 
 	// 記事一覧のサムネ
 	.post-cover {
-		width: 160px;
-		margin: 5px 10px 0 0;
+		width: 200px;
+		margin-right: 10px;
+    padding-top: calc(200px * 0.5623);
+		overflow: hidden;
+		position: relative;
 		float: left;
 
 		@include mq() {
 			width: 90px;
-			margin: 10px 10px 0 0;
+			height: 90px;
+			padding-top: 0;
 		}
 
 		img {
-			height: auto;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			@include mq() {
+				max-width: none;
+				width: auto;
+				height: 90px;
+				padding-top: 0;
+			}
 		}
 	}
 
 	.post-preview {
+		height: 70px;
 		padding: 5px 0;
-		line-height: 1.80em;
+		line-height: 1.8;
+    vertical-align: middle;
+    display: table-cell;
 		overflow: hidden;
-	}
-
-	// 記事一覧のカテゴリー
-	ul.post-categories li a {
-		color: $text-sub-color;
-		font-size: 90%;
-
-		@include mq() {
-			font-size: 80%;
-		}
 	}
 
 	// 記事一覧の記事タイトル
 	.title-post {
 		margin: 5px 0;
-		font-size: 150%;
+		font-size: 120%;
 
 		@include mq() {
 			margin: 0 0 5px;
@@ -55,23 +110,19 @@ li.post-item {
 		}
 	}
 
-	// 記事一覧の記事要旨
-	p.post-excerpt {
-		color: $text-sub-color;
-		font-size: 90%;
-
-		@include mq() {
-			display: none;
-		}
-	}
-
 	// 投稿時刻など
 	p.post-meta {
-		font-size: 90%;
 		color: $text-sub-color;
+		font-size: 90%;
+		line-height: 1;
+		position: absolute;
+		left: 220px;
+		bottom: 10px;
 
 		@include mq() {
 			font-size: 80%;
+			bottom: 5px;
+			left: 100px;
 		}
 	}
 }
