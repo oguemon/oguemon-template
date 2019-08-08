@@ -26,8 +26,8 @@ gulp.task('minifyjs', function() {
 
 gulp.task('build-server', function (done) {
     browsersync.init({
-        files: ['./**/*.php'],
-        proxy: 'https://oguemon.localhost/study/linear-algebra/overview-1/',
+        proxy: 'https://oguemon.localhost/',
+        online: true,
     });
     done();
 });
