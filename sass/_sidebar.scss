@@ -5,7 +5,7 @@
 aside#site-aside {
 	width: 340px;
 	float: right;
-	margin: -10px;
+	margin: 0 -10px -10px;
 	padding: 10px;
 	background: $white-color;
 	border-radius: 5px;
@@ -53,7 +53,8 @@ aside#site-aside {
 
 	// プロフィール
 	.profile {
-    background: #fff;
+    padding-bottom: 10px;
+    background: $white-color;
 
 		@include mq() {
 			margin: 0;
@@ -82,7 +83,7 @@ aside#site-aside {
 			padding: 5px 0 0;
 			font-size: 90%;
 			text-align: justify;
-			border-top: 1px solid #ccc;
+			border-top: 1px solid $border-base-color;
 		}
 
 		.contact {

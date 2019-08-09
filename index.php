@@ -11,7 +11,7 @@ get_header();
 
 	</div>
 	<!-- サイトのメイン部分 -->
-	<div id="site-main">
+	<div id="site-main" class="bg-blue-shallow">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
 				<?php
@@ -56,8 +56,6 @@ get_header();
 					$args['prev_text'] = '←古い記事';
 					$args['next_text'] = '新しい記事→';
 					the_posts_navigation($args);
-				} else {
-					get_template_part( 'template-parts/content' );
 				}
 				?>
 			</main><!-- #site-content -->

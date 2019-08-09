@@ -5,6 +5,10 @@
 #post-thumbnail {
 	width: 100%;
 	height: auto;
+
+	img {
+		width: 100%;
+	}
 }
 
 // 記事タイトルなど
@@ -51,22 +55,22 @@
 
 // アーカイブタイトルなど
 #archive-header {
-    margin: 0 0 10px;
-    padding: 20px;
-    overflow: hidden;
-    background: #00A5DE;
-	color: #fff;
+	padding: 20px;
+	color: $white-color;
+	text-align: center;
+	background: $main-color;
+	overflow: hidden;
 
 	h1.title {
 		margin: 0 0 10px;
 		padding: 0 0 5px;
 		font-size: 200%;
 		line-height: 1.2em;
-		border-bottom: 3px solid #fff;
+		border-bottom: 3px solid $white-color;
 	}
 	p.excerpt {
 		margin: 10px 0 0;
-		color: #fff;
+		color: $white-color;
 	}
 }
 

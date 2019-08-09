@@ -55,7 +55,7 @@ li {
 
 	@include mq() {
 		padding: 0;
-    }
+  }
 }
 
 .clearfix {
@@ -66,19 +66,22 @@ li {
 	}
 }
 
-#site-main {
-	background: #f6f9fb;
-}
-
 #site-content {
 	width: 680px;
 	float: left;
 
 	@include mq() {
 		width: 100%;
-		background: $white-color;
+		//background: $white-color;
 		float: none;
 	}
+}
+
+// 記事（SingleとPage）
+article {
+	@include mq() {
+		background: $white-color;
+  }
 }
 
 // パンくずリスト
@@ -91,7 +94,7 @@ ul#breadcrumb {
 		margin: 5px 0 0;
 		padding: 0 10px 5px;
 		font-size: 80%;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid $border-sub-color;
 	}
 
 	li {
@@ -165,4 +168,9 @@ ul#breadcrumb {
 	//background: url(https://localhost:3000/wordpress/wp-content/uploads/2019/07/sui-dau.jpg) no-repeat;
 	background-size: cover;
 	background-position: center center;
+}
+
+// 背景色設定クラス
+.bg-blue-shallow {
+	background: #f6f9fb;
 }
