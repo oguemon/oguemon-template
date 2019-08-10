@@ -53,9 +53,10 @@ get_header();
 					}
 					echo '</div>';
 
-					$args['prev_text'] = '←古い記事';
-					$args['next_text'] = '新しい記事→';
-					the_posts_navigation($args);
+					/* ページネーションの表示 */
+					if (function_exists('pagination')) {
+							pagination($wp_query->max_num_pages, get_query_var('paged'));
+					}
 				}
 				?>
 			</main><!-- #site-content -->

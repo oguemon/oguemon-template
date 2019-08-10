@@ -184,3 +184,101 @@ h2.screen-reader-text {
 		float: right;
 	}
 }
+
+// ページ送り
+#pagination {
+	padding: 30px 0;
+	line-height: 1;
+  display: flex;
+	justify-content: center;
+
+	.oguemon {
+		font-size: 30px;
+		line-height: 30px;
+		font-family: "poppins";
+		display: block;
+
+		@include mqn() {
+			font-size: 24px;
+		}
+	}
+	.pagenum {
+		margin-top: 5px;
+		font-size: 14px;
+		color: $main-color;
+		display: block;
+	}
+
+	.prev, .next {
+		display: flex;
+
+		&:hover .jp {
+			text-decoration: underline;
+		}
+
+		.arrow {
+			width: 30px;
+			margin: 0 10px;
+			text-align: center;
+			position: relative;
+
+			@include mqn() {
+				margin: 0;
+			}
+
+			.prev-arrow, .next-arrow {
+				width: 15px;
+				height: 15px;
+				border-top: 3px solid $main-color;
+				border-left: 3px solid $main-color;
+				position: absolute;
+				top: 7px;
+
+				@include mqn() {
+					width: 12px;
+					height: 12px;
+					top: 9px;
+				}
+			}
+
+			.prev-arrow {
+				transform: rotate(-45deg);
+				left: 10px;
+			}
+
+			.next-arrow {
+				transform: rotate(135deg);
+				right: 10px;
+			}
+
+			.jp {
+				color: $main-color;
+				white-space: nowrap;
+				position: absolute;
+				bottom: 0;
+			}
+		}
+	}
+
+	.pager {
+    text-align: center;
+		display: block;
+
+		&:hover .pagenum {
+			text-decoration: underline;
+		}
+
+		&.current {
+			&:hover .pagenum {
+				text-decoration: none;
+			}
+
+			.oguemon {
+				color: $accent-red;
+			}
+			.pagenum {
+				color: inherit;
+			}
+		}
+	}
+}
