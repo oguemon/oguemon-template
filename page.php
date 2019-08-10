@@ -10,9 +10,9 @@ get_header();
 <div id="site-main">
 	<div class="wrapper wrapper-main clearfix">
 		<main id="site-content">
-			<?php 
+			<?php
 			//パンくずリスト
-			get_template_part( 'template-parts/content', 'breadcrumb' );
+			//get_template_part( 'template-parts/content', 'breadcrumb' );
 			//記事を表示
 			while ( have_posts() ) {
 				the_post();

@@ -13,7 +13,7 @@ get_header();
 		<main id="site-content">
 			<?php
 			//パンくずリスト
-			get_template_part( 'template-parts/content', 'breadcrumb' );
+			//get_template_part( 'template-parts/content', 'breadcrumb' );
 			?>
 			<div id="archive-header">
 				<h1 class="title"><?= explode(':',get_the_archive_title(),2)[1] ?></h1><!-- 「カテゴリー：」は抜いてる -->
