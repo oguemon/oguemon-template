@@ -174,3 +174,17 @@ ul#breadcrumb {
 .bg-blue-shallow {
 	background: #f6f9fb;
 }
+
+// 記事埋め込みリンク
+.wp-embedded-content {
+	max-width: 100%;
+}
+
+.wp-embed {
+	border: 1px solid $border-base-color;
+	padding: 20px 15px 10px !important;
+
+	@include mq() {
+		padding: 15px 15px 10px !important;
+	}
+}
