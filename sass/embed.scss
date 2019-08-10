@@ -12,7 +12,7 @@ a {
 }
 
 a.embed-item{
-  width: 100%;
+  width: auto;
   height: 90px;
   border: 1px solid #ddd;
   position: relative;
@@ -30,6 +30,7 @@ a.embed-item{
 
   img {
     max-width: none;
+    width: auto;
     height: 90px;
     top: 50%;
     left: 50%;
@@ -55,4 +56,8 @@ a.embed-item{
   position: absolute;
   left: 100px;
   bottom: 10px;
+}
+
+.hidden {
+  display: none;
 }

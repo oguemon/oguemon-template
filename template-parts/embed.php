@@ -61,5 +61,8 @@ if (!have_posts()) {
 	<div class="title"><?= $title ?></div>
 	<div class="blogname"><?= get_bloginfo('name'); ?></div>
 </a>
+<?php
+do_action( 'embed_footer' );
+?>
 </body>
 </html>
