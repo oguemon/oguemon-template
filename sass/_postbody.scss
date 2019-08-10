@@ -3,7 +3,6 @@
  */
 // 記事本文
 #post-body {
-	margin: 10px;
 	font-size: 16px;
 	line-height: 2.0;
 	text-align: justify;
@@ -74,7 +73,7 @@
 	}
 
 	ul {
-		margin: 5px 0 5px 40px;
+		margin: 5px 10px 5px 30px;
 		padding: 0;
 
 		li {
@@ -201,7 +200,8 @@
 	border-radius: $border-radius;
 
 	@include mq() {
-		width: 100%;
+    width: auto;
+    margin: 10px;
 	}
 
 	p {
