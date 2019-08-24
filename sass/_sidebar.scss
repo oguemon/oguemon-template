@@ -89,17 +89,20 @@ aside#site-aside {
 		.contact {
 			width: 200px;
 			height: 20px;
-			margin: 5px 0 0 80px;
-			background: url($splite-url) no-repeat;
+			margin: 5px 0 10px 80px;
+			background: url("#{$base-url}/img/splite-contact.svg") no-repeat;
 			display: block;
 
-			&.twitter{
-				background-position: 0 -100px;
+			&.twitter {
+				background-position: 0 0;
 			}
 
-			&.mail{
-				margin-bottom: 10px;
-				background-position: 0 -120px;
+			&.instagram {
+				background-position: 0 -20px;
+			}
+
+			&.mail {
+				background-position: 0 -40px;
 			}
 		}
 	}
@@ -176,28 +179,29 @@ ul#category-list {
 		width: 25px;
 		height: 25px;
 		margin: 0 10px -8px 0;
+		background: url("#{$base-url}/img/splite-category.svg") no-repeat;
 		display: inline-block;
-	}
 
-	// 線形代数のアイコン
-	.study-icon {
-		background: url("#{$base-url}/img/icon-graduation-cap-solid.svg") no-repeat;
-	}
-	// 豆知識のアイコン
-	.heart-icon {
-		background: url("#{$base-url}/img/icon-heart-solid.svg") no-repeat;
-	}
-	// 西国巡礼のアイコン
-	.hike-icon {
-		background: url("#{$base-url}/img/icon-hiking-solid.svg") no-repeat;
-	}
-	// web開発のアイコン
-	.code-icon {
-		background: url("#{$base-url}/img/icon-code-solid.svg") no-repeat;
-	}
-	// おぐえもん日記のアイコン
-	.dialy-icon {
-		background: url("#{$base-url}/img/icon-book-blue-solid.svg") no-repeat;
+		// 線形代数のアイコン
+		&.study-icon {
+			background-position: 0 0;
+		}
+		// 豆知識のアイコン
+		&.heart-icon {
+			background-position: -25px 0;
+		}
+		// 西国巡礼のアイコン
+		&.hike-icon {
+			background-position: -50px 0;
+		}
+		// web開発のアイコン
+		&.code-icon {
+			background-position: -75px 0;
+		}
+		// おぐえもん日記のアイコン
+		&.dialy-icon {
+			background-position: -100px 0;
+		}
 	}
 }
 

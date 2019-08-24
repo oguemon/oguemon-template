@@ -175,6 +175,7 @@ else
 			<div class="name"><?=get_the_author_meta('nickname', 1)?></div>
 			<div class="bio"><?=get_the_author_meta('description', 1)?></div>
 			<a class="contact twitter" href="https://twitter.com/oguemon_com" target="_blank"></a>
+			<a class="contact instagram" href="https://www.instagram.com/oguemon_com/" target="_blank"></a>
 			<div class="contact mail"></div>
 		</div>
 		<?php

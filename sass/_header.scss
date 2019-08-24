@@ -214,17 +214,22 @@ header {
 			.contact {
 				width: 200px;
 				height: 20px;
-				background: url($splite-url) no-repeat;
+				background: url("#{$base-url}/img/splite-contact.svg") no-repeat;
 				display: block;
 
 				&.twitter{
 					margin: 10px auto 0;
-					background-position: 0 -100px;
+					background-position: 0 0;
+				}
+
+				&.instagram{
+					margin: 5px auto 0;
+					background-position: 0 -20px;
 				}
 
 				&.mail{
 					margin: 5px auto 0;
-					background-position: 0 -120px;
+					background-position: 0 -40px;
 				}
 			}
 		}
