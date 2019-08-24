@@ -14,6 +14,20 @@
 		display: flex;
 		justify-content: space-between;
 	}
+
+	// フッターのアイコンは設定が異なる
+	footer & {
+		height: $sns-icon-height;
+    margin: 5px;
+		padding: 0;
+		background: none;
+		border-radius: 0;
+
+		@include mq(){
+			margin: 0 $sp-postbody-side-margin;
+			display: block;
+		}
+	}
 }
 
 // SNSボタン
@@ -25,13 +39,29 @@
 	background: $white-color;
 	border-radius: $border-radius;
 	display: inline-block;
+
+	// フッターのアイコンは設定が異なる
+	footer & {
+		width: $sns-icon-width;
+		height: $sns-icon-height;
+		margin: 0 5px;
+		padding: 0;
+		background: none;
+		border-radius: 0;
+	}
 }
 
 .sns-btn {
 	width: $sns-icon-width;
 	height: $sns-icon-height;
-	background: url($splite-url) no-repeat;
+	background: url("#{$base-url}/img/splite-sns.svg") no-repeat;
 	display: inline-block;
+
+	&.sns-btn-twitter  {background-position:    0   0;}
+	&.sns-btn-facebook {background-position:  -30px 0;}
+	&.sns-btn-hatena   {background-position:  -60px 0;}
+	&.sns-btn-line     {background-position:  -90px 0;}
+	&.sns-btn-pocket   {background-position: -120px 0;}
 
 	&:hover {
 		/*アニメーション*/
@@ -47,9 +77,19 @@
 		}
 	}
 
-	&.sns-btn-twitter  {background-position:    0px -20px;}
-	&.sns-btn-facebook {background-position:  -30px -20px;}
-	&.sns-btn-hatena   {background-position:  -90px -20px;}
-	&.sns-btn-line     {background-position: -120px -20px;}
-	&.sns-btn-pocket   {background-position: -150px -20px;}
+	footer & {
+		&.sns-btn-twitter  {background-position:    0   -30px;}
+		&.sns-btn-facebook {background-position:  -30px -30px;}
+		&.sns-btn-hatena   {background-position:  -60px -30px;}
+		&.sns-btn-line     {background-position:  -90px -30px;}
+		&.sns-btn-pocket   {background-position: -120px -30px;}
+
+		&:hover {
+			&.sns-btn-twitter  {background-position:    0   0;}
+			&.sns-btn-facebook {background-position:  -30px 0;}
+			&.sns-btn-hatena   {background-position:  -60px 0;}
+			&.sns-btn-line     {background-position:  -90px 0;}
+			&.sns-btn-pocket   {background-position: -120px 0;}
+		}
+	}
 }
