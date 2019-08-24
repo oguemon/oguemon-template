@@ -141,6 +141,7 @@ header {
 	#sp-search-area {
 		margin: 10px;
 		background: none;
+		border: 1px solid $border-sub-color;
 		border-radius: 3px;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 		display: block;
@@ -167,9 +168,6 @@ header {
 		#search-body {
 			padding: 10px 15px 15px;
 			background: $white-color;
-			border-width: 0 1px 1px 1px;
-			border-style: solid;
-			border-color: #ccc;
 			border-radius: 0 0 3px 3px;
 
 			p {
