@@ -11,7 +11,7 @@ aside#site-aside {
 	border-radius: 5px;
 
 	&.front-page {
-		margin-top: -100px;
+		margin-top: -80px;
 	}
 
 	@include mq() {

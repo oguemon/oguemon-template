@@ -3,7 +3,7 @@
  */
 
 #pickup-posts {
-	margin: -100px -10px 0;
+	margin: -80px -10px 0;
 	padding: 0 10px;
 	//background: $white-color;
 	border-radius: $border-radius $border-radius 0 0;
@@ -12,66 +12,7 @@
 		display: none;
 	}
 }
-/*
-// おすすめ記事（1段目）
-.post-pickup-main {
-	margin: -100px 0 10px;
-	padding: 10px;
-	background: $white-color;
-	border-radius: $border-radius;
-	position: relative;
 
-	// サムネのラッパー
-	.post-cover {
-		width: 320px;
-		margin: 0 15px 0 0;
-		float: left;
-
-		@include mq() {
-			width: 100%;
-			display: block;
-			float: none;
-		}
-	}
-
-	// 記事情報のラッパー
-	.post-preview {
-		overflow: hidden;
-	}
-
-	// 記事タイトル
-	h2.title-post {
-    height: 130px;
-		font-size: 180%;
-    line-height: 1.5;
-    vertical-align: middle;
-		display: table-cell;
-
-		@include mq() {
-			margin: 10px 0 40px;
-			height: auto;
-			font-size: 120%;
-			display: block;
-		}
-	}
-
-	// カテゴリー
-	ul.post-categories {
-		line-height: 1;
-    position: absolute;
-    bottom: 30px;
-	}
-
-	// 投稿時刻など
-	p.post-meta {
-		font-size: 90%;
-		color: $text-sub-color;
-		line-height: 1;
-		position: absolute;
-		bottom: 10px;
-	}
-}
-*/
 // おすすめ記事のサブ（2段目）
 .post-pickup-sub-list {
 	display:	flex;
@@ -89,6 +30,7 @@
 .post-pickup-sub {
 	height: 100%;
 	padding: 10px;
+	border: 1px solid $border-toppage-article;
 	border-radius: $border-radius;
 	position: relative;
 	background: $white-color;
@@ -149,9 +91,13 @@
 // 「最新記事」みたいな見出し
 #latest-posts-header {
 	margin: 0 0 5px;
-	padding: 5px 10px;
-	font-size: 110%;
+	padding: 10px 0;
+	font-size: 150%;
 	font-weight: bold;
-	color: $white-color;
-	background: $main-color;
+	color: $text-base-color;
+	text-align: center;
+
+	@include mq() {
+    display: none;
+	}
 }

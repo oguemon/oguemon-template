@@ -7,9 +7,7 @@
 get_header();
 ?>
 	<!-- サイトのトップ画像 -->
-	<div id="top-img">
-
-	</div>
+	<a id="top-img" target="_blank" class="calc"></a>
 	<!-- サイトのメイン部分 -->
 	<div id="site-main" class="bg-blue-shallow">
 		<div class="wrapper wrapper-main clearfix">

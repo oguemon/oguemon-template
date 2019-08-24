@@ -65,6 +65,29 @@ jQuery(document).ready(function ($) {
 		});
 
 		/*
+		 *  トップ画像を時間おきに変える
+		 */
+		setInterval(toggleTopImgClass, 5000);
+		const topImgClassList = [
+			{
+				class: 'calc',
+				url: './tools/calc/mat-det-inv.html',
+			},
+			{
+				class: 'salary',
+				url: './tax-calc/',
+			},
+		];
+		let topImgCurrentClassNo = 0;
+		function toggleTopImgClass() {
+			topImgCurrentClassNo++;
+			topImgCurrentClassNo %= topImgClassList.length;
+			$('#top-img').removeClass();
+			$('#top-img').addClass(topImgClassList[topImgCurrentClassNo].class);
+			$('#top-img').attr('href', topImgClassList[topImgCurrentClassNo].url);
+		}
+
+		/*
 		 *  目次生成(toc.js)
 		 */
 		$('#toc').toc({
