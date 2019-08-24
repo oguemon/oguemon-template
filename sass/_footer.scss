@@ -5,20 +5,108 @@ footer {
 	width: 100%;
 	min-width: 1100px;
 	margin: 0;
+	color: $white-color;
+	font-size: 12px;
 	background: #333;
 
 	@include mq() {
 		min-width: auto;
 	}
 
-	#copyright {
-		margin: 0;
-		padding: 30px 0;
-		color: $text-sub-color;
-		font-size: 80%;
+	.wrapper-footer {
+		padding: 20px;
+	}
+
+	#wrapper-footer-contents-list {
+    width: 950px;
+    margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
 
 		@include mq() {
-			margin: 0 10px;
+			width: auto;
+			display: block;
 		}
+	}
+
+	.footer-contents-list {
+		width: 200px;
+
+		@include mq() {
+			width: auto;
+			margin-top: 10px;
+		}
+
+		// ロゴの部分
+		&:first-child {
+			width: 300px;
+			margin-right: 50px;
+
+			@include mq() {
+				width: auto;
+				max-width: 360px;
+				margin: 0 auto;
+			}
+		}
+
+		.title {
+			color: #999;
+			font-size: 20px;
+			font-family: "poppins";
+		}
+
+		ul.items {
+			padding: 10px;
+			border-left: 1px solid #999;
+
+			li {
+				line-height: 2;
+
+				@include mq() {
+					font-size: 14px;
+				}
+
+				a {
+					color: $white-color;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	#footer-logo {
+		width: 300px;
+		padding-top: 22.7%;
+		background: url("#{$base-url}/img/logo-white.svg");
+		display: block;
+
+		@include mq () {
+			width: auto;
+		}
+	}
+
+	.footer-contents-other-list {
+    padding-top: 20px;
+		color: #999;
+		text-align: center;
+
+		a {
+			color: #999;
+
+			&:hover {
+				color: $white-color;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	#copyright {
+    padding: 20px 0;
+    color: $white-color;
+    text-align: center;
+    border-top: 1px solid #999;
 	}
 }
