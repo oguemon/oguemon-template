@@ -41,13 +41,32 @@ li {
 	list-style-type: none;
 }
 
+.button {
+	max-width: 100%;
+	width: 360px;
+	margin: 20px auto;
+	padding: 10px;
+	color: $white-color;
+	font-weight: bold;
+	text-align: center;
+	background: $main-color;
+	border-radius: $border-radius;
+	display: block;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		background: lighten($main-color, 10%);
+		box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+	}
+}
+
 .wrapper {
 	width: 1100px;
 	margin: 0 auto;
 
 	@include mq() {
 		width: 100%;
-    }
+  }
 }
 
 .wrapper-main {
