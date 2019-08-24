@@ -40,8 +40,7 @@ gulp.task('browser-reload', function (done){
 gulp.task('watch', function() {
     gulp.watch('./**/*.php', gulp.series('browser-reload'));
     gulp.watch('./sass/*.scss', gulp.series('sass', 'browser-reload'));
-    gulp.watch('./js/oguemon.ts', gulp.series('minifyjs', 'browser-reload'));
-
+    gulp.watch('./js/oguemon.js', gulp.series('minifyjs', 'browser-reload'));
 });
 
 const defaultTasks = gulp.series('build-server', 'watch');
