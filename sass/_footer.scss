@@ -1,6 +1,16 @@
 /*
  *  フッター
  */
+#go-to-top {
+	padding: 10px;
+	color: $white-color;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	background: #555;
+	display: block;
+}
+
 footer {
 	width: 100%;
 	min-width: 1100px;

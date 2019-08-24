@@ -6,6 +6,7 @@
 
 //get_sidebar( 'footer' );
 ?>
+	<a id="go-to-top" href="#">▲ トップへ戻る</a>
 	<footer class="site-footer" role="contentinfo">
 		<div class="wrapper wrapper-footer ">
 			<div id="wrapper-footer-contents-list">
