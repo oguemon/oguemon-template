@@ -107,6 +107,15 @@
 		font-weight: bold;
 		text-align: center;
 		border-bottom: 2px solid $border-base-color;
+
+		// 関連記事のアイコン
+		.relative-icon {
+			width: 25px;
+			height: 25px;
+			margin: 0 5px -3px 0;
+			background: url("#{$base-url}/img/icon-copy-solid.svg") no-repeat;
+			display: inline-block;
+		}
 	}
 
 	#relative-article-list {
@@ -197,8 +206,14 @@ a#same-category {
 	background: $main-color;
 	border-radius: 5px;
 	display: block;
+	transition: all .2s ease-in-out;
 
 	@include mq(){
 		width: 100%;
+	}
+
+	&:hover {
+		background: lighten($main-color, 10%);
+		box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
 	}
 }

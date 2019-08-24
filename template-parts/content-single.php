@@ -135,7 +135,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		/* 関連記事 */
 ?>
 		<div id="relative-article">
-			<div id="relative-article-header">関連記事</div>
+			<div id="relative-article-header"><i class="relative-icon"></i>関連記事</div>
 			<div id="relative-article-list">
 <?php
 		$category = get_the_category()[0];
