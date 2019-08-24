@@ -55,11 +55,42 @@
 
 // アーカイブタイトルなど
 #archive-header {
-	padding: 20px;
+	min-width: 1100px;
+	width: 100%;
 	color: $white-color;
 	text-align: center;
 	background: $main-color;
 	overflow: hidden;
+
+	.category-saikoku33 & {
+		background-image: url("#{$base-url}/img/topic-saigoku33.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		@include mq() {
+			background-image: url("#{$base-url}/img/topic-saigoku33-sp.jpg");
+		}
+	}
+
+	.category-blog & {
+		background-image: url("#{$base-url}/img/topic-blog.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	@include mq() {
+		min-width: auto;
+	}
+
+	.wrapper-archive-header {
+		padding: 60px;
+
+		@include mq() {
+			padding: 30px 20px;
+		}
+	}
 
 	h1.title {
 		margin: 0 0 10px;

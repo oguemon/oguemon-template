@@ -5,6 +5,14 @@
     color: $white-color;
     text-shadow: none;
 
+    .wrapper {
+      padding: 30px 60px;
+
+      @include mq() {
+        padding: 20px;
+      }
+    }
+
     .thum {
        width: 150px;
        height: 150px;
