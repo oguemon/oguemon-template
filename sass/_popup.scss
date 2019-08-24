@@ -20,13 +20,13 @@
         border-style: solid;
         border-color:  $popup-color;
         border-radius: 5px 5px 0 0;
-    
+
         .title{
             font-size: 120%;
             font-weight: bold;
             color: $popup-color;
         }
-    
+
         .description{
             margin: 5px 0 0;
             color: $text-base-color;
@@ -42,9 +42,9 @@
         font-weight: bold;
         border-radius: 0 0 0 5px;
         float: left;
-    
+
         &:hover {
-            background: #ffcccc;
+            background: lighten($popup-color, 10%);
         }
     }
 
@@ -52,14 +52,14 @@
         width: 50%;
         padding: 10px 0;
         text-align: center;
-        background: #888888;
+        background: $popup-close-color;
         color: $white-color;
         font-weight: bold;
         border-radius: 0 0 5px 0;
         float: left;
-    
+
         &:hover {
-            background: #bbbbbb;
+            background: lighten($popup-close-color, 10%);
         }
     }
 }
