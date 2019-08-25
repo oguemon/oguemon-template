@@ -1,0 +1,43 @@
+#sitemap {
+  font-size: 14px;
+
+  h3 {
+    margin: 0 0 10px;
+    padding: 10px;
+    color: $white-color;
+    font-size: 150%;
+    background: $main-color;
+
+    @include mq() {
+      margin-top: 10px;
+    }
+  }
+
+  h4 {
+    font-size: 130%;
+
+    @include mq() {
+      margin: 0 10px;
+    }
+  }
+
+  ul, ol {
+    margin: 10px 10px 10px 40px;
+  }
+
+  li {
+    list-style-type: disc;
+
+    &.in-category {
+      list-style-type: decimal;
+    }
+
+    a {
+      color: $main-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
