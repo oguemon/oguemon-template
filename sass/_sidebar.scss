@@ -180,34 +180,35 @@ ul#category-list {
 			color: $main-color;
 		}
 	}
+}
 
-	.category-icon {
-		width: 25px;
-		height: 25px;
-		margin: 0 10px -8px 0;
-		background: url("#{$base-url}/img/splite-category.svg") no-repeat;
-		display: inline-block;
+// カテゴリーアイコン（header.phpのスマホメニューでも使用）
+.category-icon {
+	width: 25px;
+	height: 25px;
+	margin: 0 10px -8px 0;
+	background: url("#{$base-url}/img/splite-category.svg") no-repeat;
+	display: inline-block;
 
-		// 線形代数のアイコン
-		&.study-icon {
-			background-position: 0 0;
-		}
-		// 豆知識のアイコン
-		&.heart-icon {
-			background-position: -25px 0;
-		}
-		// 西国巡礼のアイコン
-		&.hike-icon {
-			background-position: -50px 0;
-		}
-		// web開発のアイコン
-		&.code-icon {
-			background-position: -75px 0;
-		}
-		// おぐえもん日記のアイコン
-		&.dialy-icon {
-			background-position: -100px 0;
-		}
+	// 線形代数のアイコン
+	&.study-icon {
+		background-position: 0 0;
+	}
+	// 豆知識のアイコン
+	&.heart-icon {
+		background-position: -25px 0;
+	}
+	// 西国巡礼のアイコン
+	&.hike-icon {
+		background-position: -50px 0;
+	}
+	// web開発のアイコン
+	&.code-icon {
+		background-position: -75px 0;
+	}
+	// おぐえもん日記のアイコン
+	&.dialy-icon {
+		background-position: -100px 0;
 	}
 }
 

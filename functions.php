@@ -16,12 +16,6 @@ function oguemon_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//サムネイルの一般的なサイズ
 	set_post_thumbnail_size( 800, 450, array( 'center', 'center' ) );
-	//メニュー（wp_nav_menu()）とその説明を登録する
-	register_nav_menus( array(
-		'primary'	=> 'メインメニュー',
-		'footer'	=> 'フッターメニュー',
-		'sp-right'  => 'スマホ右メニュー'
-	) );
 	//HTML5を用いた記述を、第2引数で与えた項目に対して許可
 	add_theme_support( 'html5', array('search-form','comment-form','gallery','caption'));
 	//編集画面の「見たままモード」に適用するスタイルのファイルを指定

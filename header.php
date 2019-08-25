@@ -179,18 +179,18 @@ else
 			<div class="contact mail"></div>
 		</div>
 		<?php
-		// スマホ用メニュー
-		wp_nav_menu( array(
-			'menu'            => '',
-			'menu_class'      => 'menu',
-			'menu_id'         => 'sp-right-menu',
-			'container'       => '',
-			'container_class' => '',
-			'container_id'    => '',
-			'theme_location'  => 'sp-right',
-			'items_wrap'      => '<ul>%3$s</ul>'
-		));
+			$url = get_bloginfo('url');
 		?>
+		<div class="menu-list">
+			<a class="menu-item" href="<?=$url?>">ホーム</a>
+			<a class="menu-item" href="<?=$url?>/topic/study/linear-algebra/"><i class="category-icon study-icon"></i>線形代数入門</a>
+			<a class="menu-item" href="<?=$url?>/topic/knowledge/trivia/"><i class="category-icon heart-icon"></i>豆知識</a>
+			<a class="menu-item" href="<?=$url?>/topic/saikoku33/"><i class="category-icon hike-icon"></i>西国三十三ヶ所巡礼</a>
+			<a class="menu-item" href="<?=$url?>/topic/web/"><i class="category-icon code-icon"></i>Web開発</a>
+			<a class="menu-item" href="<?=$url?>/topic/blog/"><i class="category-icon dialy-icon"></i>おぐえもんの日記</a>
+			<a class="menu-item" href="<?=$url?>/about/">このサイトについて</a>
+			<a class="menu-item" href="<?=$url?>/terms/">利用上の注意点</a>
+		</div>
 	</div>
 
 <!-- スマホメニュー開放中のみ有効化 -->
