@@ -14,6 +14,14 @@
 
 	a {
 		@extend %colored-link-text;
+
+		&.button {
+			color: $white-color;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	h3 {
