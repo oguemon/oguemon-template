@@ -55,7 +55,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $site_root_url . '&title=' . 
 				</div>
 			</div>
 			<div class="footer-contents-other-list">
-				<a href="">お問い合わせ</a>
+				<a href="https://forms.gle/SDnHnzGLH5Y4ynzz6">お問い合わせ</a>
 				・
 				<a href="<?=$site_root_url?>/sitemap/">サイトマップ</a>
 				・

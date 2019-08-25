@@ -220,15 +220,9 @@ else
 						<div class="en">SERVICE</div>
 						<div class="jp">便利な自作サービス</div>
 					</a>
-					<!--
-					<a class="menu-item" href="">
+					<a class="menu-item" href="https://forms.gle/SDnHnzGLH5Y4ynzz6">
 						<div class="en">CONTACT</div>
 						<div class="jp">お問い合わせ</div>
-					</a>
-					-->
-					<a class="menu-item" href="<?=$url?>/terms/">
-						<div class="en">TERMS</div>
-						<div class="jp">利用規約</div>
 					</a>
 				</div>
 			</div>
