@@ -27,6 +27,7 @@ gulp.task('minifyjs', function() {
 gulp.task('build-server', function (done) {
     browsersync.init({
         proxy: 'https://oguemon.localhost/',
+        open:"external",
         online: true,
     });
     done();
