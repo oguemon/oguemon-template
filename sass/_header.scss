@@ -23,6 +23,11 @@ header {
 		top: 0;
 		left: 10px;
 		display: block;
+		transition: all $hover-action-time ease-in-out;
+
+		&:hover {
+			opacity: 0.5;
+		}
 	}
 
 	// メニュー
@@ -41,6 +46,20 @@ header {
 			line-height: 1;
 			text-align: center;
 			display: inline-block;
+			transition: all $hover-action-time ease-in-out;
+
+			.en {
+				margin: 24px 0 3px;
+				color: $text-base-color;
+				font-size: 24px;
+				font-family: 'Poppins', sans-serif;
+				transition: inherit;
+			}
+			.jp {
+				color: $text-sub-color;
+				font-size: 12px;
+				font-weight: bold;
+			}
 
 			&:hover {
 				border-bottom: 4px solid $main-color;
@@ -48,18 +67,6 @@ header {
 				.en {
 					color: $main-color;
 				}
-			}
-
-			.en {
-				margin: 24px 0 3px;
-				color: $text-base-color;
-				font-size: 24px;
-				font-family: 'Poppins', sans-serif;
-			}
-			.jp {
-				color: $text-sub-color;
-				font-size: 12px;
-				font-weight: bold;
 			}
 		}
 	}
@@ -100,7 +107,6 @@ header {
 			background: url("#{$base-url}/img/search.svg") no-repeat;
 			background-size: 80%;
 			background-position: center;
-			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
 		}
 
@@ -110,7 +116,6 @@ header {
 			position: absolute;
 			top: 10px;
 			right: 10px;
-			-webkit-transition: all .3s ease;
 			transition: all .3s ease;
 
 			span{
@@ -120,8 +125,6 @@ header {
 				left: 0;
 				background: $menu-icon-color;
 				display: inline-block;
-				//transition-property: transform,opacity;
-				//transition-duration: .5s;
 
 				&:nth-child(1) {
 					top: 7px;
@@ -148,7 +151,6 @@ header {
 		position: absolute;
 		top: -150px;
 		z-index: 11;
-		-webkit-transition: all .3s ease;
 		transition: all .3s ease;
 
 		&.open {
@@ -214,6 +216,11 @@ header {
 				height: 20px;
 				background: url("#{$base-url}/img/splite-contact.svg") no-repeat;
 				display: block;
+				transition: all $hover-action-time ease-in-out;
+
+				&:hover {
+			    opacity: 0.5;
+				}
 
 				&.twitter{
 					margin: 10px auto 0;
@@ -262,7 +269,6 @@ header {
 		box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
 		position: absolute;
 		z-index: 10;
-		-webkit-transition: all .3s ease;
 		transition: all .3s ease;
 
 		&.side-open {

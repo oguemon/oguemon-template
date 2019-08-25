@@ -15,7 +15,7 @@ a.post-item {
 	border-radius: $border-radius;
 	position: relative;
 	display: block;
-	transition: all .1s ease-in-out;
+	transition: all $hover-action-time ease-in-out;
 
 	@include mq() {
 		margin-left: 10px;

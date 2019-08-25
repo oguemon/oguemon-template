@@ -92,6 +92,11 @@ aside#site-aside {
 			margin: 5px 0 10px 80px;
 			background: url("#{$base-url}/img/splite-contact.svg") no-repeat;
 			display: block;
+			transition: all $hover-action-time ease-in-out;
+
+			&:hover {
+				opacity: 0.5;
+			}
 
 			&.twitter {
 				background-position: 0 0;
@@ -121,11 +126,11 @@ a.view-popular {
 	padding: 5px;
 	background: $white-color;
 	display: block;
+	transition: all $hover-action-time ease-in-out;
 
 	&:hover {
 		transform: translate(-2px -2px);
 		box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
-		transition: all .2s ease-in-out;
 	}
 
 	&:first-child {
@@ -169,9 +174,10 @@ ul#category-list {
 	}
 
 	a {
+		transition: all $hover-action-time ease-in-out;
+
 		&:hover {
 			color: $main-color;
-			transition: all .2s ease-in-out;
 		}
 	}
 

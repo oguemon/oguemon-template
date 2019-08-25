@@ -29,7 +29,7 @@
 			background: $category-color;
 			border-radius: 5px;
 			display: inline-block;
-			transition: all .2s ease-in-out;
+			transition: all $hover-action-time ease-in-out;
 
 			&:hover {
 				background: lighten($main-color, 10%);

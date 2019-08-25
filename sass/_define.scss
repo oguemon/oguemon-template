@@ -42,6 +42,11 @@ $menu-icon-color: #333;
 
 $category-color: $main-color;
 
+$go-to-top-bg-color: #555;
+
+$footer-bg-color: #333;
+$footer-font-color: #999;
+
 $popup-color: #f88;
 $popup-close-color: #888888;
 
@@ -54,6 +59,9 @@ $border-radius: 5px;
 
 $sns-icon-width: 30px;
 $sns-icon-height: 30px;
+
+// 時間
+$hover-action-time: .2s;
 
 // 色付きリンク
 %colored-link-text {

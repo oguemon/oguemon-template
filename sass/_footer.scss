@@ -7,8 +7,13 @@
 	font-size: 12px;
 	font-weight: bold;
 	text-align: center;
-	background: #555;
+	background: $go-to-top-bg-color;
 	display: block;
+	transition: all $hover-action-time ease-in-out;
+
+	&:hover {
+		background: lighten(#555, 10%);
+	}
 }
 
 footer {
@@ -17,7 +22,7 @@ footer {
 	margin: 0;
 	color: $white-color;
 	font-size: 12px;
-	background: #333;
+	background: $footer-bg-color;
 
 	@include mq() {
 		min-width: auto;
@@ -60,14 +65,14 @@ footer {
 		}
 
 		.title {
-			color: #999;
+			color: $footer-font-color;
 			font-size: 20px;
 			font-family: "poppins";
 		}
 
 		ul.items {
 			padding: 10px;
-			border-left: 1px solid #999;
+			border-left: 1px solid $footer-font-color;
 
 			li {
 				line-height: 2;
@@ -92,6 +97,11 @@ footer {
 		padding-top: 22.7%;
 		background: url("#{$base-url}/img/logo-white.svg");
 		display: block;
+		transition: all $hover-action-time ease-in-out;
+
+		&:hover {
+			opacity: 0.5;
+		}
 
 		@include mq () {
 			width: auto;
@@ -100,11 +110,11 @@ footer {
 
 	.footer-contents-other-list {
     padding-top: 20px;
-		color: #999;
+		color: $footer-font-color;
 		text-align: center;
 
 		a {
-			color: #999;
+			color: $footer-font-color;
 
 			&:hover {
 				color: $white-color;
@@ -117,6 +127,6 @@ footer {
     padding: 20px 0;
     color: $white-color;
     text-align: center;
-    border-top: 1px solid #999;
+    border-top: 1px solid $footer-font-color;
 	}
 }

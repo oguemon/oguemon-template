@@ -102,7 +102,7 @@
       color: #333;
       background: $white-color;
       display: block;
-      transition: all .1s ease-in-out;
+      transition: all $hover-action-time ease-in-out;
 
       &:hover {
         box-shadow: 1px 1px 10px  rgba(0,0,0,0.15);
