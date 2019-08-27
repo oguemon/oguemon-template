@@ -184,6 +184,37 @@
 		font-weight: bold;
 	}
 
+	.catch-copy {
+    margin-top: 20px;
+		color: $main-color;
+		font-size: 130%;
+		text-align: center;
+		text-decoration: none;
+
+		@include mq() {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+
+	.wrapper-left {
+		width: 300px;
+		float: left;
+
+		@include mq() {
+			width: auto;
+			float: none;
+		}
+	}
+
+	.wrapper-right {
+		margin-left: 340px;
+
+		@include mq() {
+			margin-left: 0;
+		}
+	}
+
 	// mathjax
 	.MathJax_Display {
 		max-width: 100% !important;
