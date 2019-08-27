@@ -1,0 +1,52 @@
+
+
+// アーカイブタイトルなど
+#header-404 {
+	min-width: 1100px;
+	width: 100%;
+	color: $white-color;
+	font-family: "poppins";
+	text-align: center;
+	line-height: 1;
+	background: $accent-red;
+	overflow: hidden;
+
+	@include mq() {
+		min-width: auto;
+	}
+
+	.wrapper-404-header {
+		padding: 60px;
+
+		@include mq() {
+			padding: 30px 20px;
+		}
+	}
+
+	.error-code {
+		font-size: 800%;
+	}
+
+	.error-msg {
+		font-size: 280%;
+	}
+}
+
+#title-404 {
+	padding: 20px 10px;
+  color: $accent-red;
+  font-size: 200%;
+	text-align: center;
+}
+
+#description-404 {
+	width: 640px;
+	margin: 0 auto 30px;
+	font-size: 120%;
+	line-height: 2;
+
+	@include mq() {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+	}
+}
