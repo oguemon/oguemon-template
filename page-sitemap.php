@@ -30,7 +30,7 @@ get_header();
 					<ul>
 						<li><a href="">トップページ</a></li>
 						<li><a href="../about/">このサイトについて</a></li>
-						<li><a href="../profile/">プロフィール</a></li>
+						<!--<li><a href="../profile/">プロフィール</a></li>-->
 						<li><a href="../services/">自作サービス一覧</a></li>
 						<li><a href="../sitemap/">サイトマップ</a></li>
 						<li><a href="../terms/">ご利用上の注意点</a></li>

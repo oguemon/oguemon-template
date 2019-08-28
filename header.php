@@ -209,8 +209,8 @@ else
 				<a id="blog-title" href="<?=$url?>"></a>
 				<div id="menu-list">
 					<a class="menu-item" href="<?=$url?>/about/">
-						<div class="en">PROFILE</div>
-						<div class="jp">おぐえもんについて</div>
+						<div class="en">ABOUT</div>
+						<div class="jp">おぐえもん.comとは</div>
 					</a>
 					<a class="menu-item" href="<?=$url?>">
 						<div class="en">BLOG</div>
