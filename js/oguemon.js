@@ -104,7 +104,7 @@ $(function () {
 });
 
 // HTMLのみならず画像を含む全コンテンツが読まれたら実行
-$(window).load(function () {
+$(window).on('load', function () {
 	/*
 	 *  目次生成
 	 *  （toc.jsを使用）
