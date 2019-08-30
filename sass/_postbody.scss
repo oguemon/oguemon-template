@@ -107,14 +107,20 @@
 	}
 
 	dt {
+    padding-left: 10px;
+    font-size: 110%;
 		font-weight: bold;
+    line-height: 1.5;
+    border-left: 5px solid $main-color;
 		display: inline-block;
-		line-height: 1.5em;
-		border-bottom: 3px solid $main-color;
+
+		@include mq() {
+			margin: 0 10px;
+		}
 	}
 
 	dd {
-		margin: 0 0 0 20px;
+    margin: 0 20px 25px;
 	}
 
 	table {
