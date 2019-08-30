@@ -33,7 +33,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $site_root_url . '&title=' . 
 					<div class="title">ABOUT</div>
 					<ul class="items">
 						<li><a href="<?=$site_root_url?>/about/">このサイトについて</a></li>
-						<li><a href="<?=$site_root_url?>/profile/">プロフィール</a></li>
+						<!--<li><a href="<?=$site_root_url?>/profile/">プロフィール</a></li>-->
 					</ul>
 				</div>
 				<div class="footer-contents-list">
