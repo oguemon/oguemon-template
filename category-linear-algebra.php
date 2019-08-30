@@ -30,11 +30,6 @@ get_header();
 	<div id="site-main">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
-				<?php
-				//パンくずリスト
-				//get_template_part( 'template-parts/content', 'breadcrumb' );
-				?>
-
 	<h3><span>行列式・逆行列 計算機</span></h3>
 	<div class="description">
 		計算が超面倒な「行列式」と「逆行列」を瞬時に求めてくれるWebアプリを開発しました！<br>
@@ -245,4 +240,7 @@ get_header();
 	</div><!-- #site-main -->
 </div><!-- .linear-algebra -->
 <?php
+//パンくずリスト
+get_template_part( 'template-parts/content', 'breadcrumb' );
+
 get_footer();

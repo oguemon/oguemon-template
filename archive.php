@@ -22,10 +22,6 @@ get_header();
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
 				<?php
-				//パンくずリスト
-				//get_template_part( 'template-parts/content', 'breadcrumb' );
-				?>
-				<?php
 				if ( have_posts() ) {
 					echo '<div id="recent-posts" class="clearfix">';
 					$article_count = 0;
@@ -62,4 +58,7 @@ get_header();
 	</div><!-- #site-main -->
 </div>
 <?php
+//パンくずリスト
+get_template_part( 'template-parts/content', 'breadcrumb' );
+
 get_footer();

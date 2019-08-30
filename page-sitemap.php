@@ -21,10 +21,6 @@ get_header();
 	<div id="site-main" class="bg-blue-shallow">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
-				<?php
-				//パンくずリスト
-				//get_template_part( 'template-parts/content', 'breadcrumb' );
-				?>
 				<div id="sitemap">
 					<h3>サイト記事</h3>
 					<ul>
@@ -75,4 +71,7 @@ get_header();
 	</div><!-- #site-main -->
 </div>
 <?php
+//パンくずリスト
+get_template_part( 'template-parts/content', 'breadcrumb' );
+
 get_footer();

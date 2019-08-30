@@ -12,8 +12,6 @@ get_header();
 	<div class="wrapper wrapper-main clearfix">
 		<main id="site-content">
 			<?php
-			//パンくずリスト
-			//get_template_part( 'template-parts/content', 'breadcrumb' );
 			//記事を表示
 			while ( have_posts() ) {
 				the_post();
@@ -26,4 +24,8 @@ get_header();
 </div><!-- #site-main -->
 <?php
 include_once('template-parts/content-popup.php');
+
+//パンくずリスト
+get_template_part( 'template-parts/content', 'breadcrumb' );
+
 get_footer();
