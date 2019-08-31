@@ -18,28 +18,6 @@ if ( $custom_loop->have_posts() ) {
 	$m = 0;
 ?>
 <div id="pickup-posts" class="post-list clearfix">
-<?php
-	// 1列目記事
-	//$custom_loop->the_post();
-?>
-<!--
-		<div class="post-pickup-main clearfix">
-			<article>
-				<?php if ( has_post_thumbnail() ){ ?>
-				<div class="post-cover">
-					<a href="<?= get_permalink() ?>"><?= get_the_post_thumbnail() ?></a>
-				</div>
-				<?php } ?>
-				<div class="post-preview">
-					<h2 class="title-post"><a href="<?= get_permalink() ?>"><?= get_the_title() ?></a></h2>
-					<?php the_category();?>
-					<p class="post-meta">
-						<span class="posted-on"><span class="icon-published"></span><time><?= get_the_date() ?></time></span>
-					</p>
-				</div>
-			</article>
-		</div>
-	-->
 	<div class="post-pickup-sub-list" class="post-list clearfix">
 <?php
 	// 2列目記事
