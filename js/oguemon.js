@@ -146,7 +146,7 @@ $(window).on('load', function () {
 		// イベント送信（ページ遷移）
 		ga('send', 'event', 'popup-box', 'open', location.pathname, 1, { 'nonInteraction': 1 });
 		// 指定したリンクへ飛ぶ
-		location.href = "https://oguemon.com/tools/calc/mat-det-inv.html";
+		location.href = "https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g";
 	});
 	// ポップアップを閉じるボタンをクリック
 	$('#popup-close').click(function () {
@@ -164,15 +164,7 @@ $(window).on('load', function () {
 	function checkWhiteList() {
 		// 表示を許すページ
 		const white_list = [
-			'elimination',
-			'simultaneous-regular',
-			'cramers-rule',
-			'solution',
-			'cofactor-expansion',
-			'det-feature',
-			'hello-world',
-			'inverse-matrix',
-			'inner-and-cross-product'
+			'linear-algebra', // 線形代数カテゴリ全部
 		];
 		// 正規表現作り
 		let re_str = '';
