@@ -2,6 +2,8 @@
  *  フッター
  */
 #go-to-top {
+	min-width: 1100px;
+	width: 100%;
 	padding: 10px;
 	color: $white-color;
 	font-size: 12px;
@@ -13,6 +15,10 @@
 
 	&:hover {
 		background: lighten(#555, 10%);
+	}
+
+	@include mq() {
+		min-width: auto;
 	}
 }
 
