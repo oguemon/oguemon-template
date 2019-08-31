@@ -61,7 +61,7 @@ li {
 }
 
 .wrapper {
-	width: 1100px;
+	width: $wrapper-width;
 	margin: 0 auto;
 
 	@include mq() {
@@ -86,7 +86,7 @@ li {
 }
 
 #site-main {
-	min-width: 1100px;
+	min-width: $wrapper-width;
 	width: 100%;
 	margin: 0 auto;
 
@@ -191,7 +191,7 @@ ul#breadcrumb {
 }
 
 #top-img {
-	min-width: 1100px;
+	min-width: $wrapper-width;
 	height: 350px;
 	transition: all .5s linear;
 

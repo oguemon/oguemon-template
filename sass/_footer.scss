@@ -2,7 +2,7 @@
  *  フッター
  */
 #go-to-top {
-	min-width: 1100px;
+	min-width: $wrapper-width;
 	width: 100%;
 	padding: 10px;
 	color: $white-color;
@@ -24,7 +24,7 @@
 
 footer {
 	width: 100%;
-	min-width: 1100px;
+	min-width: $wrapper-width;
 	margin: 0;
 	color: $white-color;
 	font-size: 12px;
