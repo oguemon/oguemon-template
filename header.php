@@ -188,6 +188,7 @@ else
 			<a class="menu-item" href="<?=$url?>/topic/saikoku33/"><i class="category-icon hike-icon"></i>西国三十三ヶ所巡礼</a>
 			<a class="menu-item" href="<?=$url?>/topic/web/"><i class="category-icon code-icon"></i>Web開発</a>
 			<a class="menu-item" href="<?=$url?>/topic/blog/"><i class="category-icon dialy-icon"></i>おぐえもんの日記</a>
+			<a class="menu-item" href="<?=$url?>/services/">提供サービス一覧</a>
 			<a class="menu-item" href="<?=$url?>/about/">このサイトについて</a>
 			<a class="menu-item" href="<?=$url?>/terms/">利用上の注意点</a>
 		</div>
