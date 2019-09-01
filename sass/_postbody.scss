@@ -131,7 +131,7 @@
 
 		@include mq() {
 			min-width: auto;
-			width: 100%;
+			width: calc(100% - 20px);
 		}
 
 		th, td {
