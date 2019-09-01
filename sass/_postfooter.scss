@@ -99,7 +99,7 @@
 
 	@include mq(){
 		margin: 0 0 10px;
-		padding: 10px;
+		padding: 10px 10px 20px;
 	}
 
 	#relative-article-header {
@@ -133,7 +133,7 @@
 		transition: all $hover-action-time ease-in-out;
 
 		@include mq(){
-			width: auto;
+			width: 100%;
 			margin: 10px 0 0;
 		}
 
@@ -210,6 +210,7 @@ a#same-category {
 
 	@include mq(){
 		width: 100%;
+    margin-top: 20px;
 	}
 
 	&:hover {
