@@ -88,18 +88,25 @@ $(function () {
 			url: './tax-calc/',
 		},
 	];
-	const top_img = $('#top-img');
 	let topImgCurrentClassNo = 0;
+	// クラスとリンク先を切り替え（初期設定）
+	toggleTopImgAttr (topImgCurrentClassNo);
 	// 指定時間おきに実行する処理
 	setInterval(function () {
 		// 次の表示番号を導出
 		topImgCurrentClassNo++;
 		topImgCurrentClassNo %= topImgClassList.length;
 		// クラスとリンク先を切り替え
+		toggleTopImgAttr (topImgCurrentClassNo);
+	}, toggleTopImgInterval);
+
+	// クラスとリンク先を切り替える関数
+	function toggleTopImgAttr (topImgCurrentClassNo) {
+		const top_img = $('#top-img');
 		top_img.removeClass();
 		top_img.addClass(topImgClassList[topImgCurrentClassNo].class);
 		top_img.attr('href', topImgClassList[topImgCurrentClassNo].url);
-	}, toggleTopImgInterval);
+	}
 
 	/*
 	 *  目次生成
