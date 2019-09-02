@@ -173,7 +173,7 @@ function add_async_to_enqueue_script( $url ) {
 		//jqueryファイルでない
 		if (strpos( $url, 'jquery.min.js' ) === false)
 		{
-			return "$url' async charset='UTF-8";
+			return $url . ' async charset="UTF-8"';
 		}
 	}
 	// CSSファイルである
@@ -217,7 +217,7 @@ function add_quicktags() {
       QTags.addButton('dt','dt','<dt>','</dt>');
       QTags.addButton('dd','dd','<dd>','</dd>');
       QTags.addButton('box','box','<div class="point-box">\n','\n</div>');
-      QTags.addButton('bax-cap','bax cap','<div class="point-box-caption">','</div>');
+			QTags.addButton('bax-cap','bax cap','<div class="point-box-caption">','</div>');
     </script>
 <?php
 }
