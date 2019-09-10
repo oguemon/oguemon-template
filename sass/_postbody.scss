@@ -131,7 +131,10 @@
 
 		@include mq() {
 			min-width: auto;
-			width: calc(100% - 20px);
+			max-width: calc(100% - 20px);
+			font-size: 12px;
+			table-layout: fixed;
+			word-break: break-all;
 		}
 
 		th, td {
