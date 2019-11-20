@@ -1,13 +1,13 @@
 {
   "name": "oguemon-template",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "SASSとjsのコンパイル。",
   "private": true,
   "dependencies": {
-    "browser-sync": "^2.26.7",
-    "google-closure-compiler": "^20190618.0.0",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.2.0",
-    "gulp-sass": "^4.0.2"
+    "browser-sync": "latest",
+    "google-closure-compiler": "latest",
+    "gulp": "latest",
+    "gulp-cli": "latest",
+    "gulp-sass": "latest"
   }
 }
