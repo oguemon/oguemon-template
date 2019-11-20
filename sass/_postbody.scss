@@ -160,7 +160,7 @@
 	blockquote {
     margin: 5px 0;
     padding: 25px 25px 10px;
-		background: url("#{$base-url}/img/quotation.svg") no-repeat, $gray-light-color;
+		background: url("../img/quotation.svg") no-repeat, $gray-light-color;
     background-size: 30px;
     background-position: 15px 15px;
     border-radius: 5px;
@@ -269,7 +269,7 @@
 		width: 20px;
 		height: 20px;
     margin: 0 5px -3px 0;
-    background: url("#{$base-url}/img/icon-book-solid.svg") no-repeat;
+    background: url("../img/icon-book-solid.svg") no-repeat;
 		display: inline-block;
 	}
 	.description {

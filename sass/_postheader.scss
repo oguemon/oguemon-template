@@ -53,7 +53,7 @@
 			width: 13px;
 			height: 13px;
 			margin: 0 5px -1px 0;
-			background: url("#{$base-url}/img/icon-redo-solid.svg") no-repeat;
+			background: url("../img/icon-redo-solid.svg") no-repeat;
 			display: inline-block;
 		}
 	}
@@ -69,18 +69,18 @@
 	overflow: hidden;
 
 	.category-saikoku33 & {
-		background-image: url("#{$base-url}/img/topic-saigoku33.jpg");
+		background-image: url("../img/topic-saigoku33.jpg");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 
 		@include mq() {
-			background-image: url("#{$base-url}/img/topic-saigoku33-sp.jpg");
+			background-image: url("../img/topic-saigoku33-sp.jpg");
 		}
 	}
 
 	.category-blog & {
-		background-image: url("#{$base-url}/img/topic-blog.jpg");
+		background-image: url("../img/topic-blog.jpg");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;

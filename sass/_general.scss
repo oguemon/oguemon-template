@@ -202,7 +202,7 @@ ul#breadcrumb {
 	}
 
 	&.calc {
-		background-image: url("#{$base-url}/img/top-calc.png");
+		background-image: url("../img/top-calc.png");
 		background-color: $main-color;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -210,7 +210,7 @@ ul#breadcrumb {
 		display: block;
 
 		@include mq() {
-			background-image: url("#{$base-url}/img/top-calc-sp.png");
+			background-image: url("../img/top-calc-sp.png");
 			background-color: $main-color;
 			background-repeat: no-repeat;
 			background-position: center;
@@ -219,7 +219,7 @@ ul#breadcrumb {
 	}
 
 	&.salary {
-		background-image: url("#{$base-url}/img/top-salary.png");
+		background-image: url("../img/top-salary.png");
 		background-color: #64ab00;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -227,7 +227,7 @@ ul#breadcrumb {
 		display: block;
 
 		@include mq() {
-			background-image: url("#{$base-url}/img/top-salary-sp.png");
+			background-image: url("../img/top-salary-sp.png");
 			background-color: #64ab00;
 			background-repeat: no-repeat;
 			background-position: center;

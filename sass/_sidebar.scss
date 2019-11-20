@@ -37,7 +37,7 @@ aside#site-aside {
 			width: 25px;
 			height: 25px;
 			margin: 0 5px -8px 0;
-			background: url("#{$base-url}/img/icon-crown-solid.svg") no-repeat;
+			background: url("../img/icon-crown-solid.svg") no-repeat;
 			display: inline-block;
 		}
 
@@ -46,7 +46,7 @@ aside#site-aside {
 			width: 25px;
 			height: 25px;
 			margin: 0 5px -8px 0;
-			background: url("#{$base-url}/img/icon-folder-open-solid.svg") no-repeat;
+			background: url("../img/icon-folder-open-solid.svg") no-repeat;
 			display: inline-block;
 		}
 	}
@@ -90,7 +90,7 @@ aside#site-aside {
 			width: 200px;
 			height: 20px;
 			margin: 5px 0 10px 80px;
-			background: url("#{$base-url}/img/splite-contact.svg") no-repeat;
+			background: url("../img/splite-contact.svg") no-repeat;
 			display: block;
 			transition: all $hover-action-time ease-in-out;
 
@@ -187,7 +187,7 @@ ul#category-list {
 	width: 25px;
 	height: 25px;
 	margin: 0 10px -8px 0;
-	background: url("#{$base-url}/img/splite-category.svg") no-repeat;
+	background: url("../img/splite-category.svg") no-repeat;
 	display: inline-block;
 
 	// 線形代数のアイコン

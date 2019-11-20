@@ -54,7 +54,7 @@
 .sns-btn {
 	width: $sns-icon-width;
 	height: $sns-icon-height;
-	background: url("#{$base-url}/img/splite-sns.svg") no-repeat;
+	background: url("../img/splite-sns.svg") no-repeat;
 	display: inline-block;
 
 	&.sns-btn-twitter  {background-position:    0   0;}
