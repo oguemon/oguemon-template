@@ -42,6 +42,12 @@
         float: left;
         transition: background-color ease-in-out .2s;
 
+        @include mqn() {
+            width: 160px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
         &:hover {
             background: lighten($popup-color, 10%);
         }
@@ -53,6 +59,12 @@
         border-radius: 5px;
         float: left;
         transition: background-color ease-in-out .2s;
+
+        @include mqn() {
+            width: 80px;
+            padding-left: 0;
+            padding-right: 0;
+        }
 
         &:hover {
             background: darken($white-color, 10%);
