@@ -130,8 +130,12 @@ $(window).on('load', function () {
 	 */
 	// 既に出したかどうかのフラグ
 	let popup_flg = false;
-	// ホワイトリストに入るページなら
-	if (checkWhiteList()) {
+	// クッキーを取得
+	const cookie_key = 'popup-openchat';
+	const cookie_closed = $.cookie(cookie_key);
+	console.log('cookie: ' + cookie_closed);
+	// ホワイトリストに入るページ＆クッキーが存在しないなら
+	if (checkWhiteList() && !cookie_closed) {
 		// スクロールされる度に実行
 		$(window).scroll(function () {
 			// まだポップアップしてないand一定以上のスクロール
@@ -152,6 +156,8 @@ $(window).on('load', function () {
 	$('#popup-open').click(function () {
 		// イベント送信（ページ遷移）
 		ga('send', 'event', 'popup-box', 'open', location.pathname, 1, { 'nonInteraction': 1 });
+		// クッキーに閉じた旨を保存
+		$.cookie(cookie_key, 'closed', {expires: 7});
 		// 指定したリンクへ飛ぶ
 		location.href = "https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g";
 	});
@@ -159,6 +165,8 @@ $(window).on('load', function () {
 	$('#popup-close').click(function () {
 		//  イベント送信（閉じる）
 		ga('send', 'event', 'popup-box', 'close', location.pathname, 1, { 'nonInteraction': 1 });
+		// クッキーに閉じた旨を保存
+		$.cookie(cookie_key, 'closed', {expires: 7});
 		// ボックスを下に引っ込める
 		anime({
 			targets: '#popup-box',

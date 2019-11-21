@@ -152,6 +152,8 @@ function oguemon_scripts() {
 	wp_deregister_script('jquery');
 	//最新のJQueryを読み込み
 	wp_enqueue_script('jquery-alt', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '3.4.1', true);
+	//JQuery Cookieを読み込み
+	wp_enqueue_script('jquery-cookie', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array(), '1.4.1', true);
 	//Anime.jsの読み込み
 	wp_enqueue_script('animejs', $theme_root . '/js/anime.min.js', array(), false, true);
 	//toc.js(目次生成)の読み込み
