@@ -4,10 +4,12 @@
     width: 420px;
     right: 10px;
     margin: 10px;
+    padding: 10px;
+    background: $white-color;
     bottom: -200px;
     position: fixed;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 
     @include mq() {
         width: auto;
@@ -15,10 +17,6 @@
 
     #popup-wrapper {
         padding: 10px;
-        background: $white-color;
-        border-width: 3px 3px 0;
-        border-style: solid;
-        border-color:  $popup-color;
         border-radius: 5px 5px 0 0;
 
         .title{
@@ -34,14 +32,15 @@
     }
 
     #popup-open {
-        width: 50%;
-        padding: 10px 0;
+        margin: 0 10px;
+        padding: 10px 50px;
         text-align: center;
         background: $popup-color;
         color: $white-color;
         font-weight: bold;
-        border-radius: 0 0 0 5px;
+        border-radius: 5px;
         float: left;
+        transition: background-color ease-in-out .2s;
 
         &:hover {
             background: lighten($popup-color, 10%);
@@ -49,17 +48,14 @@
     }
 
     #popup-close {
-        width: 50%;
-        padding: 10px 0;
+        padding: 10px 20px;
         text-align: center;
-        background: $popup-close-color;
-        color: $white-color;
-        font-weight: bold;
-        border-radius: 0 0 5px 0;
+        border-radius: 5px;
         float: left;
+        transition: background-color ease-in-out .2s;
 
         &:hover {
-            background: lighten($popup-close-color, 10%);
+            background: darken($white-color, 10%);
         }
     }
 }
