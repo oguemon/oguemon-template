@@ -54,10 +54,11 @@
 	.page-number {
 		margin: 0 3px;
 		padding: 8px;
-		border: 1px solid $main-color;
 		background: $main-color;
 		color: $white-color;
 		font-size: 120%;
+		border-radius: 3px;
+		transition: background-color ease-in-out $hover-action-time;
 	}
 
 	// 特にページ番号がリンクで囲まれているもの（現在のページでない）
@@ -66,7 +67,7 @@
 		background: $white-color;
 
 		&:hover {
-			background: #ff8;
+			background: $gray-light-color;
 		}
 	}
 }
