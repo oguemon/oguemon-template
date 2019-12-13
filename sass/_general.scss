@@ -203,7 +203,7 @@ ul#breadcrumb {
 
 	&.calc {
 		background-image: url("../img/top-calc.png");
-		background-color: $main-color;
+		background-color: #47b8e8;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
@@ -211,7 +211,7 @@ ul#breadcrumb {
 
 		@include mq() {
 			background-image: url("../img/top-calc-sp.png");
-			background-color: $main-color;
+			background-color: #47b8e8;
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
@@ -238,7 +238,7 @@ ul#breadcrumb {
 
 // 背景色設定クラス
 .bg-blue-shallow {
-	background: #f6f9fb;
+	background: $bg-main-color;
 }
 
 // 記事埋め込みリンク
