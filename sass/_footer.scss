@@ -11,7 +11,7 @@
 	text-align: center;
 	background: $go-to-top-bg-color;
 	display: block;
-	transition: all $hover-action-time ease-in-out;
+	transition: background-color $hover-action-time ease-in-out;
 
 	&:hover {
 		background: lighten(#555, 10%);
@@ -103,7 +103,7 @@ footer {
 		padding-top: 22.7%;
 		background: url("../img/logo-white.svg");
 		display: block;
-		transition: all $hover-action-time ease-in-out;
+		transition: opacity $hover-action-time ease-in-out;
 
 		&:hover {
 			opacity: 0.5;

@@ -132,7 +132,7 @@
 		background: $white-color;
 		position: relative;
 		display: block;
-		transition: all $hover-action-time ease-in-out;
+		transition: box-shadow $hover-action-time ease-in-out, transform $hover-action-time ease-in-out;
 
 		@include mq(){
 			width: 100%;
@@ -208,7 +208,7 @@ a#same-category {
 	background: $main-color;
 	border-radius: 5px;
 	display: block;
-	transition: all $hover-action-time ease-in-out;
+	transition: background-color $hover-action-time ease-in-out, box-shadow $hover-action-time ease-in-out;
 
 	@include mq(){
 		width: 100%;

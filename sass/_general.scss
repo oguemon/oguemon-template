@@ -52,7 +52,7 @@ li {
 	background: $main-color;
 	border-radius: $border-radius;
 	display: block;
-	transition: all $hover-action-time ease-in-out;
+	transition: background-color $hover-action-time ease-in-out, box-shadow $hover-action-time ease-in-out;
 
 	&:hover {
 		background: lighten($main-color, 10%);

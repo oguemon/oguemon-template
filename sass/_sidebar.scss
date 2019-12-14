@@ -92,7 +92,7 @@ aside#site-aside {
 			margin: 5px 0 10px 80px;
 			background: url("../img/splite-contact.svg") no-repeat;
 			display: block;
-			transition: all $hover-action-time ease-in-out;
+			transition: opacity $hover-action-time ease-in-out;
 
 			&:hover {
 				opacity: 0.5;
@@ -126,7 +126,7 @@ a.view-popular {
 	padding: 5px;
 	background: $white-color;
 	display: block;
-	transition: all $hover-action-time ease-in-out;
+	transition: transform $hover-action-time ease-in-out, box-shadow $hover-action-time ease-in-out;
 
 	&:hover {
 		transform: translate(-2px -2px);
@@ -174,7 +174,7 @@ ul#category-list {
 	}
 
 	a {
-		transition: all $hover-action-time ease-in-out;
+		transition: color $hover-action-time ease-in-out;
 
 		&:hover {
 			color: $main-color;
