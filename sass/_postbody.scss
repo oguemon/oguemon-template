@@ -126,7 +126,7 @@
 	table {
 		min-width: 420px;
 		margin: 10px auto;
-		border: 2px solid $main-color;
+		border: 1px solid $border-base-color;
 		border-collapse: collapse;
 
 		@include mq() {
@@ -143,21 +143,25 @@
 
 		th {
 			color: $white-color;
-			font-weight: bold;
-			background: $main-color;
-			border: 1px solid $white-color;
+			font-weight: normal;
+			background: #555;
+			border: 1px solid #555;
 		}
 
-		td {
-			border: 1px solid $main-color;
-		}
+		tr {
+			border-bottom: 1px solid $border-base-color;
 
-		tr:nth-child(even) {
-			background: #f8f8f8;
-		}
+			&:last-child {
+				border-bottom: none;
+			}
 
-		tr:nth-child(odd) {
-			background: $white-color;
+			&:nth-child(even) {
+				background: #f8f8f8;
+			}
+
+			&:nth-child(odd) {
+				background: $white-color;
+			}
 		}
 	}
 
