@@ -51,6 +51,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $site_root_url . '&title=' . 
 					<ul class="items">
 						<li><a href="<?=$site_root_url?>/tools/calc/mat-det-inv.html">行列式&逆行列式計算機</a></li>
 						<li><a href="<?=$site_root_url?>/tax-calc/">簡単！手取り給料計算機</a></li>
+						<li><a href="<?=$site_root_url?>/atashinchi/">タチバナ研｜あたしンち情報</a></li>
 					</ul>
 				</div>
 			</div>
