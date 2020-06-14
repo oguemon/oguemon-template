@@ -63,7 +63,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $site_root_url . '&title=' . 
 				<a href="<?=$site_root_url?>/terms/">利用上の注意点</a>
 			</div>
 		</div><!-- .wrapper .wrapper-footer -->
-		<div id="copyright">Copyright © 2016-2019 おぐえもん All Rights Reserved.</div>
+		<div id="copyright">Copyright © 2016-2020 おぐえもん All Rights Reserved.</div>
 	</footer><!-- .site-footer -->
 </div><!-- end #container -->
 
