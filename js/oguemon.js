@@ -143,11 +143,7 @@ $(window).on('load', function () {
 				// イベント送信（表示）
 				ga('send', 'event', 'popup-box', 'show', location.pathname, 1, { 'nonInteraction': 1 });
 				// ひょっこり表示
-				anime({
-					targets: '#popup-box',
-					translateY: -200,
-					duration: 800
-				});
+				$('#popup-box').css('transform', 'translateY(-200px)');
 				popup_flg = true;
 			}
 		});
@@ -168,11 +164,7 @@ $(window).on('load', function () {
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
 		// ボックスを下に引っ込める
-		anime({
-			targets: '#popup-box',
-			translateY: 200,
-			duration: 1000
-		});
+		$('#popup-box').css('transform', 'translateY(200px)');
 	});
 
 	// 表示を許すページであるかどうかをチェック
