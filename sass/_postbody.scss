@@ -3,13 +3,16 @@
  */
 // 記事本文
 #post-body {
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 2.0;
 	text-align: justify;
 
+	@include mq() {
+		text-align: left;
+	}
+
 	strong {
 		font-weight: bold;
-		background: linear-gradient(transparent 40%, #fff888 40%);
 	}
 
 	a {
@@ -26,21 +29,8 @@
 
 	h3 {
 		margin: 25px 0 15px;
-		background: $main-color;
-		padding: 10px 15px;
-		color: $white-color;
-		font-size: 150%;
-		line-height: 1.5;
-
-		@include mq() {
-			margin-bottom: 20px;
-		}
-	}
-
-	h4 {
-		margin: 25px 0 15px;
-    padding: 0 3px 5px;
-		font-size: 140%;
+    	padding: 0 3px 5px;
+		font-size: 180%;
 		line-height: 1.5;
 		position: relative;
 		overflow: hidden;
@@ -48,6 +38,7 @@
 		@include mq() {
 			margin-left: $sp-postbody-side-margin;
 			margin-right: $sp-postbody-side-margin;
+			font-size: 160%;
 		}
 
 		&:before,
@@ -67,12 +58,25 @@
 		}
 	}
 
+	h4 {
+		margin: 25px 0 15px;
+		font-size: 140%;
+		line-height: 1.5;
+		border-bottom: 1px solid $border-sub-color;
+
+		@include mq() {
+			margin-left: $sp-postbody-side-margin;
+			margin-right: $sp-postbody-side-margin;
+			margin-bottom: 20px;
+		}
+	}
+
 	h5 {
 		font-size: 110%;
 	}
 
 	p {
-		margin: 15px 0;
+		margin: 20px 0;
 
 		@include mq() {
 			margin-left: $sp-postbody-side-margin;
