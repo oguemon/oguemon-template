@@ -9,6 +9,7 @@
     transition: transform ease-in-out .2s;
 
     .popup-content-wrapper {
+        max-width: 100%;
         display: flex;
         justify-content: space-between;
     }
