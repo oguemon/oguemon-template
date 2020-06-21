@@ -1,8 +1,11 @@
 // Sass configuration
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var closureCompiler = require('google-closure-compiler').gulp();
 const browsersync = require('browser-sync');
+
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
 
 function compileSass () {
     return gulp.src('./sass/*.scss')
@@ -10,17 +13,9 @@ function compileSass () {
             .pipe(gulp.dest('./css'))
 }
 
-function minifyJs () {
-    return gulp.src('./js/oguemon.js')
-            .pipe(closureCompiler({
-                compilation_level: 'SIMPLE',
-                warning_level: 'QUIET',
-                language_in: 'ECMASCRIPT_2015',
-                language_out: 'ECMASCRIPT_2015',
-                js_output_file: 'oguemon.min.js'
-                }, {
-                platform: ['native', 'java', 'javascript']
-                }))
+function compileTS () {
+    return gulp.src('./ts/*.ts', {base: './'})
+            .pipe(webpackStream(webpackConfig, webpack))
             .pipe(gulp.dest('./js'));
 }
 
@@ -41,7 +36,8 @@ function browserReload (done){
 function watch () {
     gulp.watch('./**/*.php', gulp.series(browserReload));
     gulp.watch('./sass/*.scss', gulp.series(compileSass, browserReload));
-    gulp.watch('./js/oguemon.js', gulp.series(minifyJs, browserReload));
+    gulp.watch('./ts/*.ts', gulp.series(compileTS, browserReload));
 }
 
 exports.default = gulp.series(buildServer, watch);
+exports.compileTS = gulp.series(compileTS);

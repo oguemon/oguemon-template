@@ -150,18 +150,10 @@ function oguemon_scripts() {
 
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
-	//最新のJQueryを読み込み
-	wp_enqueue_script('jquery-alt', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '3.4.1', true);
-	//JQuery Cookieを読み込み
-	wp_enqueue_script('jquery-cookie', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array(), '1.4.1', true);
-	//Anime.jsの読み込み
-	wp_enqueue_script('animejs', $theme_root . '/js/anime.min.js', array(), false, true);
-	//toc.js(目次生成)の読み込み
-	wp_enqueue_script('tocjs', $theme_root . '/js/toc.min.js', array(), false, true);
 	//Google Adsenseの読み込み
 	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script('original', $theme_root . '/js/oguemon.min.js', array('jquery-alt'), '3.0.180902.2', true);
+	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array(), '3.0.200622.1', true);
 }
 add_action('wp_enqueue_scripts', 'oguemon_scripts' );
 
@@ -263,7 +255,7 @@ function add_string_to_content($content) {
 			$add_string = <<< EOM
 			<div id="toc-box">
 				<div id="toc-box-caption"><i class="toc-icon"></i>目次<span class="description">（クリックで該当箇所へ移動）</span></div>
-				<div id="toc"></div>
+				<div id="toc" data-toc="h3, h4" data-toc-container="#post-body"></div>
 			</div>
 EOM;
 			// 記事ページなら

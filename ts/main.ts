@@ -1,7 +1,12 @@
 'use strict';
 
+import $ from 'jquery';
+import 'jquery.cookie';
+import '@firstandthird/toc'; // 目次生成
+
 // HTMLが読まれたら実行
 $(function () {
+
 	/*
 	 * スマホの右上のメニューボタンを押した時の処理
 	 */
@@ -66,9 +71,19 @@ $(function () {
 	// リンクがクリックされたら
 	 $('a[href^="#"]').click(function () {
 		const speed = 400; // ミリ秒
-		const href = $(this).attr("href");
-		const target = $((href == "#" || href == "")? 'html' : href);
-		const position = target.offset().top - 10; //ゆとりを持たせる
+        const href = $(this).attr("href");
+        if (href == undefined) {
+            return;
+        }
+        const target = $((href == "#" || href == "")? 'html' : href);
+        if (target == undefined) {
+            return;
+        }
+        const target_offset = target.offset();
+        if (target_offset == undefined) {
+            return;
+        }
+		const position = target_offset.top - 10; //ゆとりを持たせる
 		// スクロールを実行
 		$('body,html').animate({ scrollTop: position }, speed, 'swing');
 	});
@@ -101,32 +116,18 @@ $(function () {
 	}, toggleTopImgInterval);
 
 	// クラスとリンク先を切り替える関数
-	function toggleTopImgAttr (topImgCurrentClassNo) {
+	function toggleTopImgAttr (topImgCurrentClassNo: number) {
 		const top_img = $('#top-img');
 		top_img.removeClass();
 		top_img.addClass(topImgClassList[topImgCurrentClassNo].class);
 		top_img.attr('href', topImgClassList[topImgCurrentClassNo].url);
 	}
-
-	/*
-	 *  目次生成
-	 *  （toc.jsを使用）
-	 */
-	$('#toc').toc({
-		selectors: 'h3, h4', // 目次として表示する要素のCSSセレクターを指定
-		container: '#post-body',
-		anchorName: function (i, heading, prefix) { // アンカーネームのカスタマイズ
-			return prefix + i;
-		}
-	});
-
 });
 
 // HTMLのみならず画像を含む全コンテンツが読まれたら実行
 $(window).on('load', function () {
 	/*
 	 *  ポップアップメッセージ
-	 *  （anime.jsを使用）
 	 */
 	// 既に出したかどうかのフラグ
 	let popup_flg = false;
@@ -138,8 +139,12 @@ $(window).on('load', function () {
 	if (checkWhiteList() && !cookie_closed) {
 		// スクロールされる度に実行
 		$(window).scroll(function () {
+            const scroll_top = $(this).scrollTop();
+            if (scroll_top == undefined) {
+                return;
+            }
 			// まだポップアップしてないand一定以上のスクロール
-			if (popup_flg == false && $(this).scrollTop() > 500) {
+			if (popup_flg == false && scroll_top > 500) {
 				// イベント送信（表示）
 				ga('send', 'event', 'popup-box', 'show', location.pathname, 1, { 'nonInteraction': 1 });
 				// ひょっこり表示
