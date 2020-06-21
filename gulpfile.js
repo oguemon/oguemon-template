@@ -4,13 +4,13 @@ var sass = require('gulp-sass');
 var closureCompiler = require('google-closure-compiler').gulp();
 const browsersync = require('browser-sync');
 
-gulp.task('sass', function() {
+function compileSass () {
     return gulp.src('./sass/*.scss')
             .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
             .pipe(gulp.dest('./css'))
-});
+}
 
-gulp.task('minifyjs', function() {
+function minifyJs () {
     return gulp.src('./js/oguemon.js')
             .pipe(closureCompiler({
                 compilation_level: 'SIMPLE',
@@ -22,27 +22,26 @@ gulp.task('minifyjs', function() {
                 platform: ['native', 'java', 'javascript']
                 }))
             .pipe(gulp.dest('./js'));
-});
+}
 
-gulp.task('build-server', function (done) {
+function buildServer (done) {
     browsersync.init({
         proxy: 'https://oguemon.localhost/',
         open:"external",
         online: true,
     });
     done();
-});
+}
 
-gulp.task('browser-reload', function (done){
+function browserReload (done){
     browsersync.reload();
     done();
-});
+}
 
-gulp.task('watch', function() {
-    gulp.watch('./**/*.php', gulp.series('browser-reload'));
-    gulp.watch('./sass/*.scss', gulp.series('sass', 'browser-reload'));
-    gulp.watch('./js/oguemon.js', gulp.series('minifyjs', 'browser-reload'));
-});
+function watch () {
+    gulp.watch('./**/*.php', gulp.series(browserReload));
+    gulp.watch('./sass/*.scss', gulp.series(compileSass, browserReload));
+    gulp.watch('./js/oguemon.js', gulp.series(minifyJs, browserReload));
+}
 
-const defaultTasks = gulp.series('build-server', 'watch');
-gulp.task('default', defaultTasks);
+exports.default = gulp.series(buildServer, watch);
