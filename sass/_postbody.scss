@@ -257,14 +257,19 @@
 	}
 
 	// mathjax
+	.MathJax {
+		margin: 0 5px;
+	}
+
 	.MathJax_Display {
 		max-width: 100% !important;
 		margin: 0;
-		padding: 5px 0;
+		padding: 10px 0;
 		overflow: hidden;
 
 		@include mq() {
-			overflow: scroll;
+			overflow-x: scroll;
+			overflow-y: hidden;
 		}
 	}
 }
