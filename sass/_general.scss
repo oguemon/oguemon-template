@@ -120,29 +120,6 @@ article {
   }
 }
 
-// パンくずリスト
-ul#breadcrumb {
-	margin: 0 0 20px;
-	color: $text-base-color;
-	font-size: 90%;
-
-	@include mq() {
-		margin: 5px 0 0;
-		padding: 0 10px 5px;
-		font-size: 80%;
-		border-bottom: 1px solid $border-sub-color;
-	}
-
-	li {
-		margin: 0 2px;
-		display: inline;
-
-		a {
-			@extend %colored-link-text;
-		}
-	}
-}
-
 // 検索窓
 .search-box {
 	height: 40px;

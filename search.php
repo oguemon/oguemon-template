@@ -19,13 +19,6 @@ get_header();
 	<div id="site-main">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
-				<!-- パンくずリスト
-				<ul id="breadcrumb">
-					<li><a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></li>
-					<li>></li>
-					<li>サイト内検索</li>
-				</ul>
-				-->
 				<!-- 検索窓 -->
 				<div id="article-search-area">
 					<div class="search-box">

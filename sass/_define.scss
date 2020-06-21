@@ -59,13 +59,3 @@ $sns-icon-height: 30px;
 
 // 時間
 $hover-action-time: .2s;
-
-// 色付きリンク
-%colored-link-text {
-	color: $main-color;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
