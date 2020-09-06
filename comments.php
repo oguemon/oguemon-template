@@ -41,14 +41,22 @@ $comment_list_options = [
 
 // コメント可能ならば
 if(comments_open(get_the_ID())) {
+    $comment_num = get_comments_number();
+    $title = ($comment_num > 0)? $comment_num . '件のコメント' : '今なら1コメをGetできます！';
 ?>
     <div class="comments">
-        <div class="header"><i class="comment-icon"></i><?= get_comments_number(); ?>件のコメント</div>
-        <?php comment_form($comment_form_options); ?>
+        <div class="header"><i class="comment-icon"></i><?= $title ?></div>
+        <?php
+        comment_form($comment_form_options);
+        if ($comment_num > 0) {
+        ?>
         <div id="comment-toggle">コメントの一覧を開閉する</div>
         <div id="comment-list" style="display: none;">
             <?php wp_list_comments($comment_list_options); ?>
         </div>
+        <?php
+        }
+        ?>
     </div>
 <?php
 }
