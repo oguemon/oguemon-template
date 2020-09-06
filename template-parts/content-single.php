@@ -131,6 +131,9 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	</div>
 
 <?php
+	// コメント表示
+	comments_template();
+
 	if(has_category()):
 		/* 関連記事 */
 ?>

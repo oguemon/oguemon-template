@@ -89,6 +89,26 @@ $(function () {
 	});
 
 	/*
+	 * コメント関連
+	 */
+	// コメントが入力されたら
+	$('#comment-input').on('keyup', e => {
+		const $e = $(e.target);
+		const lines = 1 + (String($e.val()).match(/\n/g) || []).length;
+		const line_height = 20;
+		const padding_top = parseInt($e.css('padding-top').replace(/px/, ''));
+		const padding_bottom = parseInt($e.css('padding-bottom').replace(/px/, ''));
+		const border_width = 1;
+		const set_height = lines * line_height + padding_top + padding_bottom + border_width;
+		$e.css('height', set_height + 'px');
+	});
+
+	// コメントの一覧を開閉する
+	$('#comment-toggle').on('click', () => {
+		$('#comment-list').slideToggle(200);
+	});
+
+	/*
 	 *  トップ画像を時間おきに変える
 	 */
 	// 変数宣言
