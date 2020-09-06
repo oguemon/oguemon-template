@@ -44,13 +44,14 @@
 	}
 
 	input, textarea {
+		font-size: 16px;
 		font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
+		border-radius: 0;
 	}
 
 	input[name=author], textarea {
 		margin-bottom: 10px;
 		padding: 10px 15px;
-		font-size: 100%;
 		border: none;
 		border-bottom: 1px solid $border-base-color;
 		display: block;
