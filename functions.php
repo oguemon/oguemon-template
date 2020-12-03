@@ -76,6 +76,13 @@ function oguemon_embed_style() {
 add_filter('embed_head', 'oguemon_embed_style');
 
 /**
+ * RSSフィードのリンクを生成
+ */
+add_action('wp_head', function() {
+	printf('<link rel="alternate" type="application/rss+xml" title="%s" href="%s">%s', get_bloginfo('name'), get_bloginfo('rss2_url'), "\n");
+});
+
+/**
  * タイトルタグの最適化
  */
 // 区切り文字の変更
