@@ -83,6 +83,22 @@ add_action('wp_head', function() {
 });
 
 /**
+ * RSSフィードの本文を生成
+ */
+function my_content_feeds($content) {
+	global $post, $more;
+	$more = false;
+	$content = apply_filters('the_content', get_the_content(''));
+	$content = str_replace(']]>', ']]&gt;', $content);
+	// 元記事へのリンク追加--ここから
+	$content = $content . '<p><a href="' . get_permalink($post->ID) . '">「 ' . get_the_title($post->ID) . ' 」の続きを読む</a></p>';
+	// 元記事へのリンク追加--ここまで
+	return $content;
+}
+add_filter('the_excerpt_rss', 'my_content_feeds');
+add_filter('the_content_feed', 'my_content_feeds');
+
+/**
  * タイトルタグの最適化
  */
 // 区切り文字の変更
