@@ -115,12 +115,16 @@ $(function () {
 	const toggleTopImgInterval = 5000; // ミリ秒
 	const topImgClassList = [
 		{
-			class: 'calc',
-			url: './tools/calc/mat-det-inv.html',
+			class: 'clubhouse',
+			url: './clubhouse-gen/',
 		},
 		{
 			class: 'salary',
 			url: './tax-calc/',
+		},
+		{
+			class: 'calc',
+			url: './tools/calc/mat-det-inv.html',
 		},
 	];
 	let topImgCurrentClassNo = 0;
@@ -156,7 +160,7 @@ $(window).on('load', function () {
 	const cookie_closed = $.cookie(cookie_key);
 	console.log('cookie: ' + cookie_closed);
 	// ホワイトリストに入るページ＆クッキーが存在しないなら
-	if (checkWhiteList() && !cookie_closed) {
+	if (true) { // if (checkWhiteList() && !cookie_closed) {
 		// スクロールされる度に実行
 		$(window).scroll(function () {
             const scroll_top = $(this).scrollTop();
@@ -180,7 +184,7 @@ $(window).on('load', function () {
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
 		// 指定したリンクへ飛ぶ
-		location.href = "https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g";
+		location.href = "https://oguemon.com/clubhouse-gen/";
 	});
 	// ポップアップを閉じるボタンをクリック
 	$('#popup-close').click(function () {

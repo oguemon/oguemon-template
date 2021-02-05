@@ -8,10 +8,10 @@
 <div id="popup-box">
     <div class="wrapper popup-content-wrapper">
         <div id="popup-open" class="popup-info">
-            <div class="title">みんなで線形代数を勉強しよう！</div>
+            <div class="title">クラブハウスのスクショ生成器が登場！</div>
             <div class="description">
-                線形代数LINEオープンチャットが600人を突破！<br>
-                匿名OK！疑問や発見を語り合い理解を深めよう。
+                自動生成されたClubhouseのスクショをSNSにアップして、<br>
+                招待される人脈があることをみんなにマウントしよう！
             </div>
         </div>
         <div id="popup-close" class="close-btn">

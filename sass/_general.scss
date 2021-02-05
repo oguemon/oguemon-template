@@ -186,6 +186,23 @@ article {
     padding-top: 80%;
 	}
 
+	&.clubhouse {
+		background-image: url("../img/top-clubhouse.png");
+		background-color: #f9f7f2;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		display: block;
+
+		@include mq() {
+			background-image: url("../img/top-clubhouse-sp.png");
+			background-color: #f9f7f2;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+
 	&.calc {
 		background-image: url("../img/top-calc.png");
 		background-color: #47b8e8;
