@@ -1,10 +1,10 @@
 {
   "name": "oguemon-template",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "SassとTypscriptのコンパイル。",
   "private": true,
   "devDependencies": {
-    "@firstandthird/toc": "^2.1.0",
+    "@firstandthird/toc": "latest",
     "@types/google.analytics": "latest",
     "@types/jquery": "latest",
     "@types/jquery.cookie": "latest",
@@ -13,11 +13,9 @@
     "gulp-sass": "latest",
     "jquery": "latest",
     "jquery.cookie": "latest",
-    "jquery.toc": "^0.4.0",
     "ts-loader": "latest",
     "typescript": "latest",
     "webpack": "latest",
-    "webpack-cli": "latest",
     "webpack-stream": "latest"
   }
 }
