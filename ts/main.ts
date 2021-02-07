@@ -20,7 +20,7 @@ $(function () {
 	// 初期化）透明レイヤー（右上メニュー押下時に現れる戻るトリガー用）を非表示
 	transparent.css('display', 'none');
 	// ボタンがクリックされたら
-	btn_menu.on('click', function () {
+	btn_menu.on('click', () => {
 		// スライドを実行
 		container.toggleClass('side-open');
 		//横に開いていたら
@@ -31,18 +31,18 @@ $(function () {
 		} else {
 			btn_menu.css('transform', 'rotate(0)');
 			transparent.css('display', 'none');
-			setTimeout(function () {
+			setTimeout(() => {
 				menu_area.css('display', 'none');
 			}, 300);
 		}
 	});
 	// 透明レイヤーがクリックされたら
-	transparent.on('click', function () {
+	transparent.on('click', () => {
 		// スライドを実行（戻る方向に）
 		container.removeClass('side-open');
 		btn_menu.css('transform', 'rotate(0)');
 		transparent.css('display', 'none');
-		setTimeout(function () {
+		setTimeout(() => {
 			menu_area.css('display', 'none');
 		}, 300);
 	});
@@ -54,7 +54,7 @@ $(function () {
 	const btn_search = $('#sp-search-btn');
 	const popup_search = $('#sp-search-area');
 	// ボタンがクリックされたら
-	btn_search.on('click', function () {
+	btn_search.on('click', () => {
 		// スライドを実行
 		popup_search.toggleClass('open');
 		// 検索窓が出ていたら
@@ -69,13 +69,13 @@ $(function () {
 	 * #で始まるアンカーをクリックした場合にスムーズスクロール
 	 */
 	// リンクがクリックされたら
-	 $('a[href^="#"]').click(function () {
+	 $('a[href^="#"]').on('click', () => {
 		const speed = 400; // ミリ秒
-        const href = $(this).attr("href");
+        const href = $(this).attr('href');
         if (href == undefined) {
             return;
         }
-        const target = $((href == "#" || href == "")? 'html' : href);
+        const target = $((href == '#' || href == '')? 'html' : href);
         if (target == undefined) {
             return;
         }
@@ -92,14 +92,14 @@ $(function () {
 	 * コメント関連
 	 */
 	// コメントが入力されたら
-	$('#comment-input').on('keyup', e => {
-		const $e = $(e.target);
-		const lines = 1 + (String($e.val()).match(/\n/g) || []).length;
-		const line_height = 20;
-		const padding_top = parseInt($e.css('padding-top').replace(/px/, ''));
+	$('#comment-input').on('input', e => {
+		const $e             = $(e.target);
+		const lines          = 1 + (String($e.val()).match(/\n/g) || []).length;
+		const line_height    = 20;
+		const padding_top    = parseInt($e.css('padding-top').replace(/px/, ''));
 		const padding_bottom = parseInt($e.css('padding-bottom').replace(/px/, ''));
-		const border_width = 1;
-		const set_height = lines * line_height + padding_top + padding_bottom + border_width;
+		const border_width   = 1;
+		const set_height     = lines * line_height + padding_top + padding_bottom + border_width;
 		$e.css('height', set_height + 'px');
 	});
 
@@ -129,14 +129,14 @@ $(function () {
 	];
 	let topImgCurrentClassNo = 0;
 	// クラスとリンク先を切り替え（初期設定）
-	toggleTopImgAttr (topImgCurrentClassNo);
+	toggleTopImgAttr(topImgCurrentClassNo);
 	// 指定時間おきに実行する処理
-	setInterval(function () {
+	setInterval(() => {
 		// 次の表示番号を導出
 		topImgCurrentClassNo++;
 		topImgCurrentClassNo %= topImgClassList.length;
 		// クラスとリンク先を切り替え
-		toggleTopImgAttr (topImgCurrentClassNo);
+		toggleTopImgAttr(topImgCurrentClassNo);
 	}, toggleTopImgInterval);
 
 	// クラスとリンク先を切り替える関数
@@ -162,7 +162,7 @@ $(window).on('load', function () {
 	// ホワイトリストに入るページ＆クッキーが存在しないなら
 	if (true) { // if (checkWhiteList() && !cookie_closed) {
 		// スクロールされる度に実行
-		$(window).scroll(function () {
+		$(window).on('scroll', () => {
             const scroll_top = $(this).scrollTop();
             if (scroll_top == undefined) {
                 return;
@@ -178,16 +178,16 @@ $(window).on('load', function () {
 		});
 	}
 	// ポップアップの開くボタンをクリック
-	$('#popup-open').click(function () {
+	$('#popup-open').on('click', () => {
 		// イベント送信（ページ遷移）
 		ga('send', 'event', 'popup-box', 'open', location.pathname, 1, { 'nonInteraction': 1 });
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
 		// 指定したリンクへ飛ぶ
-		location.href = "https://oguemon.com/clubhouse-gen/";
+		location.href = 'https://oguemon.com/clubhouse-gen/';
 	});
 	// ポップアップを閉じるボタンをクリック
-	$('#popup-close').click(function () {
+	$('#popup-close').on('click', () => {
 		//  イベント送信（閉じる）
 		ga('send', 'event', 'popup-box', 'close', location.pathname, 1, { 'nonInteraction': 1 });
 		// クッキーに閉じた旨を保存
