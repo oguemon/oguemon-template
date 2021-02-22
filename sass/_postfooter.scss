@@ -95,7 +95,8 @@
 }
 
 // 関連記事
-#relative-article {
+.relative-article, .crp_related {
+	margin-bottom: 20px;
 	padding: 15px;
 	background: $gray-light-color;
 
@@ -104,7 +105,7 @@
 		padding: 10px 10px 20px;
 	}
 
-	#relative-article-header {
+	.relative-article-header {
 		font-size: 180%;
 		font-weight: bold;
 		text-align: center;
@@ -120,15 +121,15 @@
 		}
 	}
 
-	#relative-article-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+	.relative-article-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
-	a.relative-article-item {
+	a.crp_link, a.relative-article-item {
 		width: 317px;
-    margin: 15px 0 0;
+    	margin: 15px 0 0;
 		background: $white-color;
 		position: relative;
 		display: block;
@@ -144,7 +145,7 @@
 			box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
 		}
 
-		.thumbnail {
+		figure {
 			width: 90px;
 			height: 90px;
 			margin: 0 10px 0 0;
@@ -163,22 +164,21 @@
 			}
 		}
 
-		.info {
-			display: table;
+		.title, .crp_title {
+			height: 90px;
+			padding: 0 10px 0 0;
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 100%;
+			font-weight: bold;
+			color: $text-base-color;
 			overflow: hidden;
 
-			.title {
-				height: 90px;
-				padding: 0 10px 0 0;
-				display: table-cell;
-				vertical-align: middle;
-				font-size: 100%;
-				font-weight: bold;
-				color: $text-base-color;
+		}
 
-				@include mq(){
-					height: 75px;
-				}
+		.title{
+			@include mq(){
+				height: 75px;
 			}
 		}
 
@@ -196,27 +196,35 @@
 			}
 		}
 	}
-}
 
-a#same-category {
-	width: 360px;
-	margin: 10px auto 0;
-	padding: 10px;
-	color: $white-color;
-	font-weight: bold;
-	text-align: center;
-	background: $main-color;
-	border-radius: 5px;
-	display: block;
-	transition: background-color $hover-action-time ease-in-out, box-shadow $hover-action-time ease-in-out;
+	a.same-category {
+		width: 360px;
+		margin: 10px auto 0;
+		padding: 10px;
+		color: $white-color;
+		font-weight: bold;
+		text-align: center;
+		background: $main-color;
+		border-radius: 5px;
+		display: block;
+		transition: background-color $hover-action-time ease-in-out, box-shadow $hover-action-time ease-in-out;
 
-	@include mq(){
-		width: 100%;
-    margin-top: 20px;
+		@include mq(){
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		&:hover {
+			background: lighten($main-color, 10%);
+			box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
+		}
 	}
 
-	&:hover {
-		background: lighten($main-color, 10%);
-		box-shadow: 2px 2px 7px rgba(0,0,0,0.4);
+	.notfound {
+		padding: 20px 0;
+		color: $accent-red;
+		font-size: 120%;
+		font-weight: bold;
+		text-align: center;
 	}
 }

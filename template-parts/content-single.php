@@ -131,37 +131,51 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	</div>
 
 <?php
-	// コメント表示
-	comments_template();
+	// 関連記事
+	if (function_exists('echo_crp')) {
+		echo_crp();
+	}
 
+	// コメント表示
+	// comments_template();
+
+	// 同カテゴリ記事
 	if(has_category()):
-		/* 関連記事 */
-?>
-		<div id="relative-article">
-			<div id="relative-article-header"><i class="relative-icon"></i>関連記事</div>
-			<div id="relative-article-list">
-<?php
 		$category = get_the_category()[0];
-		query_posts('cat='.$category->cat_ID.'&showposts=5');
-		while(have_posts()):
-			the_post();//記事情報の取得
-			$end_div = '';
-?>
-			<a href="<?=get_permalink()?>" class="relative-article-item">
-				<div class="thumbnail"><?= get_the_post_thumbnail() ?></div>
-				<div class="info">
-					<div class="title"><?= get_the_title() ?></div>
-				</div>
-				<div class="date"><?= get_the_date() ?></div>
-			</a>
-<?php
-		endwhile;
-		wp_reset_query();
-?>
-			</div>
-			<a id="same-category" href="<?= get_category_link($category->cat_ID) ?>">このカテゴリの全ての記事（<?= $category->count ?>件）を見る</a>
-		</div>
-<?php
+		displaySameCategoryArticleList($category);
 	endif;
 ?>
 </article>
+<?php
+// 同カテゴリの記事を表示する関数
+function displaySameCategoryArticleList ($category) {
+		query_posts('cat='.$category->cat_ID.'&showposts=4');
+		echo <<<EOM
+		<div class="relative-article">
+			<div class="relative-article-header"><i class="relative-icon"></i>このカテゴリの記事</div>
+			<div class="relative-article-list">
+		EOM;
+			while (have_posts()) {
+				the_post(); //記事情報の取得
+				$url = get_permalink();
+				$thumurl = get_the_post_thumbnail();
+				$title = get_the_title();
+				$date = get_the_date();
+				echo <<<EOM
+				<a href="{$url}" class="relative-article-item">
+					<figure>{$thumurl}</figure>
+					<div class="title">{$title}</div>
+					<div class="date">{$date}</div>
+				</a>
+				EOM;
+			}
+			wp_reset_query();
+			$caturl = get_category_link($category->cat_ID);
+			$catcount = $category->count;
+			echo <<<EOM
+			</div>
+			<a class="same-category" href="{$caturl}">このカテゴリの全ての記事（{$catcount}件）を見る</a>
+		</div>
+		EOM;
+	}
+?>
