@@ -185,19 +185,16 @@ add_action('wp_enqueue_scripts', 'oguemon_scripts' );
  */
 function add_async_to_enqueue_script( $url ) {
 	// JSファイルである
-	if (strpos( $url, '.js' ))
-	{
-		//jqueryファイルでない
-		if (strpos( $url, 'jquery.min.js' ) === false)
-		{
-			return $url . ' async charset="UTF-8"';
-		}
+	if (strpos( $url, '.js' )) {
+		return $url . '\' async charset=\'UTF-8';
 	}
 	// CSSファイルである
+	/*
 	else if (strpos( $url, '.css' ))
 	{
-		//return "$url' async charset='UTF-8";
+		return "$url' async charset='UTF-8";
 	}
+	*/
 
 	return $url;
 }
@@ -284,16 +281,7 @@ EOM;
 			// 記事ページなら
 			if (is_single()) {
 				// 広告を追記
-				$add_string .= <<< EOM
-				<ins class="adsbygoogle"
-					 style="display:block; text-align:center;"
-					 data-ad-layout="in-article"
-					 data-ad-format="fluid"
-					 data-ad-client="ca-pub-6941251424797111"
-					 data-ad-slot="9452886211">
-				</ins>
-				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-EOM;
+				$add_string .= '[ad]';
 			}
 
 			// 最初のhタグの前の位置を取得
@@ -306,6 +294,21 @@ EOM;
 	return $content;
 }
 add_filter('the_content', 'add_string_to_content');
+
+// サイト内広告
+function output_ad() {
+	return <<< EOM
+	<ins class="adsbygoogle"
+		 style="display:block; text-align:center;"
+		 data-ad-layout="in-article"
+		 data-ad-format="fluid"
+		 data-ad-client="ca-pub-6941251424797111"
+		 data-ad-slot="9452886211">
+	</ins>
+	<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+EOM;
+}
+add_shortcode('ad', 'output_ad');
 
 // セリフ
 function output_testimony($atts, $content = '') {
