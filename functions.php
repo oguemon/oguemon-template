@@ -307,6 +307,27 @@ EOM;
 }
 add_filter('the_content', 'add_string_to_content');
 
+// セリフ
+function output_testimony($atts, $content = '') {
+    extract(shortcode_atts([
+        'imgurl' => '/wordpress/wp-content/themes/oguemon/img/profile.jpg',
+        'name' => '',
+	], $atts));
+
+	$output  = '<div class="testimony">';
+	$output .=     '<div class="testimony_icon"><img src="' . $imgurl . '" /></div>';
+	$output .= 	   '<div class="testimony_text">';
+	$output .= 		   '<div class="testimony_content">';
+	$output .= ($name !== '')? '<div class="name">' . $name . '</div>' : '';
+	$output .= 			    $content;
+	$output .=         '</div>';
+	$output .=     '</div>';
+	$output .= '</div>';
+
+	return $output;
+}
+add_shortcode('serif', 'output_testimony');
+
 // GETパラメータとして使用できるnameを追加（ABテスト用）
 /*
 function add_query_vars_filter($vars) {
