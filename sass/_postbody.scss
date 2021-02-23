@@ -276,6 +276,12 @@
 			overflow-y: hidden;
 		}
 	}
+
+	// katex
+	.katex-display {
+		margin: 20px 0;
+		overflow-x: scroll;
+	}
 }
 
 /*

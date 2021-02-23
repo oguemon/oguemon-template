@@ -181,13 +181,35 @@ function oguemon_scripts() {
 add_action('wp_enqueue_scripts', 'oguemon_scripts' );
 
 /**
+ * katexショートコードに対してスクリプトを読み込む
+ */
+add_shortcode('katex', function() {
+	$base_url = 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/';
+	wp_enqueue_script('katex-core', $base_url . 'katex.min.js', [], '0.12.0', true);
+	wp_enqueue_script('katex-render', $base_url . 'contrib/auto-render.min.js', ['katex-core'], '0.12.0', true);
+
+	$css_output = "<link rel='stylesheet' href='" . $base_url . "katex.min.css?v=0.12.0' media='print' onload='this.media=\"all\"' />";
+
+	return $css_output;
+});
+
+/**
  * スクリプトの非同期読み込みを実現
  */
 function add_async_to_enqueue_script( $url ) {
 	// JSファイルである
-	if (strpos( $url, '.js' )) {
-		return $url . '\' async charset=\'UTF-8';
-	}
+    if (strpos($url, '.js') !== false) {
+        // katexのコアjsファイルである
+        if (strpos($url, 'katex.min.js') !== false) {
+            $url .= '\' defer onload=\'';
+        } elseif // katexのauto-renderである
+        (strpos($url, 'auto-render.min.js') !== false) {
+            $url .= '\' defer onload=\'renderMathInElement(document.getElementById("post-body"));';
+        } else {
+            // その他のjsファイル
+            $url .= '\' async charset=\'UTF-8';
+        }
+    }
 	// CSSファイルである
 	/*
 	else if (strpos( $url, '.css' ))
@@ -255,6 +277,48 @@ function remove_p_on_images($content){
     return preg_replace('/<p>(\s*)(<img .*>)(\s*)<\/p>/iU', '\2', $content);
 }
 add_filter('the_content', 'remove_p_on_images');
+
+/**
+ * Latex記述の内側はbrタグを含めない
+ */
+// 検索ワードに囲まれた範囲内にある改行コードを削除
+function trim_br_between_search_words($regs, $content) {
+	// ヒットしなければ終了
+	if (preg_match_all($regs, $content, $matches, PREG_OFFSET_CAPTURE) === false) {
+		return $content;
+	}
+	// 2以上の偶数個ヒットしなければ終了
+	$match_count = count($matches[0]);
+	if ($match_count < 2 && $match_count % 2 !== 0) {
+		return $content;
+	}
+	// 後ろから順にやる
+	for ($i = $match_count - 1; $i > 0; $i = $i - 2) {
+		// 最初の$$の前の位置を取得
+		$pos_1 = $matches[0][$i - 1][1];
+		$pos_2 = $matches[0][$i][1];
+
+		// 最初のhタグの前に指定した文字列を挟む
+		$target = substr($content, $pos_1, $pos_2 - $pos_1);
+		$before_chars = strlen($target);
+
+		// 改行を消す
+		$target = preg_replace('/<br\s*\/?>/', '', $target);
+		$after_chars = strlen($target);
+
+		// 文字数に変化があれば加える
+		if ($before_chars !== $after_chars) {
+			$content = substr($content, 0, $pos_1) . $target . substr($content, $pos_2);
+		}
+	}
+	return $content;
+}
+add_filter('the_content', function ($content) {
+	// $$の検索と、\(と\)の検索
+	$content = trim_br_between_search_words('/\$\$/', $content);
+	$content = trim_br_between_search_words('/\\(|\\)/', $content);
+	return $content;
+});
 
 /**
  * 記事本文の最初の見出しの前に目次と広告を適宜挟む
