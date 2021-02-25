@@ -69,9 +69,9 @@ $(function () {
 	 * #で始まるアンカーをクリックした場合にスムーズスクロール
 	 */
 	// リンクがクリックされたら
-	 $('a[href^="#"]').on('click', () => {
+	 $('a[href^="#"]').on('click', e => {
 		const speed = 400; // ミリ秒
-        const href = $(this).attr('href');
+        const href = $(e.target).attr('href');
         if (href == undefined) {
             return;
         }
@@ -162,8 +162,8 @@ $(window).on('load', function () {
 	// ホワイトリストに入るページ＆クッキーが存在しないなら
 	if (true) { // if (checkWhiteList() && !cookie_closed) {
 		// スクロールされる度に実行
-		$(window).on('scroll', () => {
-            const scroll_top = $(this).scrollTop();
+		$(window).on('scroll', e => {
+            const scroll_top = $(e.target).scrollTop();
             if (scroll_top == undefined) {
                 return;
             }
