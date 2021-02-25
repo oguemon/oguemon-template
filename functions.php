@@ -250,16 +250,15 @@ function setPostViews($postID) {
 function add_quicktags() {
 ?>
     <script type="text/javascript">
-      QTags.addButton('h3','h3','<h3>','</h3>');
-      QTags.addButton('h4','h4','<h4>','</h4>');
-      QTags.addButton('u','u','<span style="text-decoration: underline;">','</span>');
-      QTags.addButton('dl','dl','<dl>\n','\n</dl>');
-      QTags.addButton('dt','dt','<dt>','</dt>');
-      QTags.addButton('dd','dd','<dd>','</dd>');
-      QTags.addButton('box','box','[box title=""]','[/box]');
-
-      QTags.addButton('serif','serif','[serif imgurl="" name=""]','[/serif]');
-			QTags.addButton('greet','greet','こんにちは、おぐえもん(<a href="https://twitter.com/oguemon_com" target="_blank">@oguemon_com</a>)です。');
+	QTags.addButton('h3','h3','<h3>','</h3>');
+	QTags.addButton('h4','h4','<h4>','</h4>');
+	QTags.addButton('u','u','<span style="text-decoration: underline;">','</span>');
+	QTags.addButton('dl','dl','<dl>\n','\n</dl>');
+	QTags.addButton('dt','dt','<dt>','</dt>');
+	QTags.addButton('dd','dd','<dd>','</dd>');
+	QTags.addButton('box','box','[box title=""]','[/box]');
+	QTags.addButton('serif','serif','[serif imgurl="" name=""]','[/serif]');
+	QTags.addButton('greet','greet','こんにちは、おぐえもん(<a href="https://twitter.com/oguemon_com" target="_blank">@oguemon_com</a>)です。');
     </script>
 <?php
 }
