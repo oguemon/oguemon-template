@@ -256,8 +256,7 @@ function add_quicktags() {
       QTags.addButton('dl','dl','<dl>\n','\n</dl>');
       QTags.addButton('dt','dt','<dt>','</dt>');
       QTags.addButton('dd','dd','<dd>','</dd>');
-      QTags.addButton('box','box','<div class="point-box">\n','\n</div>');
-			QTags.addButton('bax-cap','bax cap','<div class="point-box-caption">','</div>');
+      QTags.addButton('box','box','[box title=""]','[/box]');
 			QTags.addButton('greet','greet','こんにちは、おぐえもん(<a href="https://twitter.com/oguemon_com" target="_blank">@oguemon_com</a>)です。');
     </script>
 <?php
@@ -398,6 +397,20 @@ function output_testimony($atts, $content = '') {
 	return $output;
 }
 add_shortcode('serif', 'output_testimony');
+
+add_shortcode('box', function ($atts, $content = '') {
+    extract(shortcode_atts([
+        'title' => '',
+	], $atts));
+
+	$output  = '<div class="point-box">';
+	$output .= $title? '<div class="point-box-caption">' . $title . '</div>' : '';
+	$output .= $content;
+	$output .= '</div>';
+
+	return $output;
+});
+
 
 // GETパラメータとして使用できるnameを追加（ABテスト用）
 /*
