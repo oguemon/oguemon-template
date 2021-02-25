@@ -257,6 +257,8 @@ function add_quicktags() {
       QTags.addButton('dt','dt','<dt>','</dt>');
       QTags.addButton('dd','dd','<dd>','</dd>');
       QTags.addButton('box','box','[box title=""]','[/box]');
+
+      QTags.addButton('serif','serif','[serif imgurl="" name=""]','[/serif]');
 			QTags.addButton('greet','greet','こんにちは、おぐえもん(<a href="https://twitter.com/oguemon_com" target="_blank">@oguemon_com</a>)です。');
     </script>
 <?php
