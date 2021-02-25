@@ -5,7 +5,7 @@ import 'jquery.cookie';
 import '@firstandthird/toc'; // 目次生成
 
 // HTMLが読まれたら実行
-$(function () {
+$(() => {
 
 	/*
 	 * スマホの右上のメニューボタンを押した時の処理
@@ -149,7 +149,7 @@ $(function () {
 });
 
 // HTMLのみならず画像を含む全コンテンツが読まれたら実行
-$(window).on('load', function () {
+$(window).on('load', () => {
 	/*
 	 *  ポップアップメッセージ
 	 */
