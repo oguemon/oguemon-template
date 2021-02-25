@@ -205,7 +205,11 @@ function add_async_to_enqueue_script( $url ) {
         } elseif // katexのauto-renderである
         (strpos($url, 'auto-render.min.js') !== false) {
             $url .= '\' defer onload=\'renderMathInElement(document.getElementById("post-body"));';
-        } else {
+        } elseif // その他、非同期に表示されるjsファイル
+        (strpos($url, 'adsbygoogle.js') !== false ||
+         strpos($url, 'smush-lazy-load.min.js') !== false ||
+         strpos($url, 'oguemon.js') !== false ||
+         strpos($url, 'wp-embed.min.js') !== false) {
             // その他のjsファイル
             $url .= '\' async charset=\'UTF-8';
         }
