@@ -5,9 +5,20 @@
 #post-thumbnail {
 	width: 100%;
 	height: auto;
+    overflow: hidden;
+	position: relative;
+
+	&:before {
+		content: "";
+		padding-top: 56.25%;
+		display: block;
+	}
 
 	img {
 		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 }
 
