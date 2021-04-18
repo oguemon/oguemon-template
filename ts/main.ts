@@ -153,6 +153,39 @@ $(window).on('load', () => {
 	/*
 	 *  ポップアップメッセージ
 	 */
+	// メッセージの一覧
+	const popup_contents = [
+		{
+			'title': '分かりやすい線形代数解説が40記事以上！',
+			'description': 'おぐえもん.comでは、大学の授業の理解に役立つ線形代数解説記事をたくさんアップ！試験対策などにお使いください！',
+			'link': 'https://oguemon.com/topic/study/linear-algebra/',
+		},
+		{
+			'title': '行列式＆逆行列の自動計算サイトを公開！',
+			'description': '線形代数のレポート＆試験対策の伴侶が登場！<br>三角化機能や、演習に役立つ計算ドリル機能も搭載！',
+			'link': 'https://oguemon.com/tools/calc/mat-det-inv.html',
+		},
+		{
+			'title': 'みんなで線形代数を勉強しよう！',
+			'description': '500人を突破した線形代数のLINEオープンチャット！<br>匿名OK！疑問や発見を語り合い理解を深めよう。',
+			'link': 'https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g',
+		},
+		{
+			'title': 'クラブハウスのスクショ生成器が登場！',
+			'description': '自動生成されたClubhouseのスクショをSNSにアップして、<br>招待される人脈があることをみんなにマウントしよう！',
+			'link': 'https://oguemon.com/clubhouse-gen/',
+		},
+	];
+	// UNIX時間 % メッセージパターン数で出すメッセージを決める
+	const pattern = (new Date()).getTime() % popup_contents.length;
+	const popup_content = popup_contents[pattern];
+
+	// メッセージのセット
+	const $popup_box = $('#popup-box');
+	$popup_box.find('.title').text(popup_content.title);
+	$popup_box.find('.description').html(popup_content.description);
+	$popup_box.find('#popup-open').attr('href', popup_content.link);
+
 	// 既に出したかどうかのフラグ
 	let popup_flg = false;
 	// クッキーを取得
@@ -170,7 +203,7 @@ $(window).on('load', () => {
 			// まだポップアップしてないand一定以上のスクロール
 			if (popup_flg == false && scroll_top > 500) {
 				// イベント送信（表示）
-				ga('send', 'event', 'popup-box', 'show', location.pathname, 1, { 'nonInteraction': 1 });
+				// ga('send', 'event', 'popup-box', 'show', location.pathname, 1, { 'nonInteraction': 1 });
 				// ひょっこり表示
 				$('#popup-box').css('transform', 'translateY(-200px)');
 				popup_flg = true;
@@ -183,13 +216,11 @@ $(window).on('load', () => {
 		ga('send', 'event', 'popup-box', 'open', location.pathname, 1, { 'nonInteraction': 1 });
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
-		// 指定したリンクへ飛ぶ
-		location.href = 'https://oguemon.com/clubhouse-gen/';
 	});
 	// ポップアップを閉じるボタンをクリック
 	$('#popup-close').on('click', () => {
-		//  イベント送信（閉じる）
-		ga('send', 'event', 'popup-box', 'close', location.pathname, 1, { 'nonInteraction': 1 });
+		// イベント送信（閉じる）
+		// ga('send', 'event', 'popup-box', 'close', location.pathname, 1, { 'nonInteraction': 1 });
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
 		// ボックスを下に引っ込める
