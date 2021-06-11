@@ -115,8 +115,8 @@ $(() => {
 	const toggleTopImgInterval = 5000; // ミリ秒
 	const topImgClassList = [
 		{
-			class: 'clubhouse',
-			url: './clubhouse-gen/',
+			class: 'book',
+			url: 'https://oguemon.com/study/linear-algebra/textbook/',
 		},
 		{
 			class: 'salary',
@@ -156,28 +156,16 @@ $(window).on('load', () => {
 	// メッセージの一覧
 	const popup_contents = [
 		{
-			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-linear-algebra.png',
-			'title': '分かりやすい線形代数解説が40記事以上！',
-			'description': 'おぐえもん.comでは、大学の授業の理解に役立つ線形代数解説記事をたくさんアップ！試験対策などにお使いください！',
-			'link': 'https://oguemon.com/topic/study/linear-algebra/',
-		},
-		{
-			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-matrix-calc.png',
-			'title': '行列式＆逆行列の自動計算サイトを公開！',
-			'description': '線形代数のレポート＆試験対策の伴侶が登場！<br>三角化機能や、演習に役立つ計算ドリル機能も搭載！',
-			'link': 'https://oguemon.com/tools/calc/mat-det-inv.html',
-		},
-		{
 			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-openchat.png',
-			'title': 'みんなで線形代数を勉強しよう！',
-			'description': '500人を突破した線形代数のLINEオープンチャット！<br>匿名OK！疑問や発見を語り合い理解を深めよう。',
+			'title': 'みんなで線形代数を勉強しよう',
+			'description': '500人を突破した線形代数のLINEオープンチャット！匿名OK！疑問や発見を語り合い理解を深めよう。',
 			'link': 'https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g',
 		},
 		{
-			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-clubhouse.png',
-			'title': 'クラブハウスのスクショ生成器が登場！',
-			'description': '自動生成されたClubhouseのスクショをSNSにアップして、<br>招待される人脈があることをみんなにマウントしよう！',
-			'link': 'https://oguemon.com/clubhouse-gen/',
+			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book.png',
+			'title': 'おぐえもんの線形代数が書籍化！',
+			'description': 'やさしい・見やすい・読みやすいが揃った入門書が登場！6/18発売。Amazon・楽天で予約受付中！',
+			'link': 'https://oguemon.com/study/linear-algebra/textbook/',
 		},
 	];
 	// UNIX時間 % メッセージパターン数で出すメッセージを決める

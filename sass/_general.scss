@@ -186,17 +186,17 @@ article {
     padding-top: 80%;
 	}
 
-	&.clubhouse {
-		background-image: url("../img/top-clubhouse.png");
-		background-color: #f9f7f2;
+	&.book {
+		background-image: url("../img/top-book.png");
+		background-color: #0E5095;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
 		display: block;
 
 		@include mq() {
-			background-image: url("../img/top-clubhouse-sp.png");
-			background-color: #f9f7f2;
+			background-image: url("../img/top-book-sp.png");
+			background-color: #0E5095;
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
