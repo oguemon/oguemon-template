@@ -160,12 +160,18 @@ $(window).on('load', () => {
 			'title': 'みんなで線形代数を勉強しよう',
 			'description': '500人を突破した線形代数のLINEオープンチャット！匿名OK！疑問や発見を語り合い理解を深めよう。',
 			'link': 'https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g',
+			'white_list': [
+				'linear-algebra', // 線形代数カテゴリ全部
+			],
 		},
 		{
 			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book.png',
 			'title': 'おぐえもんの線形代数が書籍化！',
 			'description': 'やさしい・見やすい・読みやすいが揃った入門書が登場！6/18発売。Amazon・楽天で予約受付中！',
 			'link': 'https://oguemon.com/study/linear-algebra/textbook/',
+			'white_list': [
+				'linear-algebra', // 線形代数カテゴリ全部
+			],
 		},
 	];
 	// UNIX時間 % メッセージパターン数で出すメッセージを決める
@@ -186,7 +192,7 @@ $(window).on('load', () => {
 	const cookie_closed = $.cookie(cookie_key);
 	console.log('cookie: ' + cookie_closed);
 	// ホワイトリストに入るページ＆クッキーが存在しないなら
-	if (true) { // if (checkWhiteList() && !cookie_closed) {
+	if (checkWhiteList(popup_content.white_list)) { // if (checkWhiteList() && !cookie_closed) {
 		// スクロールされる度に実行
 		$(window).on('scroll', e => {
             const scroll_top = $(e.target).scrollTop();
@@ -221,11 +227,12 @@ $(window).on('load', () => {
 	});
 
 	// 表示を許すページであるかどうかをチェック
-	function checkWhiteList() {
-		// 表示を許すページ
-		const white_list = [
-			'linear-algebra', // 線形代数カテゴリ全部
-		];
+	function checkWhiteList(white_list: string[]) {
+		// 空配列なら表示
+		if(white_list.length == 0) {
+			return true;
+		}
+
 		// 正規表現作り
 		let re_str = '';
 		for (let i = 0; i < white_list.length; i++) {
