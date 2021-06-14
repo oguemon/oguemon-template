@@ -282,3 +282,55 @@ header {
 		}
     }
 }
+
+// PR用バナー（PC/SP兼用）
+.pr-bar {
+	margin-bottom: 2px;
+	background-color: $accent-red;
+
+	a {
+		width: 100%;
+		padding: 6px 10px;
+		color: $white-color;
+		font-weight: bold;
+		text-align: center;
+		display: block;
+
+		@include mq() {
+			font-size: 120%;
+		}
+	}
+
+	span {
+		position: relative;
+		display: inline-block;
+
+		&:after {
+			content: '';
+			width: 20px;
+			height: 100%;
+			background-image: url("../img/icon-double-vector.svg");
+			background-position-y: center;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 0;
+			right: -20px;
+			animation-name: pr-bar-icon-animate;
+			animation-duration: 1.5s;
+			animation-delay: 0.8s;
+			animation-timing-function: ease;
+			animation-iteration-count: infinite;
+		}
+	}
+}
+
+@keyframes pr-bar-icon-animate {
+	0% {
+		transform: translateX(0);
+		filter: opacity(1);
+	}
+	100% {
+		transform: translateX(10px);
+		filter: opacity(0);
+	}
+}
