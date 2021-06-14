@@ -173,6 +173,15 @@ $(window).on('load', () => {
 				'linear-algebra', // 線形代数カテゴリ全部
 			],
 		},
+		{
+			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book2.png',
+			'title': '線形代数がよく分かる入門書を作りました',
+			'description': '授業や教科書の内容が分からない、独学をはじめようとしているあなたのための一冊。6/18発売！',
+			'link': '/study/linear-algebra/textbook/',
+			'white_list': [
+				'linear-algebra', // 線形代数カテゴリ全部
+			],
+		},
 	];
 	// UNIX時間 % メッセージパターン数で出すメッセージを決める
 	const pattern = (new Date()).getTime() % popup_contents.length;
