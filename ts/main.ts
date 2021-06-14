@@ -116,15 +116,15 @@ $(() => {
 	const topImgClassList = [
 		{
 			class: 'book',
-			url: 'https://oguemon.com/study/linear-algebra/textbook/',
+			url: '/study/linear-algebra/textbook/',
 		},
 		{
 			class: 'salary',
-			url: './tax-calc/',
+			url: '/tax-calc/',
 		},
 		{
 			class: 'calc',
-			url: './tools/calc/mat-det-inv.html',
+			url: '/tools/calc/mat-det-inv.html',
 		},
 	];
 	let topImgCurrentClassNo = 0;
@@ -156,7 +156,7 @@ $(window).on('load', () => {
 	// メッセージの一覧
 	const popup_contents = [
 		{
-			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-openchat.png',
+			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-openchat.png',
 			'title': 'みんなで線形代数を勉強しよう',
 			'description': '500人を突破した線形代数のLINEオープンチャット！匿名OK！疑問や発見を語り合い理解を深めよう。',
 			'link': 'https://line.me/ti/g2/7Iv3QJFuUGfmd-karjBg_g',
@@ -165,10 +165,10 @@ $(window).on('load', () => {
 			],
 		},
 		{
-			'img' : 'https://oguemon.com/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book.png',
+			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book.png',
 			'title': 'おぐえもんの線形代数が書籍化！',
 			'description': 'やさしい・見やすい・読みやすいが揃った入門書が登場！6/18発売。Amazon・楽天で予約受付中！',
-			'link': 'https://oguemon.com/study/linear-algebra/textbook/',
+			'link': '/study/linear-algebra/textbook/',
 			'white_list': [
 				'linear-algebra', // 線形代数カテゴリ全部
 			],

@@ -170,7 +170,7 @@ else
 	<div id="sp-right-menu-area">
 		<div class="profile">
 			<div class="icon">
-				<img src="https://oguemon.com/wordpress/wp-content/themes/oguemon/img/profile.jpg">
+				<img src="/wordpress/wp-content/themes/oguemon/img/profile.jpg">
 			</div>
 			<div class="name"><?=get_the_author_meta('nickname', 1)?></div>
 			<div class="bio"><?=get_the_author_meta('description', 1)?></div>

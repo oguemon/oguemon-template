@@ -7,7 +7,7 @@
 <aside id="site-aside" class="<?php if(is_home() && !is_paged()) echo 'front-page';?>" role="complementary">
 	<div class="contents profile">
 		<div class="icon">
-			<img src="https://oguemon.com/wordpress/wp-content/themes/oguemon/img/profile.jpg">
+			<img src="/wordpress/wp-content/themes/oguemon/img/profile.jpg">
 		</div>
 		<div class="name"><?=get_the_author_meta('nickname', 1)?></div>
 		<div class="bio"><?=get_the_author_meta('description', 1)?></div>
