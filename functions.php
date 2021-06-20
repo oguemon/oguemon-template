@@ -227,24 +227,6 @@ function add_async_to_enqueue_script( $url ) {
 add_filter( 'clean_url', 'add_async_to_enqueue_script', 11, 1 );
 
 /**
- *  記事ごとのアクセス数集計
- */
-function setPostViews($postID) {
-	if (is_single() && !is_admin_bar_showing()) {
-		$count_key = 'post_views_count';
-		$count = get_post_meta($postID, $count_key, true);
-		if($count == ''){
-			$count = 0;
-			delete_post_meta($postID, $count_key);
-			add_post_meta($postID, $count_key, '0');
-		}else{
-			$count++;
-			update_post_meta($postID, $count_key, $count);
-		}
-	}
-}
-
-/**
  * Quick Tagsの追加（投稿編集画面のタグボタン）
  */
 function add_quicktags() {

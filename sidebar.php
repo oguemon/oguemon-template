@@ -50,31 +50,28 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	<div class="title"><i class="rank-icon"></i>人気記事</div>
 	<div id="popular">
 		<?php
-		//記事のPVをインクリメントする（function.php参照）
-		setPostViews(get_the_ID());
 		// ループ開始
-		$rank_posts = get_posts(array(
-			'meta_key' => 'post_views_count',
-			'orderby' => 'meta_value_num',
-			'posts_per_page' => 5,
-			'order' => 'DESC'
-		));
-		$ranking = 0;
-		foreach ( $rank_posts as $post ) {
-			$ranking++;
-			setup_postdata($post);
+		$ranking_slugs = json_decode(file_get_contents(__DIR__ . '/ranking.json'));
+		foreach ($ranking_slugs as $ranking_slug) {
+			$custom_loop = new WP_Query([
+				'name' => $ranking_slug,
+				'posts_per_page' => '1',
+			]);
+			while ($custom_loop->have_posts()) {
+				$custom_loop->the_post();
 		?>
-		<!-- サムネイルの表示 -->
-		<a class="view-popular" href="<?= get_permalink() ?>">
-			<div class="view-popular-thum">
-				<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(80,60)); } ?>
-			</div>
-			<!-- タイトルの表示 -->
-			<div class="view-popular-title"><?= get_the_title() ?></div>
-		</a>
+				<!-- サムネイルの表示 -->
+				<a class="view-popular" href="<?= get_permalink() ?>">
+					<div class="view-popular-thum">
+						<?php if (has_post_thumbnail()) { the_post_thumbnail([80,60]); } ?>
+					</div>
+					<!-- タイトルの表示 -->
+					<div class="view-popular-title"><?= get_the_title() ?></div>
+				</a>
 		<?php
+			}
+			wp_reset_postdata();
 		}
-		wp_reset_postdata();
 		?>
 	</div>
 
