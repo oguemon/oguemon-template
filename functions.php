@@ -412,6 +412,27 @@ add_shortcode('box', function ($atts, $content = '') {
 	return $output;
 });
 
+function output_textbook_link_box() {
+	return <<<EOM
+	<div class="affiliate-box">
+		<div class="thum">
+			<img src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4903814149&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=oguemon-22&language=ja_JP">
+		</div>
+		<div class="text">
+			<div class="copy">＼ おぐえもん.comの分かりやすさを凝縮 ／</div>
+			<div class="title">大学1年生もバッチリ分かる線形代数入門</div>
+			<div class="publisher">プレアデス出版</div>
+			<div class="size">A5サイズ・236ページ</div>
+			<div class="debut">販売中！（2021.06.18 発売）</div>
+			<div class="link-box">
+				<a class="link-button amazon" href="https://amzn.to/3hR2dgV" target="_blank">Amazonの販売ページ</a>
+				<a class="link-button rakuten" href="https://a.r10.to/hD4Mmj" target="_blank">楽天の販売ページ</a>
+			</div>
+		</div>
+	</div>
+EOM;
+}
+add_shortcode('textbook', 'output_textbook_link_box');
 
 // GETパラメータとして使用できるnameを追加（ABテスト用）
 /*

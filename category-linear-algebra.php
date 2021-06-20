@@ -30,6 +30,14 @@ get_header();
 	<div id="site-main">
 		<div class="wrapper wrapper-main clearfix">
 			<main id="site-content">
+	<h3><span>当サイトの本が出ます！</span></h3>
+	<div class="description">
+		「やさしい・見やすい・読みやすい」が特徴の線形代数入門書を書きました！<br>
+		授業が分かるようになる。独学がはかどる。そんな一冊です！
+	</div>
+	<?= output_textbook_link_box() ?>
+	<a href="/study/linear-algebra/textbook/" target="_blank" class="button">本書のポイントをまとめました</a>
+
 	<h3><span>行列式・逆行列 計算機</span></h3>
 	<div class="description">
 		計算が超面倒な「行列式」と「逆行列」を瞬時に求めてくれるWebアプリを開発しました！<br>
