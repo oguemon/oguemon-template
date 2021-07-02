@@ -36,16 +36,28 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 	</div>
 
 	<div class="title"><i class="category-icon"></i>カテゴリー</div>
-	<?php
-		$url = get_bloginfo('url');
-	?>
-	<ul id="category-list">
-		<li><i class="category-icon study-icon"></i><a href="<?=$url?>/topic/study/linear-algebra/">線形代数入門</a></li>
-		<li><i class="category-icon heart-icon"></i><a href="<?=$url?>/topic/knowledge/trivia/">豆知識</a></li>
-		<li><i class="category-icon hike-icon"></i><a href="<?=$url?>/topic/saikoku33/">西国三十三ヶ所巡礼</a></li>
-		<li><i class="category-icon code-icon"></i><a href="<?=$url?>/topic/web/">Web開発</a></li>
-		<li><i class="category-icon dialy-icon"></i><a href="<?=$url?>/topic/blog/">おぐえもんの日記</a></li>
-	</ul>
+	<div class="category-list">
+		<a href="/topic/study/linear-algebra/">
+			<i class="icon study-icon"></i>
+			<span>線形代数入門</span>
+		</a>
+		<a href="/topic/knowledge/trivia/">
+			<i class="icon heart-icon"></i>
+			<span>豆知識</span>
+		</a>
+		<a href="/topic/saikoku33/">
+			<i class="icon hike-icon"></i>
+			<span>西国三十三ヶ所巡礼</span>
+		</a>
+		<a href="/topic/web/">
+			<i class="icon code-icon"></i>
+			<span>Web開発</span>
+		</a>
+		<a href="/topic/blog/">
+			<i class="icon dialy-icon"></i>
+			<span>おぐえもんの日記</span>
+		</a>
+	</div>
 
 	<div class="title"><i class="rank-icon"></i>人気記事</div>
 	<div id="popular">

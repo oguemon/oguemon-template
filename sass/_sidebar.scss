@@ -169,20 +169,65 @@ a.view-popular {
 }
 
 // カテゴリー
-ul#category-list {
-	padding: 10px;
-
-	li {
-    font-weight: bold;
-		line-height: 2.5;
-	}
+.category-list {
+	margin: 20px 0;
 
 	a {
-		transition: color $hover-action-time ease-in-out;
+		height: 36px;
+		margin: 0 10px 15px 0;
+		border: 1px solid #ccc;
+		border-radius: 18px;
+		display: inline-block;
+		position: relative;
+		transition: background-color $hover-action-time ease-in-out;
 
 		&:hover {
-			color: $main-color;
+			background-color: $gray-light-color;
 		}
+
+		.icon {
+			width: 25px;
+			height: 25px;
+			background-image: url(../img/splite-category.svg);
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 4px;
+			left: 8px;
+			display: block;
+
+			// 線形代数のアイコン
+			&.study-icon {
+				background-position: 0 0;
+			}
+			// 豆知識のアイコン
+			&.heart-icon {
+				background-position: -25px 0;
+			}
+			// 西国巡礼のアイコン
+			&.hike-icon {
+				background-position: -50px 0;
+			}
+			// web開発のアイコン
+			&.code-icon {
+				background-position: -75px 0;
+			}
+			// おぐえもん日記のアイコン
+			&.dialy-icon {
+				background-position: -100px 0;
+			}
+		}
+
+		span {
+			margin-left: 36px;
+			padding: 0 15px 0 5px;
+			line-height: 34px;
+			display: block;
+		}
+	}
+
+	@include mq() {
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 }
 
