@@ -63,7 +63,7 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 				<!-- サムネイルの表示 -->
 				<a class="view-popular" href="<?= get_permalink() ?>">
 					<div class="view-popular-thum">
-						<?php if (has_post_thumbnail()) { the_post_thumbnail([80,60]); } ?>
+						<?php if (has_post_thumbnail()) { the_post_thumbnail(); } ?>
 					</div>
 					<!-- タイトルの表示 -->
 					<div class="view-popular-title"><?= get_the_title() ?></div>
@@ -74,6 +74,32 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 		}
 		?>
 	</div>
+
+	<div class="title"><i class="recent-icon"></i>最新記事</div>
+		<?php
+		// ループ開始
+		$custom_loop = new WP_Query([
+			'posts_per_page' => '8',
+		]);
+		while ($custom_loop->have_posts()) {
+			$custom_loop->the_post();
+		?>
+			<!-- サムネイルの表示 -->
+			<a class="view-recent" href="<?= get_permalink() ?>">
+				<div class="view-recent-thum">
+					<?php if (has_post_thumbnail()) { the_post_thumbnail(); } ?>
+				</div>
+				<div class="view-recent-info">
+					<!-- タイトルの表示 -->
+					<div class="view-recent-title"><?= get_the_title() ?></div>
+					<!-- 日付の表示 -->
+					<div class="view-recent-date"><?= get_the_date() ?></div>
+				</div>
+			</a>
+		<?php
+		}
+		wp_reset_postdata();
+		?>
 
 	<!-- 【広告】サイドバー（PC） -->
 	<ins class="adsbygoogle ad-s-item"
