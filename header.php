@@ -198,7 +198,7 @@ else
 		</div>
 	</header>
 <?php
-if(strpos($_SERVER["REQUEST_URI"], 'linear-algebra/') !== false){
+if(strpos($_SERVER["REQUEST_URI"], 'linear-algebra/') !== false && strpos($_SERVER["REQUEST_URI"], 'linear-algebra/textbook/') === false){
 ?>
 	<div class="pr-bar">
 		<a href="/study/linear-algebra/textbook/"><span>めっちゃ分かる線形代数入門本を作りました！</span></a>
