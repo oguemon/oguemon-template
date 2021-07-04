@@ -407,8 +407,8 @@ function output_textbook_link_box() {
 			<div class="size">A5サイズ・236ページ</div>
 			<div class="debut">販売中！（2021.06.18 発売）</div>
 			<div class="link-box">
-				<a class="link-button amazon" href="https://amzn.to/3hR2dgV" target="_blank">Amazonの販売ページ</a>
-				<a class="link-button rakuten" href="https://a.r10.to/hD4Mmj" target="_blank">楽天の販売ページ</a>
+				<a class="link-button amazon" href="https://amzn.to/3hR2dgV" target="_blank"  data-linktype="入門書（Amazon）">Amazonの販売ページ</a>
+				<a class="link-button rakuten" href="https://a.r10.to/hD4Mmj" target="_blank" data-linktype="入門書（Rakuten）">楽天の販売ページ</a>
 			</div>
 		</div>
 	</div>

@@ -146,6 +146,17 @@ $(() => {
 		top_img.addClass(topImgClassList[topImgCurrentClassNo].class);
 		top_img.attr('href', topImgClassList[topImgCurrentClassNo].url);
 	}
+
+	// アフィリエイトリンクを押すとイベント発生
+	$('.link-button').on('click', e => {
+		ga('send', 'event', {
+			eventCategory: 'Link',
+			eventAction: 'Click',
+			eventLabel: $(e.target).data('linktype'),
+			eventValue: 1,
+			nonInteraction: true,
+		})
+	});
 });
 
 // HTMLのみならず画像を含む全コンテンツが読まれたら実行
@@ -156,6 +167,7 @@ $(window).on('load', () => {
 	// メッセージの一覧
 	const popup_contents = [
 		{
+			'eventlabel': 'オープンチャット',
 			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-openchat.png',
 			'title': 'みんなで線形代数を勉強しよう',
 			'description': '500人を突破した線形代数のLINEオープンチャット！匿名OK！疑問や発見を語り合い理解を深めよう。',
@@ -165,18 +177,20 @@ $(window).on('load', () => {
 			],
 		},
 		{
+			'eventlabel': '入門書A',
 			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book.png',
 			'title': 'おぐえもんの線形代数が書籍化！',
-			'description': 'やさしい・見やすい・読みやすいが揃った入門書が登場！6/18発売。Amazon・楽天で予約受付中！',
+			'description': 'やさしい・見やすい・読みやすいが揃った入門書が登場！Amazon・楽天で発売中！',
 			'link': '/study/linear-algebra/textbook/',
 			'white_list': [
 				'linear-algebra', // 線形代数カテゴリ全部
 			],
 		},
 		{
+			'eventlabel': '入門書B',
 			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book2.png',
 			'title': '線形代数がよく分かる入門書を作りました',
-			'description': '授業や教科書の内容が分からない、独学をはじめようとしているあなたのための一冊。6/18発売！',
+			'description': '好評発売中！授業や教科書の内容が分からない、独学をはじめようとしているあなたのための一冊。',
 			'link': '/study/linear-algebra/textbook/',
 			'white_list': [
 				'linear-algebra', // 線形代数カテゴリ全部
@@ -186,6 +200,10 @@ $(window).on('load', () => {
 	// UNIX時間 % メッセージパターン数で出すメッセージを決める
 	const pattern = (new Date()).getTime() % popup_contents.length;
 	const popup_content = popup_contents[pattern];
+
+	// ポップアップのIDを取得
+	// これはGoogle Analyticsのイベントにしよう
+	const eventlabel = popup_content.eventlabel;
 
 	// メッセージのセット
 	const $popup_box = $('#popup-box');
@@ -197,11 +215,11 @@ $(window).on('load', () => {
 	// 既に出したかどうかのフラグ
 	let popup_flg = false;
 	// クッキーを取得
-	const cookie_key = 'popup-openchat';
+	const cookie_key = eventlabel;
 	const cookie_closed = $.cookie(cookie_key);
 	console.log('cookie: ' + cookie_closed);
 	// ホワイトリストに入るページ＆クッキーが存在しないなら
-	if (checkWhiteList(popup_content.white_list)) { // if (checkWhiteList() && !cookie_closed) {
+	if (checkWhiteList(popup_content.white_list) && !cookie_closed) {
 		// スクロールされる度に実行
 		$(window).on('scroll', e => {
             const scroll_top = $(e.target).scrollTop();
@@ -211,7 +229,13 @@ $(window).on('load', () => {
 			// まだポップアップしてないand一定以上のスクロール
 			if (popup_flg == false && scroll_top > 500) {
 				// イベント送信（表示）
-				// ga('send', 'event', 'popup-box', 'show', location.pathname, 1, { 'nonInteraction': 1 });
+				ga('send', 'event', {
+					eventCategory: 'PopupBox',
+					eventAction: 'Show',
+					eventLabel: eventlabel,
+					eventValue: 1,
+					nonInteraction: true,
+				})
 				// ひょっこり表示
 				$('#popup-box').css('transform', 'translateY(-200px)');
 				popup_flg = true;
@@ -221,14 +245,26 @@ $(window).on('load', () => {
 	// ポップアップの開くボタンをクリック
 	$('#popup-open').on('click', () => {
 		// イベント送信（ページ遷移）
-		ga('send', 'event', 'popup-box', 'open', location.pathname, 1, { 'nonInteraction': 1 });
+		ga('send', 'event', {
+			eventCategory: 'PopupBox',
+			eventAction: 'Click',
+			eventLabel: eventlabel,
+			eventValue: 1,
+			nonInteraction: true,
+		})
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
 	});
 	// ポップアップを閉じるボタンをクリック
 	$('#popup-close').on('click', () => {
 		// イベント送信（閉じる）
-		// ga('send', 'event', 'popup-box', 'close', location.pathname, 1, { 'nonInteraction': 1 });
+		ga('send', 'event', {
+			eventCategory: 'PopupBox',
+			eventAction: 'Close',
+			eventLabel: eventlabel,
+			eventValue: 1,
+			nonInteraction: true,
+		})
 		// クッキーに閉じた旨を保存
 		$.cookie(cookie_key, 'closed', {expires: 7});
 		// ボックスを下に引っ込める

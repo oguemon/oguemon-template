@@ -9,38 +9,7 @@
 <head>
 	<meta charset="<?= get_bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<?php
-/*
- *  Google Analytics（ログイン中でなければ表示）
- */
-if (!is_user_logged_in()) {
-	// 余因子展開のページかつテストページでない（ABテスト用コード）
-	$url = parse_url($_SERVER["REQUEST_URI"]);
-    if ($url["path"] == '/study/linear-algebra/cofactor-expansion/') {
-        if (get_query_var('type') == 'beta') {
-?>
-			<link rel="canonical" href="https://oguemon.com/study/linear-algebra/cofactor-expansion/">
-<?php
-        } else {
-?>
-			<!-- Google Analytics Content Experiment code -->
-			<script>function utmx_section(){}function utmx(){}(function(){var
-			k='136223162-0',d=document,l=d.location,c=d.cookie;
-			if(l.search.indexOf('utm_expid='+k)>0)return;
-			function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-			indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-			length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-			'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-			'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-			'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-			valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-			'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-			</script><script>utmx('url','A/B');</script>
-			<!-- End of Google Analytics Content Experiment code -->
-<?php
-		}
-	}
-?>
+	<!-- Google Analytics -->
 	<script type="text/javascript">
 		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 		ga('create', 'UA-89114839-2', { 'cookieDomain': 'oguemon.com' } );
@@ -48,7 +17,6 @@ if (!is_user_logged_in()) {
 	</script>
 	<script async src="https://www.google-analytics.com/analytics.js"></script>
 <?php
-}
 
 // ヘッダーの出力
 wp_head();
