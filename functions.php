@@ -407,9 +407,14 @@ function output_textbook_link_box() {
 			<div class="size">A5サイズ・236ページ</div>
 			<div class="debut">販売中！（2021.06.18 発売）</div>
 			<div class="link-box">
+				<!--
 				<a class="link-button amazon" href="https://amzn.to/3hR2dgV" target="_blank"  data-linktype="入門書（Amazon）">Amazonの販売ページ</a>
 				<a class="link-button rakuten" href="https://a.r10.to/hD4Mmj" target="_blank" data-linktype="入門書（Rakuten）">楽天の販売ページ</a>
+				-->
+				<a class="link-button honto" href="https://honto.jp/netstore/pd-book_31012808.html" target="_blank" data-linktype="入門書（Honto）">丸善・ジュンク堂書店</a>
+				<a class="link-button kinokuniya" href="https://www.kinokuniya.co.jp/f/dsg-01-9784903814148" target="_blank" data-linktype="入門書（紀伊國屋）">紀伊國屋書店</a>
 			</div>
+			<div class="message">※ 好評につき、Amazon・楽天は現在売り切れ中です（7/10現在）</div>
 		</div>
 	</div>
 EOM;
