@@ -179,7 +179,7 @@ $(window).on('load', () => {
 		{
 			'eventlabel': '入門書A',
 			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book.png',
-			'title': 'おぐえもんの線形代数が書籍化！',
+			'title': '授業より分かるおぐえもんの線形代数が書籍化！',
 			'description': 'やさしい・見やすい・読みやすいが揃った入門書が登場！Amazon・楽天で発売中！',
 			'link': '/study/linear-algebra/textbook/',
 			'white_list': [
@@ -190,7 +190,17 @@ $(window).on('load', () => {
 			'eventlabel': '入門書B',
 			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book2.png',
 			'title': '線形代数がよく分かる入門書を作りました',
-			'description': '好評発売中！授業や教科書の内容が分からない、独学をはじめようとしているあなたのための一冊。',
+			'description': '授業や教科書の内容が分からない、独学をはじめようとしているあなたのための一冊が好評発売中！',
+			'link': '/study/linear-algebra/textbook/',
+			'white_list': [
+				'linear-algebra', // 線形代数カテゴリ全部
+			],
+		},
+		{
+			'eventlabel': '入門書C',
+			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book2.png',
+			'title': 'テスト対策に、授業より分かる線形代数入門書を！',
+			'description': '授業や教科書よりも噛み砕いているのに、授業の範囲をカバーしている当サイト謹製の解説書が発売中！',
 			'link': '/study/linear-algebra/textbook/',
 			'white_list': [
 				'linear-algebra', // 線形代数カテゴリ全部
