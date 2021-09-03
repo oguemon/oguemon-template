@@ -61,6 +61,19 @@
     line-height: 1.8;
   }
 
+  p.center-link {
+    margin-top: -10px;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
   .junle-list {
     margin: 10px 0;
     display: flex;

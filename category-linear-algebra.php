@@ -37,6 +37,7 @@ get_header();
 	</div>
 	<?= output_textbook_link_box() ?>
 	<a href="/study/linear-algebra/textbook/" target="_blank" class="button">本書のポイントをまとめました</a>
+	<p class="center-link"><a href="http://www.pleiades-publishing.co.jp/download/" target="_blank" class="text-link">正誤表はこちら</a></p>
 
 	<h3><span>行列式・逆行列 計算機</span></h3>
 	<div class="description">
