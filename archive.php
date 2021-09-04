@@ -29,7 +29,7 @@ get_header();
 						$article_count++;
 						the_post();
 				?>
-						<a class="post-item <?php if($article_count == 1) echo 'first-article'; ?> clearfix" href="<?= get_permalink() ?>">
+						<a class="post-item clearfix" href="<?= get_permalink() ?>">
 							<div class="post-cover">
 							<?php if ( has_post_thumbnail() ) { ?>
 								<img src="<?= get_the_post_thumbnail_url(); ?>">

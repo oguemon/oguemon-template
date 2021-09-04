@@ -27,44 +27,6 @@ a.post-item {
 		box-shadow: 1px 1px 10px  rgba(0,0,0,0.15);
 	}
 
-	@include mq() {
-		&.first-article {
-			.post-cover {
-				width: 100%;
-				padding: 56.23% 0 0;
-				border-radius: $border-radius $border-radius 0 0;
-				overflow: hidden;
-				position: relative;
-
-				img {
-					width: 100%;
-					height: auto;
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-				}
-			}
-
-			// おすすめ記事の記事タイトル
-			h2.title-post {
-				margin-bottom: 18px;
-				padding: 10px;
-				font-size: 120%;
-			}
-
-			// おすすめ記事の投稿時刻など
-			p.post-meta {
-				font-size: 80%;
-				line-height: 1;
-				color: $text-sub-color;
-				position: absolute;
-				left: 10px;
-				bottom: 10px;
-			}
-		}
-	}
-
 	// 記事一覧のサムネ
 	.post-cover {
 		width: 200px;
@@ -131,6 +93,42 @@ a.post-item {
 			font-size: 80%;
 			bottom: 5px;
 			left: 100px;
+		}
+	}
+
+	@include mq() {
+		.post-cover {
+			width: 100%;
+			padding: 56.23% 0 0;
+			border-radius: $border-radius $border-radius 0 0;
+			overflow: hidden;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		// おすすめ記事の記事タイトル
+		h2.title-post {
+			margin-bottom: 18px;
+			padding: 5px 10px;
+			font-size: 120%;
+		}
+
+		// おすすめ記事の投稿時刻など
+		p.post-meta {
+			font-size: 80%;
+			line-height: 1;
+			color: $text-sub-color;
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
 		}
 	}
 }
