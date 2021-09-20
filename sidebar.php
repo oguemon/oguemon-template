@@ -115,8 +115,9 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 
 	<!-- 【広告】サイドバー（PC） -->
 	<ins class="adsbygoogle ad-s-item"
-		 style="width: 300px; height: 600px;"
-		 data-ad-client="ca-pub-6941251424797111"
-		 data-ad-slot="4920179380"></ins>
+		style="display:block"
+		data-ad-client="ca-pub-6941251424797111"
+		data-ad-slot="4920179380"
+		data-ad-format="auto"></ins>
 	<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </aside><!-- #site-aside -->
