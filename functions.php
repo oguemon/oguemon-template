@@ -425,12 +425,20 @@ function output_amzn_link_box($atts) {
         'asin' => '',
 	], $atts));
 
-	$product  = json_decode(get_amazon_product_info($asin));
-	$url      = $product->ItemsResult->Items[0]->DetailPageURL;
-	$imgurl   = $product->ItemsResult->Items[0]->Images->Primary->Large->URL;
-	$title    = $product->ItemsResult->Items[0]->ItemInfo->Title->DisplayValue;
-	$price    = number_format($product->ItemsResult->Items[0]->Offers->Listings[0]->Price->Amount);
-	$get_date = date('Y.m.d');
+	try {
+		$product  = json_decode(get_amazon_product_info($asin));
+		$url      = $product->ItemsResult->Items[0]->DetailPageURL;
+		$imgurl   = $product->ItemsResult->Items[0]->Images->Primary->Large->URL;
+		$title    = $product->ItemsResult->Items[0]->ItemInfo->Title->DisplayValue;
+		$price    = number_format($product->ItemsResult->Items[0]->Offers->Listings[0]->Price->Amount);
+		$get_date = date('Y.m.d');
+	} catch (Exception $e) {
+		$url      = '';
+		$imgurl   = '';
+		$title    = '取得に失敗しました';
+		$price    = '0';
+		$get_date = date('Y.m.d');
+	}
 
 	return <<<EOM
 	<a class="amzn-box" href="$url" target="_blank">
