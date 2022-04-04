@@ -1,6 +1,6 @@
 // Sass configuration
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 const browsersync = require('browser-sync');
 
 const webpack = require('webpack');
