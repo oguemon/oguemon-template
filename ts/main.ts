@@ -197,10 +197,10 @@ $(window).on('load', () => {
 			],
 		},
 		{
-			'eventlabel': '入門書C',
+			'eventlabel': '入門書-大学図書館',
 			'img' : '/wordpress/wp-content/themes/oguemon/img/oguemon-choice/thum-book2.png',
-			'title': 'テスト対策に、授業より分かる線形代数入門書を！',
-			'description': '授業や教科書よりも噛み砕いているのに、授業の範囲をカバーしている当サイト謹製の解説書が発売中！',
+			'title': '京大図書館にもあります！おぐえもんの線形代数本',
+			'description': '当サイトが書籍化！好評につき40以上の大学図書館に納入されました。Amazonでも発売中！',
 			'link': '/study/linear-algebra/textbook/',
 			'white_list': [
 				'linear-algebra', // 線形代数カテゴリ全部
