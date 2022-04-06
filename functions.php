@@ -365,7 +365,7 @@ add_shortcode('ad', 'output_ad');
 // セリフ
 function output_testimony($atts, $content = '') {
     extract(shortcode_atts([
-        'imgurl' => '/wordpress/wp-content/themes/oguemon/img/profile.jpg',
+        'imgurl' => get_template_directory_uri() . '/img/profile.jpg',
         'name' => '',
 	], $atts));
 
