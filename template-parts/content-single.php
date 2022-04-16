@@ -58,22 +58,16 @@
 	</div>
 
 	<!-- ソーシャルボタン -->
-<?php
-//リンクの生成
-$title = urlencode(get_the_title());
-$url   = urlencode(get_permalink());
-$link_twitter = 'http://twitter.com/share?url=' . $url . '&text=' . $title . '&related=oguemon_com';
-$link_fb      = 'https://www.facebook.com/dialog/feed?app_id=1846956072250071&link='. $url;
-$link_hatena  = 'http://b.hatena.ne.jp/entry/' . $url;
-$link_line    = 'http://line.me/R/msg/text/?'. $url;
-$link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
-?>
+	<?php
+	//リンクの生成
+	$slg = new ShareLinkGenerator(get_permalink(), get_the_title());
+	?>
 	<div id="sns-btn-list">
-		<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-twitter"></span></a>
-		<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-facebook"></span></a>
-		<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-hatena"></span></a>
-		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-line"></span></a>
-		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-pocket"></span></a>
+		<a href="<?= $slg->getShareLinkTwitter() ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-twitter"></span></a>
+		<a href="<?= $slg->getShareLinkFacebook() ?>" target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-facebook"></span></a>
+		<a href="<?= $slg->getShareLinkHatena() ?>"   target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-hatena"></span></a>
+		<a href="<?= $slg->getShareLinkLine() ?>"     target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-line"></span></a>
+		<a href="<?= $slg->getShareLinkPocket() ?>"   target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-pocket"></span></a>
 	</div>
 
 	<div id="post-body" class="entry-content clearfix">
@@ -105,11 +99,11 @@ $link_pocket  = 'http://getpocket.com/edit?url=' . $url . '&title=' . $title;
 
 	<!-- ソーシャルボタン -->
 	<div id="sns-btn-list">
-		<a href="<?= $link_twitter ?>" target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-twitter"></span></a>
-		<a href="<?= $link_fb ?>"      target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-facebook"></span></a>
-		<a href="<?= $link_hatena ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-hatena"></span></a>
-		<a href="<?= $link_line ?>"    target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-line"></span></a>
-		<a href="<?= $link_pocket ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-pocket"></span></a>
+		<a href="<?= $slg->getShareLinkTwitter() ?>"  target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-twitter"></span></a>
+		<a href="<?= $slg->getShareLinkFacebook() ?>" target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-facebook"></span></a>
+		<a href="<?= $slg->getShareLinkHatena() ?>"   target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-hatena"></span></a>
+		<a href="<?= $slg->getShareLinkLine() ?>"     target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-line"></span></a>
+		<a href="<?= $slg->getShareLinkPocket() ?>"   target="_blank" class="sns-btn-bg"><span class="sns-btn sns-btn-pocket"></span></a>
 	</div>
 
 	<div class="ad-article-footer">

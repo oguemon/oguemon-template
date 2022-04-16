@@ -6,6 +6,9 @@
 
 include_once(get_template_directory() . '/func/AwsV4.php');
 
+// シェアリンクURL生成
+include_once(get_template_directory() . '/func/ShareLinkGenerator.php');
+
 /**
  * Word Pressに関する初期設定
  */
