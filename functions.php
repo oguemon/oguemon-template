@@ -12,78 +12,76 @@ include_once(get_template_directory() . '/func/ShareLinkGenerator.php');
 /**
  * Word Pressに関する初期設定
  */
-function oguemon_setup() {
-	// フィードリンクの有効化（headerで投稿・コメントのRSSリンクを生成）
-	add_theme_support( 'automatic-feed-links' );
-	//プラグイン・テーマによるタイトル管理を可能に
-	add_theme_support( 'title-tag' );
-	//投稿にサムネイルを適用可能
-	add_theme_support( 'post-thumbnails' );
-	//サムネイルの一般的なサイズ
-	set_post_thumbnail_size( 800, 450, array( 'center', 'center' ) );
-	//HTML5を用いた記述を、第2引数で与えた項目に対して許可
-	add_theme_support( 'html5', array('search-form','comment-form','gallery','caption'));
-	//編集画面の「見たままモード」に適用するスタイルのファイルを指定
-	add_editor_style( 'css/editor-style.css' );
-}
 //上の関数を、テーマの初期化後に実行
-add_action( 'after_setup_theme', 'oguemon_setup' );
+add_action('after_setup_theme', function () {
+	// フィードリンクの有効化（headerで投稿・コメントのRSSリンクを生成）
+	add_theme_support('automatic-feed-links');
+	//プラグイン・テーマによるタイトル管理を可能に
+	add_theme_support('title-tag');
+	//投稿にサムネイルを適用可能
+	add_theme_support('post-thumbnails');
+	//サムネイルの一般的なサイズ
+	set_post_thumbnail_size(800, 450, ['center', 'center']);
+	//HTML5を用いた記述を、第2引数で与えた項目に対して許可
+	add_theme_support('html5', ['search-form','comment-form','gallery','caption']);
+	//編集画面の「見たままモード」に適用するスタイルのファイルを指定
+	add_editor_style('css/editor-style.css');
+});
 
 // 固定ページにおいて要旨フィールドをサポートさせる
-add_post_type_support( 'page', 'excerpt' );
+add_post_type_support('page', 'excerpt');
 
 /**
  * headタグ内の不要なタグを除去
  */
 // タイトルタグ生成
-//remove_action( 'wp_head', '_wp_render_title_tag', 1);
+//remove_action('wp_head', '_wp_render_title_tag', 1);
 // スクリプト書き出し
-//remove_action( 'wp_head', 'wp_enqueue_scripts', 1);
+//remove_action('wp_head', 'wp_enqueue_scripts', 1);
 // リソースヒント(名前解決など)
-remove_action( 'wp_head', 'wp_resource_hints', 2);
+remove_action('wp_head', 'wp_resource_hints', 2);
 // フィードリンク
-remove_action( 'wp_head', 'feed_links', 2);
-remove_action( 'wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'feed_links_extra', 3);
 // 外部記事投稿系
-remove_action( 'wp_head', 'rsd_link');
-remove_action( 'wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
 // 関連ページ(次ページなど)のタグ表示
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 // ローカライズなスタイルシートの読み込み
-//remove_action( 'wp_head', 'locale_stylesheet');
+//remove_action('wp_head', 'locale_stylesheet');
 // no-index
-//remove_action( 'wp_head', 'noindex', 1);
+//remove_action('wp_head', 'noindex', 1);
 // 絵文字対応
-remove_action( 'wp_head', 'print_emoji_detection_script', 7);
-remove_action( 'wp_print_styles', 'print_emoji_styles');
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
 // スタイルの表示（wp_print_stylesアクションの実行）
-//remove_action( 'wp_head', 'wp_print_styles', 8);
+//remove_action('wp_head', 'wp_print_styles', 8);
 // ヘッダにスクリプトを表示（wp_print_head_scriptsアクションの実行）
-//remove_action( 'wp_head', 'wp_print_head_scripts', 9);
+//remove_action('wp_head', 'wp_print_head_scripts', 9);
 // WordPressのバージョン
-remove_action( 'wp_head', 'wp_generator');
+remove_action('wp_head', 'wp_generator');
 // rel="canonical"の出力
-remove_action( 'wp_head', 'rel_canonical');
+remove_action('wp_head', 'rel_canonical');
 // 短縮リンク
-remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 // カスタムCSSの出力
-//remove_action( 'wp_head', 'wp_custom_css_cb', 101);
+//remove_action('wp_head', 'wp_custom_css_cb', 101);
 // faviconなどの出力
-//remove_action( 'wp_head', 'wp_site_icon', 99);
+//remove_action('wp_head', 'wp_site_icon', 99);
 
 
 // wp-embedのスタイルを表示しない
 remove_action('embed_head', 'print_embed_styles');
 // wp-embedのスタイルを設定する
-function oguemon_embed_style() {
+add_filter('embed_head', function () {
 	wp_enqueue_style('wp-embed-template-org', get_stylesheet_directory_uri() . '/css/embed.css');
-}
-add_filter('embed_head', 'oguemon_embed_style');
+});
 
 /**
  * RSSフィードのリンクを生成
  */
-add_action('wp_head', function() {
+add_action('wp_head', function () {
 	printf('<link rel="alternate" type="application/rss+xml" title="%s" href="%s">%s', get_bloginfo('name'), get_bloginfo('rss2_url'), "\n");
 });
 
@@ -107,16 +105,15 @@ add_filter('the_content_feed', 'my_content_feeds');
  * タイトルタグの最適化
  */
 // 区切り文字の変更
-function custom_title_separator() {
+add_filter('document_title_separator', function () {
 	return '|';
-}
-add_filter( 'document_title_separator', 'custom_title_separator' );
+});
 
 //タイトルタグの形式変更
-function custom_title_parts($title) {
+add_filter('document_title_parts', function ($title) {
 
 	// トップページでなければサイト説明文要素を削除
-	if ( !is_front_page() ) {
+	if (!is_front_page()) {
 		unset($title['tagline']);
 	}
 
@@ -146,30 +143,27 @@ function custom_title_parts($title) {
 	}
 
 	return $title;
-}
-add_filter( 'document_title_parts', 'custom_title_parts' );
+});
 
 /**
  * 画像などのコンテンツの最大幅を指定
  */
-function oguemon_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'oguemon_content_width', 720 );
-}
 //上の関数を、テーマの初期化後に実行(第3引数は優先順位-小さい程大きい)
-add_action( 'after_setup_theme', 'oguemon_content_width', 0 );
+add_action('after_setup_theme', function () {
+	$GLOBALS['content_width'] = apply_filters('oguemon_content_width', 720);
+}, 0);
 
 /**
  * 記事の要旨（excerpt）の最大文字数を設定
  */
-function oguemon_excerpt_length( $length ) {
+add_filter('excerpt_length', function ($length) {
 	return 30;
-}
-add_filter( 'excerpt_length', 'oguemon_excerpt_length', 999 );
+}, 999);
 
 /**
  * CSSやスクリプトなどの読み込み
  */
-function oguemon_scripts() {
+add_action('wp_enqueue_scripts', function () {
 	//テーマのルート
 	$theme_root = get_template_directory_uri();
 
@@ -182,8 +176,7 @@ function oguemon_scripts() {
 	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
 	//オリジナルのjavascriptの読み込み
 	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array(), '3.0.200622.1', true);
-}
-add_action('wp_enqueue_scripts', 'oguemon_scripts' );
+});
 
 /**
  * katexショートコードに対してスクリプトを読み込む
@@ -201,7 +194,7 @@ add_shortcode('katex', function() {
 /**
  * スクリプトの非同期読み込みを実現
  */
-function add_async_to_enqueue_script( $url ) {
+add_filter('clean_url', function ($url) {
 	// JSファイルである
     if (strpos($url, '.js') !== false) {
         // katexのコアjsファイルである
@@ -228,15 +221,14 @@ function add_async_to_enqueue_script( $url ) {
 	*/
 
 	return $url;
-}
-add_filter( 'clean_url', 'add_async_to_enqueue_script', 11, 1 );
+}, 11, 1);
 
 /**
  * Quick Tagsの追加（投稿編集画面のタグボタン）
  */
-function add_quicktags() {
+add_action('admin_print_footer_scripts', function () {
 ?>
-    <script type="text/javascript">
+	<script type="text/javascript">
 	QTags.addButton('h3','h3','<h3>','</h3>');
 	QTags.addButton('h4','h4','<h4>','</h4>');
 	QTags.addButton('u','u','<span style="text-decoration: underline;">','</span>');
@@ -246,28 +238,25 @@ function add_quicktags() {
 	QTags.addButton('box','box','[box title=""]','[/box]');
 	QTags.addButton('serif','serif','[serif imgurl="" name=""]','[/serif]');
 	QTags.addButton('greet','greet','こんにちは、おぐえもん(<a href="https://twitter.com/oguemon_com" target="_blank">@oguemon_com</a>)です。');
-    </script>
+	</script>
 <?php
-}
-add_action( 'admin_print_footer_scripts', 'add_quicktags' );
+});
 
 /**
  * 画像にwidthとheightの属性を加えない
  */
-function custom_attribute( $html ){
+add_filter('post_thumbnail_html', function ($html) {
     // width height を削除する
     $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
     return $html;
-}
-add_filter( 'post_thumbnail_html', 'custom_attribute' );
+});
 
 /**
  * 画像をpタグで囲まない
  */
-function remove_p_on_images($content){
+add_filter('the_content', function ($content) {
     return preg_replace('/<p>(\s*)(<img .*>)(\s*)<\/p>/iU', '\2', $content);
-}
-add_filter('the_content', 'remove_p_on_images');
+});
 
 /**
  * Latex記述の内側はbrタグを含めない
@@ -314,7 +303,7 @@ add_filter('the_content', function ($content) {
 /**
  * 記事本文の最初の見出しの前に目次と広告を適宜挟む
  */
-function add_string_to_content($content) {
+add_filter('the_content', function ($content) {
 
     if (!is_single() && !is_page()) {
         // 記事ページと固定ページ以外に目次を表示させない
@@ -347,11 +336,10 @@ EOM;
 	}
 
 	return $content;
-}
-add_filter('the_content', 'add_string_to_content');
+});
 
 // サイト内広告
-function output_ad() {
+add_shortcode('ad', function () {
 	return <<< EOM
 	<ins class="adsbygoogle"
 		 style="display:block; text-align:center;"
@@ -362,11 +350,10 @@ function output_ad() {
 	</ins>
 	<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 EOM;
-}
-add_shortcode('ad', 'output_ad');
+});
 
 // セリフ
-function output_testimony($atts, $content = '') {
+add_shortcode('serif', function ($atts, $content = '') {
     extract(shortcode_atts([
         'imgurl' => get_template_directory_uri() . '/img/profile.jpg',
         'name' => '',
@@ -383,8 +370,7 @@ function output_testimony($atts, $content = '') {
 	$output .= '</div>';
 
 	return $output;
-}
-add_shortcode('serif', 'output_testimony');
+});
 
 add_shortcode('box', function ($atts, $content = '') {
     extract(shortcode_atts([
@@ -399,7 +385,7 @@ add_shortcode('box', function ($atts, $content = '') {
 	return $output;
 });
 
-function output_textbook_link_box() {
+add_shortcode('textbook', function () {
 	return <<<EOM
 	<div class="affiliate-box">
 		<div class="thum">
@@ -420,10 +406,9 @@ function output_textbook_link_box() {
 		</div>
 	</div>
 EOM;
-}
-add_shortcode('textbook', 'output_textbook_link_box');
+});
 
-function output_amzn_link_box($atts) {
+add_shortcode('amzn', function ($atts) {
     extract(shortcode_atts([
         'asin' => '',
 	], $atts));
@@ -455,8 +440,7 @@ function output_amzn_link_box($atts) {
 		</div>
 	</a>
 EOM;
-}
-add_shortcode('amzn', 'output_amzn_link_box');
+});
 
 function get_amazon_product_info ($item_id) {
 
@@ -501,7 +485,7 @@ function get_amazon_product_info ($item_id) {
 		);
 	$stream = stream_context_create ( $params );
 
-	$fp = @fopen ( 'https://'.$host.$uriPath, 'rb', false, $stream );
+	$fp = @fopen ('https://'.$host.$uriPath, 'rb', false, $stream );
 
 	if (! $fp) {
 		throw new Exception ( "Exception Occured" );
@@ -515,12 +499,11 @@ function get_amazon_product_info ($item_id) {
 
 // GETパラメータとして使用できるnameを追加（ABテスト用）
 /*
-function add_query_vars_filter($vars) {
+add_filter('query_vars', function ($vars) {
 	$vars[] = 'type';
 	$vars[] = 'utm_expid';
 	return $vars;
-}
-add_filter( 'query_vars', 'add_query_vars_filter' );
+});
 */
 
 /**
