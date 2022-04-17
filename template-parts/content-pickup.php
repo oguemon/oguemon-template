@@ -5,13 +5,13 @@
  */
 
 // おすすめ記事を探す
-$custom_loop = new WP_Query( array(
+$custom_loop = new WP_Query([
 	'post_type'      => 'post',
 	'posts_per_page' => 5,
 	'order'          => 'DESC',
 	'orderby'        => 'date',
-	'tag' 		 	 => 'pickup'
-));
+	'tag' 		 	 => 'pickup',
+]);
 
 if ( $custom_loop->have_posts() ) {
 	$i = 0;

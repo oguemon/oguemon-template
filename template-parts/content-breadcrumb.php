@@ -20,7 +20,7 @@
         "name": "<?= get_bloginfo('name') ?>"
       }
     },
-		<?php
+    <?php
 		$content_num = 2;
 		if(is_category()){//カテゴリーページ
 			$id    = get_categories('include='.get_query_var('cat'))[0]->parent;
@@ -37,12 +37,12 @@
 		}
 
 		if(!empty($id)){
-			$cat_list = array();
+			$cat_list = [];
 			while(!empty($id)){
-				array_push($cat_list, array(
+				array_push($cat_list, [
 					'url'  => get_category_link($id),
-					'name' => get_the_category_by_ID($id)
-				));
+					'name' => get_the_category_by_ID($id),
+				]);
 				$id = get_categories('include='.$id)[0]->parent;
 			}
 			foreach (array_reverse($cat_list) as $cat){

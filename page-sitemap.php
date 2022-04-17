@@ -42,14 +42,14 @@ get_header();
 					<h3>ブログ記事</h3>
 					<?php
 					// カテゴリ一覧
-					$category_list = array(
+					$category_list = [
 						'linear-algebra',
 						'saikoku33',
 						'trivia',
 						'web',
 						'is',
-						'blog'
-					);
+						'blog',
+					];
 					foreach ($category_list as $category) {
 						query_posts('category_name=' . $category . '&posts_per_page=-1');
 						echo '<h4>' . explode(':',get_the_archive_title(),2)[1] . '</h4>';

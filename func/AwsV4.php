@@ -10,8 +10,8 @@ class AwsV4 {
     private $regionName = null;
     private $serviceName = null;
     private $httpMethodName = null;
-    private $queryParametes = array ();
-    private $awsHeaders = array ();
+    private $queryParametes = [];
+    private $awsHeaders = [];
     private $payload = "";
 
     private $HMACAlgorithm = "AWS4-HMAC-SHA256";

@@ -188,11 +188,11 @@ add_action('wp_enqueue_scripts', function () {
 	//デフォルトのJQuery読み込みを解除
 	wp_deregister_script('jquery');
 	//Google Adsenseの読み込み
-	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
+	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', [], false, false);
 	//Google Analyticsの読み込み
 	wp_enqueue_script('g-analytics', '//www.google-analytics.com/analytics.js', [], false, false);
 	//オリジナルのjavascriptの読み込み
-	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array(), '3.0.200622.1', true);
+	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', [], '3.0.200622.1', true);
 });
 
 /**

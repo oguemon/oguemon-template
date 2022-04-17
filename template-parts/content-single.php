@@ -75,25 +75,25 @@
 	//本文の表示
 	the_content();
 	//次のページ・前のページ
-	wp_link_pages( array(
+	wp_link_pages([
 		'before'           => '<div class="page-links">',
 		'after'            => '</div>',
 		'previouspagelink' => '<div class="page-link-arrow prev">前のページ</div><div></div>',
 		'nextpagelink'     => '<div class="page-link-arrow next">次のページ</div><div></div>',
 		'next_or_number'   => 'next',
 		'separator'        => ' ',
-		'echo'             => 1
-	) );
+		'echo'             => 1,
+	]);
 	//ページ番号
-	wp_link_pages( array(
+	wp_link_pages([
 		'before'           => '<div class="page-links">',
 		'after'            => '</div>',
 		'link_before'      => '<span class="page-number">',
 		'link_after'       => '</span>',
 		'next_or_number'   => 'number',
 		'separator'        => ' ',
-		'echo'             => 1
-	) );
+		'echo'             => 1,
+	]);
 ?>
 	</div><!-- id="post-body" -->
 

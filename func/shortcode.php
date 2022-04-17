@@ -153,13 +153,13 @@ function get_amazon_product_info ($item_id) {
     foreach ( $headers as $key => $value ) {
         $headerString .= $key . ': ' . $value . "\r\n";
     }
-    $params = array (
-            'http' => array (
-                'header' => $headerString,
-                'method' => 'POST',
-                'content' => $payload
-            )
-        );
+    $params = [
+		'http' => [
+			'header' => $headerString,
+			'method' => 'POST',
+			'content' => $payload,
+		],
+	];
     $stream = stream_context_create ( $params );
 
     $fp = @fopen ('https://'.$host.$uriPath, 'rb', false, $stream );
