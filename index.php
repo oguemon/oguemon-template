@@ -52,9 +52,7 @@ get_header();
 					echo '</div>';
 
 					/* ページネーションの表示 */
-					if (function_exists('pagination')) {
-							pagination($wp_query->max_num_pages, get_query_var('paged'));
-					}
+					get_template_part('template-parts/content', 'pagination');
 				}
 				?>
 			</main><!-- #site-content -->
