@@ -1,8 +1,16 @@
 {
   "name": "oguemon-template",
   "version": "4.1.0",
-  "description": "SassとTypscriptのコンパイル。",
-  "private": true,
+  "description": "おぐえもん.com専用WordPressテーマ",
+  "homepage": "http://oguemon.com/",
+  "bugs": {
+    "url": "https://github.com/oguemon/oguemon-template/issues"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oguemon/oguemon-template"
+  },
   "scripts": {
     "dev": "npx webpack --mode=development",
     "prod": "npx webpack --mode=production"
@@ -24,5 +32,6 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1",
     "webpack-remove-empty-scripts": "^0.8.0"
-  }
+  },
+  "private": true
 }
