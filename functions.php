@@ -82,6 +82,17 @@ add_filter('embed_head', function () {
 	wp_enqueue_style('wp-embed-template-org', get_stylesheet_directory_uri() . '/css/embed.css');
 });
 
+// Google Analytics
+add_action('wp_head', function () {
+	echo '<!-- Google Analytics -->'
+	   . '<script type="text/javascript">'
+	   . 	'window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;'
+	   . 	'ga("create", "'. GOOGLE_ANALYTICS_TRACKING_ID . '", {"cookieDomain": "'. GOOGLE_ANALYTICS_COOKIE_DOMAIN . '"});'
+	   . 	'ga("send", "pageview");'
+	   . '</script>'
+	   . "\n";
+}, 0);
+
 /**
  * RSSフィードのリンクを生成
  */
@@ -178,6 +189,8 @@ add_action('wp_enqueue_scripts', function () {
 	wp_deregister_script('jquery');
 	//Google Adsenseの読み込み
 	wp_enqueue_script('g-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), false, false);
+	//Google Analyticsの読み込み
+	wp_enqueue_script('g-analytics', '//www.google-analytics.com/analytics.js', [], false, false);
 	//オリジナルのjavascriptの読み込み
 	wp_enqueue_script('original', $theme_root . '/js/oguemon.js', array(), '3.0.200622.1', true);
 });
@@ -196,6 +209,7 @@ add_filter('clean_url', function ($url) {
             $url .= '\' defer onload=\'renderMathInElement(document.getElementById("post-body"));';
         } elseif // その他、非同期に表示されるjsファイル
         (strpos($url, 'adsbygoogle.js') !== false ||
+         strpos($url, 'analytics.js') !== false ||
          strpos($url, 'smush-lazy-load.min.js') !== false ||
          strpos($url, 'oguemon.js') !== false ||
          strpos($url, 'wp-embed.min.js') !== false) {

@@ -9,13 +9,6 @@
 <head>
 	<meta charset="<?= get_bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-	<!-- Google Analytics -->
-	<script type="text/javascript">
-		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-		ga('create', 'UA-89114839-2', { 'cookieDomain': 'oguemon.com' } );
-		ga('send', 'pageview');
-	</script>
-	<script async src="https://www.google-analytics.com/analytics.js"></script>
 <?php
 
 // ヘッダーの出力
