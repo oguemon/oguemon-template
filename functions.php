@@ -217,13 +217,6 @@ add_filter('clean_url', function ($url) {
             $url .= '\' async charset=\'UTF-8';
         }
     }
-	// CSSファイルである
-	/*
-	else if (strpos( $url, '.css' ))
-	{
-		return "$url' async charset='UTF-8";
-	}
-	*/
 
 	return $url;
 }, 11, 1);
@@ -342,12 +335,3 @@ EOM;
 
 	return $content;
 });
-
-// GETパラメータとして使用できるnameを追加（ABテスト用）
-/*
-add_filter('query_vars', function ($vars) {
-	$vars[] = 'type';
-	$vars[] = 'utm_expid';
-	return $vars;
-});
-*/
