@@ -125,8 +125,6 @@ function get_amazon_product_info ($item_id) {
 
     $serviceName = "ProductAdvertisingAPI";
     $region      = "us-west-2";
-    $accessKey   = "AKIAIFFJBJKEUTMVS52Q";
-    $secretKey   = "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";
     $payload = '{'
             . ' "ItemIds": ["' . $item_id . '"],'
             . ' "Resources": ['
@@ -140,7 +138,7 @@ function get_amazon_product_info ($item_id) {
             . '}';
     $host="webservices.amazon.co.jp";
     $uriPath="/paapi5/getitems";
-    $awsv4 = new AwsV4 ($accessKey, $secretKey);
+    $awsv4 = new AwsV4 (PAAPI_ACCESS_KEY, PAAPI_SECRET_KEY);
     $awsv4->setRegionName($region);
     $awsv4->setServiceName($serviceName);
     $awsv4->setPath ($uriPath);

@@ -4,6 +4,9 @@
  * @package oguemon
  */
 
+// 定数
+include_once(get_template_directory() . '/constants.php');
+
 // シェアリンクURL生成
 include_once(get_template_directory() . '/func/ShareLinkGenerator.php');
 
