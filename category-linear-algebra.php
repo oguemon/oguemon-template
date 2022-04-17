@@ -35,7 +35,7 @@ get_header();
 		「やさしい・見やすい・読みやすい」が特徴の線形代数入門書を書きました！<br>
 		授業が分かるようになる。独学がはかどる。そんな一冊です！
 	</div>
-	<?= output_textbook_link_box() ?>
+	<?= do_shortcode('[textbook]') ?>
 	<a href="/study/linear-algebra/textbook/" target="_blank" class="button">本書のポイントをまとめました</a>
 	<p class="center-link"><a href="http://www.pleiades-publishing.co.jp/download/" target="_blank" class="text-link">正誤表はこちら</a></p>
 
